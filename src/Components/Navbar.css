@@ -1,0 +1,28 @@
+header{
+  height: 150px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+
+
+.container-header img {
+  width: 15.5rem;
+  height: 3.5rem;
+  margin-left: 50%;
+  
+}
+
+.container-menu{
+  display: inline-flex;
+  margin-right: 15%;
+  width: 42.5rem;
+  
+}
+
+.menu{
+  font-size: 1.5rem;
+  margin-left: 20%;
+}

@@ -1,28 +1,31 @@
 header{
-  height: 150px;
-  border-bottom: 1px solid black;
+  border: 1px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
+  height: 5.8rem;
 }
 
+.container-image{
+  margin-left: 4%;
+  padding-right: 1.25rem;
+}
 
-.container-header img {
+.container-image img {
+  display: inline-flex;
   width: 15.5rem;
   height: 3.5rem;
-  margin-left: 50%;
-  
+  margin-left: 4%;
 }
 
 .container-menu{
-  display: inline-flex;
-  margin-right: 15%;
-  width: 42.5rem;
-  
+  margin-right:2.5%;
+  width: 28.62rem;
 }
 
-.menu{
-  font-size: 1.5rem;
-  margin-left: 20%;
+.container-menu li {
+  display: inline-flex;
+  font-size: 1.4rem;
+  margin-right: 4%;
+  
 }

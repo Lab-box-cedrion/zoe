@@ -1,6 +1,7 @@
 import React from "react";
 import "./Cabecera.css";
 import { Link } from "react-router-dom";
+import {Dropdown, DropdownButton} from "react-bootstrap";
 
 const Cabecera = () => {
   return (
@@ -18,6 +19,12 @@ const Cabecera = () => {
         <li className="menu">HISTÓRICOS</li>
         <li className="menu">MAX/MIN</li>
       </ul>
+      <DropdownButton id="dropdown-basic-button" title="Menu">
+        <Dropdown.Item href="#/action-1">INFO</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">AJUSTES</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">HISTÓRICOS</Dropdown.Item>
+        <Dropdown.Item href="#/action-4">MAX/MIN</Dropdown.Item>
+      </DropdownButton>
     </div>
   );
 };

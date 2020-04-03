@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import Cabecera from "./Components/Cabecera/Cabecera";
-import Pie from "./Components/Cabecera/Footer/Pie"
+import Pie from "./Components/Footer/Pie"
 
 
 

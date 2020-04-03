@@ -8,66 +8,42 @@
   justify-content: space-between;
   align-items: center;
   height: 5.8rem;
-  
 }
 
-.contenedor-image{
-  margin-left: 4%;
-  padding-right: 1.25rem;
-}
-
-.contenedor-image img {
+/* Icono Cedrion */
+.brand-icon{
   display: inline-flex;
   width: 15.5rem;
   height: 3.5rem;
   margin-left: 4%;
 }
 
-.contenedor-menu{
-  margin-right:1.5%;
-  width: 32rem;
-}
-
-.contenedor-menu li {
-  display: inline-flex;
+/* Menú */
+.nav-link{
   font-size: 1.4rem;
-  margin-right: 4%;
-  
 }
 
-.contenedor-menu li:hover{
-  color: rgb(89,34,213);
-  cursor: pointer;
-}
-
-
-.dropdown{
-  display:none;
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+ color:rgb(89,34,213) ;
 }
 
 
+/* ---------Media Queries(Smartphone)---------- */
 
-/* -----------------Media Queries(IPAD)------------------ */
-
-@media only screen and (max-width:806px){
+@media only screen and (max-width:406px){
   #cabecera{
     display: flex;
     justify-content: center;
     align-items: center;
 
   }
-
-  .contenedor-image{
-    margin-left: 0%;
-  }
-
-  .contenedor-menu{
-    display: none;
-  }
-  
-  .dropdown{
-    display:inline-flex;
-  }
   
 }
 
+/* ----Iphone 4/5 */
+@media only screen and (max-width:346px){
+  .brand-icon{
+    width:70%;
+  }
+}

@@ -14,7 +14,7 @@ const Cabecera = () => {
     <div id="cabecera">
       <img
         className="brand-icon"
-        src="https://s5.gifyu.com/images/icono-cedrion.png"
+        src="https://s6.gifyu.com/images/Screenshot-2020-04-06-at-17.21.51.png"
         alt="main-icono"
       />
       <Navbar collapseOnSelect expand="lg">

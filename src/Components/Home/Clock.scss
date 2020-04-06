@@ -1,15 +1,22 @@
 body {
     display: flex;
     justify-content: center;
-          background-color: #2C2C2C;
+    background-color: #2C2C2C;
       }
+
 .titulo {
-text-align: center;
-color: #8064a2;
-font-family: Helvetica;
-/*text-shadow:  0 0 10px #FFF, 0 0 15px #FFF, 16px 16px 10px rgba(179,140,227,0.62), 16px 16px 10px rgba(179,140,227,0.62), 7px -5px 11px rgba(179,140,227,0.62), -1px -11px 6px rgba(226,189,242,0.58), 5px 11px 10px rgba(169,130,255,0.86);*/
-text-shadow: 0 0 5px #FFF, 0 0 15px #FFF, 2px 2px 7px rgba(206,193,222,0.26), 20px 8px 9px rgba(173,135,219,0.24), 0px -2px 8px rgba(201,157,255,0.07), 0px 0px 10px rgba(233,220,255,0.07), 11px 12px 15px rgba(233,220,255,0.07), 14px 14px 13px rgba(233,220,255,0.07), 17px 26px 16px rgba(128,100,162,0.52), 1px -1px 10px rgba(117,6,105,0.47);
-}
+      margin: 2rem auto;
+      text-align: center;
+      color: rgb(89, 34, 213);
+      font-family: 'Open Sans', sans-serif;
+      text-shadow:  0px 2px 5px #f796e8, 2px 2px 7px rgba(206,193,222,0.26), 8px 4px 3px #FA5FE5, 0px -2px 8px rgba(201,157,255,0.07), 0px 0px 10px rgba(233,220,255,0.07), 11px 12px 15px rgba(233,220,255,0.07), 14px 14px 13px rgba(233,220,255,0.07), 17px 26px 16px rgba(128,100,162,0.52), 1px -1px 10px rgba(117,6,105,0.47);
+      }
+      
+canvas {
+        border-radius: 100%;
+      }
+
+
 
 // loading spinner
 

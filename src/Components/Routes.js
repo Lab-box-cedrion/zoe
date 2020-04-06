@@ -1,11 +1,14 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 
+
+
 const Routes=()=>{
 
   return(
     <div>
-      <Route path="/" exact component={} />
+      <Route path="/" exact component={ Home} />
+      <Route path="/info" exact component={  } />
       <Route path="ajustes" component={} />
       <Route path="historicos" component={} />
       <Route path="notas" component={} />

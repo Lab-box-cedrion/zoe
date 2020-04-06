@@ -25,6 +25,14 @@ input[type="number"] {
 .form-label {
   margin: 0.4em 0.3em 0.4em 0.7em;
 }
+.form-control {
+  margin: 0.4em 0.3em 0.4em 0.7em;
+  width: 60%;
+}
+.text-muted {
+  margin: 0.4em 1em 0.4em 1em;
+  text-align: justify;
+}
 .input-button {
   display: flex;
 }
@@ -41,11 +49,4 @@ input[type="number"] {
   font-size: 1.2em;
   margin: 4px 2px;
   border-radius: 0.3em;
-}
-.form-control {
-  margin: 0.4em 0.3em 0.4em 0.7em;
-  width: 60%;
-}
-.text-muted {
-  margin: 0.4em 0.3em 0.4em 0.3em;
 }

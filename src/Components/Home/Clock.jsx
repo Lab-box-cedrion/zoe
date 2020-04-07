@@ -8,7 +8,8 @@ export default class Clock extends Component {
     constructor(props){
         super(props);
         this.state = {
-            time: new Date() 
+            time: new Date(),
+            onChange : true
         }
     }
     
@@ -30,6 +31,9 @@ export default class Clock extends Component {
         })
     }
 
+    onChange() {
+        
+    }
 
 
     render () {

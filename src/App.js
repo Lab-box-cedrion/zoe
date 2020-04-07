@@ -3,12 +3,14 @@ import Cabecera from "./Components/Cabecera/Cabecera";
 import Pie from "./Components/Footer/Pie";
 import "./App.css";
 import Home from "./Components/Home/Home";
+import Routes from "./Routes";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <Fragment>
-      <Home />
-    </Fragment>
+    <Router>
+      <Routes />
+    </Router>
   );
 }
 

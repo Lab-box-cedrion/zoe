@@ -8,7 +8,7 @@ const InputParameters = (props) => {
       <div className="input-button">
         <Form.Control type="number" placeholder={props.unity} />
         <button onClick={() => props.onAdd(props.key)} className="button">
-          +
+          <span>+</span>
         </button>
         <button className="button">-</button>
       </div>

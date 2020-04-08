@@ -5,21 +5,30 @@ import { Container, Row, Form } from "react-bootstrap";
 
 class SelectParameters extends Component {
   state = {
-    inputParameter: [
-      { id: 0, name: "Tiempo", value: 0, unity: "s" },
-      { id: 1, name: "Tensión", value: 0, unity: "Kv" },
-      { id: 2, name: "Amperaje", value: 0, unity: "mA" },
-      { id: 3, name: "Temperatura", value: 0, unity: "ºC" },
-      { id: 4, name: "Humedad", value: 0, unity: "%" },
+    AllParameter: [
+      { id: 0, type: "input", name: "Tiempo", value: 0, unity: "s" },
+      { id: 1, type: "input", name: "Tensión", value: 0, unity: "Kv" },
+      { id: 2, type: "input", name: "Amperaje", value: 0, unity: "mA" },
+      { id: 3, type: "input", name: "Temperatura", value: 0, unity: "ºC" },
+      { id: 4, type: "input", name: "Humedad", value: 0, unity: "%" },
+      { id: 5, type: "check", name: "Luz", value: "false", unity: "%" },
+      {
+        id: 6,
+        type: "selector",
+        name: "Microorganismo",
+        value: 0,
+        unity: "ºC",
+      },
+      { id: 7, type: "selector", name: "Sustrato", value: 0, unity: "%" },
     ],
   };
 
   handleAdd = (index) => {
-    console.log("Add1", this.state.inputParameter[index]);
+    console.log("Add1", this.state.AllParameter[index]);
   };
 
   render() {
-    console.log("render SP", this.state.inputParameter[0]);
+    console.log("render SP", this.state.AllParameter[0]);
     return (
       <section className="select-parameters">
         <Container>
@@ -34,11 +43,10 @@ class SelectParameters extends Component {
           </Row>
           <Row>
             <Form className="form-parameters">
-              {this.state.inputParameter.map((element) => (
-                <InputParameter
+              {this.state.AllParameter.map((element) => (
+                <inputParameter
                   key={element.id}
-                  name={element.name}
-                  unity={element.unity}
+                  stateParameter={element.name}
                   onAdd={this.handleAdd(element.id)}
                 />
               ))}

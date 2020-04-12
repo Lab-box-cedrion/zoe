@@ -7,12 +7,7 @@ const Routes = () => {
   return (
     <Router>
       <Route path="/" exact component={Home} />
-      {/*       <Route path="/info" component={} />
-       */}{" "}
       <Route path="/ajustes" component={SelectParameters} />
-      {/* <Route path="historicos" component={} />
-      <Route path="notas" component={} />
-      <Route path="max-min" component={} /> */}
     </Router>
   );
 };

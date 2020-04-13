@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 import "./SelectParameteres.css";
 import InputParameter from "./inputParameter";
-import { Container, Row, Form } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 
 class SelectParameters extends Component {
   state = {
-    AllParameter: [
+    inputParameter: [
       { id: 0, type: "input", name: "Tiempo", value: 0, unity: "s" },
       { id: 1, type: "input", name: "Tensión", value: 0, unity: "Kv" },
       { id: 2, type: "input", name: "Amperaje", value: 0, unity: "mA" },
       { id: 3, type: "input", name: "Temperatura", value: 0, unity: "ºC" },
       { id: 4, type: "input", name: "Humedad", value: 0, unity: "%" },
+    ],
+    checkParameter: [
       { id: 5, type: "check", name: "Luz", value: "false", unity: "%" },
+    ],
+    selectParameter: [
       {
         id: 6,
         type: "selector",
@@ -23,34 +27,38 @@ class SelectParameters extends Component {
     ],
   };
 
-  handleAdd = (index) => {
-    console.log("Add1", this.state.AllParameter[index]);
+  handleAdd = () => {
+    console.log("Add");
   };
 
   render() {
-    console.log("render SP", this.state.AllParameter[0]);
+    console.log("render SP", this.state.inputParameter[0]);
     return (
       <section className="select-parameters">
-        <Container>
+        <Container fluid>
           <Row className="intro">
-            <h1>Campos de selección</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-              nihil nesciunt sequi libero accusamus dolore corrupti autem
-              maxime, perspiciatis incidunt, et, necessitatibus soluta
-              laboriosam dolores sit vitae nobis amet sint?
-            </p>
+            <Col>
+              <h1>Campos de selección</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Aliquam nihil nesciunt sequi libero accusamus dolore corrupti
+                autem maxime, perspiciatis incidunt, et, necessitatibus soluta
+                laboriosam dolores sit vitae nobis amet sint?
+              </p>
+            </Col>
           </Row>
           <Row>
-            <Form className="form-parameters">
-              {this.state.AllParameter.map((element) => (
-                <inputParameter
-                  key={element.id}
-                  stateParameter={element.name}
-                  onAdd={this.handleAdd(element.id)}
-                />
-              ))}
-            </Form>
+            <Col>
+              <Form className="form-parameters">
+                {this.state.inputParameter.map((element) => (
+                  <InputParameter
+                    key={element.id}
+                    inputParameter={element}
+                    onAdd={() => this.handleAdd()}
+                  />
+                ))}
+              </Form>
+            </Col>
           </Row>
         </Container>
       </section>

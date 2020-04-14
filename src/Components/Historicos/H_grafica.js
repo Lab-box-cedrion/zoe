@@ -3,7 +3,7 @@ import LineChartDemo from './Charts';
 import Cabecera from '../Cabecera/Cabecera';
 import Pie from '../Footer/Pie';
 
-class Historicos_grafica extends Component {
+export default class H_grafica extends Component {
    
     render() { 
         return ( 
@@ -16,5 +16,3 @@ class Historicos_grafica extends Component {
          );
     }
 }
- 
-export default Historicos_grafica;

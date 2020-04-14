@@ -1,17 +1,16 @@
-import React, {Fragment} from 'react';
-import Cabecera from "./Components/Cabecera/Cabecera";
-import Pie from "./Components/Footer/Pie";
-import './App.css';
-import Home from'./Components/Home/Home';
-
+import React from "react";
+import {BrowserRouter as Router} from 'react-router-dom';
+import "./App.css";
+import Routes from './Routes';
 
 
 function App() {
   return (
-    <Fragment>
-      <Home />
-    </Fragment>
-      
+    <div className="App"> 
+      <Router >
+        <Routes />
+      </Router>
+    </div>
   );
 }
 

@@ -5,6 +5,8 @@ import Home from "./Components/Home/Home";
 import Historicos from './Components/Historicos/Historicos';
 import Historicos_grafica from './Components/Historicos/Historicos_grafica';
 import Testeo from "./Testeo"
+import H_grafica from './Components/Historicos/H_grafica';
+import H_parametros from './Components/Historicos/H_parametros';
 
 const Routes = () => {
   return (
@@ -14,6 +16,7 @@ const Routes = () => {
       <Route path="/historicos" component={ Historicos } />
       <Route path="/historicos_grafica" component={ Historicos_grafica } />
       <Route path="/test" component={Testeo} />
+      <Route path="/historicos_parametros" component={ H_parametros } />
     </Router>
   );
 };

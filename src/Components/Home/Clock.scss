@@ -1,10 +1,15 @@
-body {
+.clock {
+  background-color: #2C2C2C;
   display: flex;
   justify-content: center;
+}
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #2C2C2C;
-    }
-
-.titulo {
+  margin: 0, auto;
+  .titulo {
     margin: 5rem auto 2rem;
     text-align: center;
     color: rgb(89, 34, 213);
@@ -12,12 +17,14 @@ body {
     font-family: "Bauhaus 93"; src: url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.eot"); src: url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.woff") format("woff"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.svg#Bauhaus 93") format("svg");
     text-shadow:  0px 2px 5px #f796e8, 2px 2px 7px rgba(206,193,222,0.26), 8px 4px 3px #FA5FE5, 0px -2px 8px rgba(201,157,255,0.07), 0px 0px 10px rgba(233,220,255,0.07), 11px 12px 15px rgba(233,220,255,0.07), 14px 14px 13px rgba(233,220,255,0.07), 17px 26px 16px rgba(128,100,162,0.52), 1px -1px 10px rgba(117,6,105,0.47);
     }
-    
-canvas {
+
+    #canvas {
+      margin: 0rem auto 20rem;
       border-radius: 100%;
+      background-color:#2C2C2C;
     }
 
-
+}
 
 // loading spinner
 

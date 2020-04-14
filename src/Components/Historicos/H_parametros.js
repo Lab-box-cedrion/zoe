@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Cabecera from '../Cabecera/Cabecera';
 import Pie from '../Footer/Pie';
-import DateBox from '../Shared small components/DateBox';
+import DateBox from './DateBox';
 import 'primereact/resources/themes/nova-dark/theme.css';
 
 

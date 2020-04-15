@@ -9,7 +9,7 @@ const Routes = () => {
       <Route path="/" exact component={Home} />
       {/*       <Route path="/info" component={} />
        */}{" "}
-      <Route path="/ajustes" component={SelectParameters} />
+      <Route path="/ajustes" component={SelectParametersForm} />
       {/* <Route path="historicos" component={} />
       <Route path="notas" component={} />
       <Route path="max-min" component={} /> */}

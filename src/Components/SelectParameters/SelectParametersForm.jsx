@@ -9,7 +9,7 @@ function SelectParametersForm() {
     <React.Fragment>
       <Container>
         <Row>
-          <Col xs={12} className="intro">
+          <Col className="intro">
             <h1>Selección de parámetros</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
@@ -20,9 +20,9 @@ function SelectParametersForm() {
           </Col>
         </Row>
         <Row>
-          <Col xs={12}>
+          <Col>
             <form className="form-parameters">
-              <label>
+              <label className="fecha">
                 <input type="date"></input>
                 <input type="text" placeholder="Nombre"></input>
               </label>

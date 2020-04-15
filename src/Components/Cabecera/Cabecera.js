@@ -14,15 +14,18 @@ const Cabecera = () => {
     <div id="cabecera">
       <img
         className="brand-icon"
-        src="https://s6.gifyu.com/images/Screenshot-2020-04-06-at-17.21.51.png"
+        src="https://s6.gifyu.com/images/cedrion_horizontal_dark_TRANS-01.png"
         alt="main-icono"
       />
-      <Navbar collapseOnSelect expand="lg">
+      <Navbar collapseOnSelect expand="md">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link>INFO</Nav.Link>
-            <Nav.Link>AJUSTES</Nav.Link>
+            <NavDropdown title="AJUSTES" id="collasible-nav-dropdown">
+              <NavDropdown.Item>NOTAS</NavDropdown.Item>
+            </NavDropdown>
+
             <Nav.Link>HISTÓRICOS</Nav.Link>
             <Nav.Link>MAX/MIN</Nav.Link>
           </Nav>

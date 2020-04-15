@@ -47,7 +47,7 @@ export default class Clock extends Component {
         }
 
         return (
-            <div>
+            <div className='clock'>
                 {this.state.time ? 
                         <div className= 'clock-container' onClick={this.redirectComponent}>
                             <h1 className='titulo'>LAB - BOX</h1>

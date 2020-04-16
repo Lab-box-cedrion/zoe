@@ -12,12 +12,7 @@ input[type="number"] {
 .intro {
   margin: 1em 1em 0 1em;
 }
-.containerCSS {
-  display: grid;
-  grid-template-rows: 70px 70px;
-  grid-template-columns: 1fr;
-  align-items: center;
-}
+
 .form-parameters {
   padding: 0.5em 0 0 0.5em;
   margin: 1em 1em 0 1em;
@@ -63,4 +58,22 @@ input[type="number"] {
 }
 .button:hover {
   background-color: greenyellow;
+}
+
+@media (min-width: 768px) and (max-width: 950px) {
+  .containerCSS {
+    display: grid;
+    grid-template-rows: 70px 70px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .containerCSS {
+    display: grid;
+    grid-template-rows: 70px 70px;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
 }

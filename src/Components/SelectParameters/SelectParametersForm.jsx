@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./SelectParametersForm.scss";
 
 function SelectParametersForm() {
+  // contiene los nombres de los campos de los input
+  const [newExperiment, updateParameters] = useState({
+    fecha: new Date().toLocaleString(),
+    nombre: "",
+
+    /* tension: "",
+    amperaje: "",
+    temperatura: "",
+    humedad: "",
+    luzpulsada: false,
+    microorganismos: "", */
+  });
+  const [tiempo, setTiempo] = useState(0);
+
+  const submitInfo = (event) => {
+    event.preventDefault();
+    console.log("submit info");
+  };
+
   return (
     <React.Fragment>
-      <section>
+      <section className="containerCSS">
         <h1>Selección de parámetros</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
@@ -13,24 +32,59 @@ function SelectParametersForm() {
           perspiciatis incidunt, et, necessitatibus soluta laboriosam dolores
           sit vitae nobis amet sint?
         </p>
-        <form className="containerCSS form-parameters">
-          <label className="fecha">
-            <input type="date"></input>
+        <form
+          onSubmit={(event) => submitInfo(event)}
+          className=" form-parameters"
+        >
+          <label htmlFor="fecha" className="fecha">
+            Fecha
+            <input
+              type="input"
+              name="fecha"
+              value={newExperiment.fecha}
+              placeholder={newExperiment.fecha}
+            ></input>
           </label>
           <label>
-            <input type="text" placeholder="Nombre"></input>
+            <input
+              type="text"
+              placeholder="Nombre (opcional)"
+              name="nombre"
+              value={newExperiment.nombre}
+              onChange={(event) =>
+                updateParameters({
+                  ...newExperiment,
+                  nombre: event.target.value,
+                })
+              }
+            ></input>
           </label>
-          <label className="tiempo">
+          <label
+            htmlFor="tiempo"
+            className="tiempo"
+            value={newExperiment.tiempo}
+          >
             <input
               type="number"
               name="tiempo"
               placeholder="Tiempo h:mm:ss"
-              value="hola"
+              value={newExperiment.tiempo}
+              onChange={(event) => setTiempo(event.target.value)}
             ></input>
-            <button className="button plus ">&#9650;</button>
-            <button className="button minus">&#9660;</button>
+            <button
+              className="button plus "
+              onClick={() => setTiempo(tiempo + 10)}
+            >
+              &#9650;
+            </button>
+            <button
+              className="button minus"
+              onClick={() => setTiempo(tiempo - 10)}
+            >
+              &#9660;
+            </button>
           </label>
-          <label className="tension">
+          {/* <label htmlFor="tensión" className="tension" value={newExperiment.tension}>
             <input
               type="number"
               name="tension"
@@ -40,7 +94,7 @@ function SelectParametersForm() {
             <button className="button plus ">&#9650;</button>
             <button className="button minus">&#9660;</button>
           </label>
-          <label className="amperaje">
+          <label htmlFor="amperaje" className="amperaje">
             <input
               type="number"
               name="amperaje"
@@ -50,7 +104,7 @@ function SelectParametersForm() {
             <button className="button plus ">&#9650;</button>
             <button className="button minus">&#9660;</button>
           </label>
-          <label className="temperatura">
+          <label htmlFor="temperatura" className="temperatura">
             <input
               type="number"
               name="temperatura"
@@ -60,7 +114,7 @@ function SelectParametersForm() {
             <button className="button plus ">&#9650;</button>
             <button className="button minus">&#9660;</button>
           </label>
-          <label className="humedad">
+          <label htmlFor="humedad" className="humedad">
             <input
               type="number"
               name="humedad"
@@ -70,14 +124,14 @@ function SelectParametersForm() {
             <button className="button plus ">&#9650;</button>
             <button className="button minus">&#9660;</button>
           </label>
-          <label className="luz-pulsada">
+          <label htmlFor="luzpulsada" className="luz-pulsada">
             Luz pulsada
             {/* <input
               type="number"
               name="luzPulsada"
               placeholder="luzPulsada"
               value="hola"
-            ></input> */}
+            ></input> 
             <button className="button plus ">Sí</button>
             <button className="button minus">No</button>
           </label>
@@ -90,7 +144,8 @@ function SelectParametersForm() {
             </option>
             <option value="Escherichia Coli">Escherichia Coli</option>
             <option value="Staphylococcus aureus">Staphylococcus aureus</option>
-          </select>
+          </select> */}
+          <button type="submit">Aplicar parámetros</button>
         </form>
       </section>
     </React.Fragment>

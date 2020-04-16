@@ -5,7 +5,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 10%;
+  height: 5.8rem;
   background-image: linear-gradient(#5922D5, #B096EA)
 
 }
@@ -18,11 +18,47 @@
   color: white;
 }
 
+.menu-inferior{
+  display:none;
+}
+
 /* ------MEDIA QUERIES------ */
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:767px){
 
   .pie{
+    justify-content: center;
+  }
+
+  .pie p{
+    margin:0;
+  }
+  
+}
+
+@media only screen and (max-width: 575px){
+  .pie p{
     display:none;
-  }  
+  }
+
+  .menu-inferior{
+    display: unset;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid white;
+    height: 52%;
+    width: 75%;
+    background-color: white;
+    border-radius: 0.75rem;
+    
+  }
+  
+  .icono-sub{
+    color: #7d7d7d;
+    font-size: 2rem;
+  }
+  
+
+
 }

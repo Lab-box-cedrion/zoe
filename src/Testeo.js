@@ -7,13 +7,10 @@ import {faCog} from "@fortawesome/free-solid-svg-icons";
 
 const Testeo = () => {
 
-  let iconoAjustes = <FontAwesomeIcon icon={faCog} />
- 
-
   return (  
     <Fragment>
       <Cabecera />
-  <h4>Página de testeo {iconoAjustes}</h4>
+        <h5 style={{textAlign: "center"}}>Página de testeo </h5>
       <Pie />
     </Fragment>
   ); 

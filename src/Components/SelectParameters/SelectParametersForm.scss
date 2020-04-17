@@ -14,13 +14,13 @@ input[type="number"] {
 }
 
 .form-parameters {
-  height: 75%;
+  height: 600px;
   padding: 0.5em 0 0 0.5em;
   margin: 1em 1em 0 1em;
   background-color: #340f62;
   border-radius: 0.625em;
   & input {
-    height: 2.75em;
+    height: 2em;
     background: #f2ab4f;
     border: 0.0625em solid #7d7d7d;
     box-sizing: border-box;
@@ -62,15 +62,17 @@ input[type="number"] {
   color: yellow;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 735px) {
   .containerCSS {
+    height: 100%;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
     align-items: center;
+    justify-self: auto;
   }
 }
-@media (min-width: 768px) and (max-width: 950px) {
+@media (min-width: 736px) and (max-width: 1023px) {
   .containerCSS {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
@@ -79,7 +81,7 @@ input[type="number"] {
   }
 }
 
-@media (min-width: 951px) {
+@media (min-width: 1024px) {
   .containerCSS {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;

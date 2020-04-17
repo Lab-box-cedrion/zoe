@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Cabecera from "../Cabecera/Cabecera";
+import Pie from "../Footer/Pie";
 
 import "./SelectParametersForm.scss";
 
@@ -24,6 +26,7 @@ function SelectParametersForm() {
 
   return (
     <React.Fragment>
+      <Cabecera />
       <section className="containerCSS">
         <h1>Selección de parámetros</h1>
         <p>
@@ -36,16 +39,17 @@ function SelectParametersForm() {
           onSubmit={(event) => submitInfo(event)}
           className=" form-parameters"
         >
-          <label htmlFor="fecha" className="fecha">
-            Fecha
+          <div className="fecha">
+            <label htmlFor="fecha">Fecha</label>
             <input
               type="input"
               name="fecha"
               value={newExperiment.fecha}
               placeholder={newExperiment.fecha}
             ></input>
-          </label>
-          <label>
+          </div>
+          <div>
+            <label>Nombre</label>
             <input
               type="text"
               placeholder="Nombre (opcional)"
@@ -58,32 +62,30 @@ function SelectParametersForm() {
                 })
               }
             ></input>
+          </div>
+
+          <label htmlFor="tiempo" className="tiempo" value={tiempo}>
+            Tiempo
           </label>
-          <label
-            htmlFor="tiempo"
-            className="tiempo"
-            value={newExperiment.tiempo}
+          <input
+            type="number"
+            name="tiempo"
+            placeholder="Tiempo h:mm:ss"
+            value={tiempo}
+            onChange={(event) => setTiempo(event.target.value)}
+          ></input>
+          <button
+            className="button plus "
+            onClick={() => setTiempo(tiempo + 10)}
           >
-            <input
-              type="number"
-              name="tiempo"
-              placeholder="Tiempo h:mm:ss"
-              value={newExperiment.tiempo}
-              onChange={(event) => setTiempo(event.target.value)}
-            ></input>
-            <button
-              className="button plus "
-              onClick={() => setTiempo(tiempo + 10)}
-            >
-              &#9650;
-            </button>
-            <button
-              className="button minus"
-              onClick={() => setTiempo(tiempo - 10)}
-            >
-              &#9660;
-            </button>
-          </label>
+            &#9650;
+          </button>
+          <button
+            className="button minus"
+            onClick={() => setTiempo(tiempo - 10)}
+          >
+            &#9660;
+          </button>
           {/* <label htmlFor="tensión" className="tension" value={newExperiment.tension}>
             <input
               type="number"
@@ -145,9 +147,12 @@ function SelectParametersForm() {
             <option value="Escherichia Coli">Escherichia Coli</option>
             <option value="Staphylococcus aureus">Staphylococcus aureus</option>
           </select> */}
-          <button type="submit">Aplicar parámetros</button>
+          <button className="button" type="submit">
+            Aplicar parámetros
+          </button>
         </form>
       </section>
+      <Pie />
     </React.Fragment>
   );
 }

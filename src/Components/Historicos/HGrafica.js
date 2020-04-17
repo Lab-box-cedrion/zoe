@@ -3,7 +3,7 @@ import LineChartDemo from './Charts';
 import Cabecera from '../Cabecera/Cabecera';
 import Pie from '../Footer/Pie';
 
-export default class H_grafica extends Component {
+export default class HGrafica extends Component {
    
     render() { 
         return ( 

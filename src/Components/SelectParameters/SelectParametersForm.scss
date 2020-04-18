@@ -15,14 +15,14 @@ input[type="number"] {
 
 .form-parameters {
   height: 600px;
-  padding: 0.5em 0 0 0.5em;
+  padding: 20em 0 0 0.5em;
   margin: 1em 1em 0 1em;
-  background-color: #340f62;
+  background-color: #292929;
   border-radius: 0.625em;
-  & input {
+  & .input {
     height: 2em;
-    background: #f2ab4f;
-    border: 0.0625em solid #7d7d7d;
+    background: #292929;
+    border: 0.0625em solid #bb86fc;
     box-sizing: border-box;
     border-radius: 0.4375em;
     margin: 0 0.3em 0 0;
@@ -34,9 +34,6 @@ input[type="number"] {
     box-sizing: border-box;
     border-radius: 0.4375em;
     margin: 0 0.3em 0 0;
-  }
-  & label {
-    margin: 0;
   }
 }
 
@@ -61,31 +58,15 @@ input[type="number"] {
   background-color: greenyellow;
   color: yellow;
 }
-
-@media (max-width: 735px) {
-  .containerCSS {
-    height: 100%;
-    display: grid;
-    grid-template-rows: min-content;
-    grid-template-columns: auto;
-    align-items: center;
-    justify-self: auto;
-  }
-}
-@media (min-width: 736px) and (max-width: 1023px) {
-  .containerCSS {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-}
-
-@media (min-width: 1024px) {
-  .containerCSS {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-  }
+.containerCss {
+  max-width: 1200px;
+  margin: 10px auto;
+  padding: 1em 1.2em;
+  width: 100%;
+  display: grid;
+  /* Define Auto Row size */
+  grid-auto-rows: min-content;
+  /*Define our columns */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
 }

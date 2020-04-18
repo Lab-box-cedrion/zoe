@@ -4,11 +4,11 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
 .intro {
   margin: 1em 1em 0 1em;
 }
@@ -66,7 +66,7 @@ input[type="number"] {
   .containerCSS {
     height: 100%;
     display: grid;
-    grid-template-rows: auto;
+    grid-template-rows: min-content;
     grid-template-columns: auto;
     align-items: center;
     justify-self: auto;

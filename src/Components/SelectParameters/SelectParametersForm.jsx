@@ -6,17 +6,15 @@ import "./SelectParametersForm.scss";
 
 function SelectParametersForm() {
   // contiene los nombres de los campos de los input
-  const [newExperiment, updateParameters] = useState({
-    fecha: new Date().toLocaleString(),
-    nombre: "",
+  const [date, setDate] = useState(new Date());
 
-    /* tension: "",
+  /* tension: "",
     amperaje: "",
     temperatura: "",
     humedad: "",
     luzpulsada: false,
     microorganismos: "", */
-  });
+
   const [tiempo, setTiempo] = useState(0);
 
   const submitInfo = (event) => {
@@ -44,8 +42,8 @@ function SelectParametersForm() {
             <input
               type="input"
               name="fecha"
-              value={newExperiment.fecha}
-              placeholder={newExperiment.fecha}
+              value={date}
+              placeholder={date}
             ></input>
           </div>
           <div>
@@ -54,13 +52,7 @@ function SelectParametersForm() {
               type="text"
               placeholder="Nombre (opcional)"
               name="nombre"
-              value={newExperiment.nombre}
-              onChange={(event) =>
-                updateParameters({
-                  ...newExperiment,
-                  nombre: event.target.value,
-                })
-              }
+              value="nombre"
             ></input>
           </div>
 

@@ -9,14 +9,7 @@ import "./SelectParametersForm.scss";
 
 function SelectParametersForm() {
   // contiene los nombres de los campos de los input
-  const date = new Date();
-  var options = {
-    weekday: "short",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  date.toLocaleString("es-Es", options);
+  const date = new Date().toLocaleString("es-Es");
   const [name, setName] = useState("");
   const [time, setTime] = useState(null);
   const [tension, setTension] = useState(null);
@@ -41,17 +34,12 @@ function SelectParametersForm() {
         <Intro />
         <form
           onSubmit={(event) => submitInfo(event)}
-          className=" containerCss form-parameters"
+          className="containerCss form-parameters"
         >
           <div className="date">
-            <label htmlFor="fecha">Fecha</label>
-            <input
-              type="input"
-              className="input"
-              name="fecha"
-              value={date}
-              placeholder={date}
-            ></input>
+            <label htmlFor="fecha">
+              <span>{date}</span>
+            </label>
           </div>
           <div className="name">
             <span className="p-float-label">

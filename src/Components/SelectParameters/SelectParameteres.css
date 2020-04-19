@@ -37,7 +37,6 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-<<<<<<< HEAD
 
 @media (max-width: 768px) {
   .select-parameters {
@@ -81,45 +80,6 @@ input[type="number"] {
     margin: 4px 2px;
     border-radius: 50%;
   }
-||||||| merged common ancestors
-.intro {
-  margin: 1em 1em 0 1em;
-}
-.form-parameters {
-  width: 100vw;
-  margin: 1em 1em 0 1em;
-  background-color: #70429363;
-  border-radius: 0.3em;
-}
-.form-label {
-  margin: 0.4em 0.3em 0.4em 0.7em;
-}
-.form-control {
-  margin: 0.4em 0.3em 0.4em 0.7em;
-  width: 60%;
-}
-.text-muted {
-  margin: 0.4em 1em 0.4em 1em;
-  text-align: justify;
-}
-.input-button {
-  display: flex;
-}
-.button {
-  width: 2em;
-  height: 2em;
-  background-color: #663399;
-  border: none;
-  color: white;
-  padding: 0.5em;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1.2em;
-  margin: 4px 2px;
-  border-radius: 50%;
-=======
 .intro {
   margin: 1em 1em 0 1em;
 }
@@ -161,5 +121,4 @@ input[type="number"] {
   font-size: 1.2em;
   margin: 0 0.5em 0;
   border-radius: 50%;
->>>>>>> 6d6ee54ca353c98d33c1e30f49b4813968d88a8b
 }

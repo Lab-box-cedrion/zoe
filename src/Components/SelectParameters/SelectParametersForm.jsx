@@ -20,7 +20,7 @@ function SelectParametersForm() {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col sm={12} md={6}>
             <form className="form-parameters">
               <label className="fecha">
                 <input type="date"></input>

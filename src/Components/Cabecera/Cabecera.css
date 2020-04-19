@@ -10,12 +10,19 @@
   background-color: #2c2c2c;
 }
 
+/* Icono ajustes solo en movil */
+.rueda-ajustes, .icono-notas{
+  font-size: 2rem;
+  display: none;
+}
+
+
 /* Icono Cedrion */
 .brand-icon{
   display: inline-flex;
-  width: 7.3rem;
+  width: 15rem;
   height: auto;
-  margin-left: 4%;
+  margin-left: 2.3%;
 
 }
 
@@ -62,27 +69,39 @@
 
 /* ---------Media Queries(Smartphone)---------- */
 
-@media only screen and (max-width:406px){
+
+
+/* Quitamos Menu Burguer y ponemos Iconos sueltos */
+@media only screen and (max-width:575px){
+
   #cabecera{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-
   }
-  
-}
 
-/*  */
-@media only screen and (max-width:575px){
+  .brand-icon{
+    margin: 0;
+  }
+
+  .rueda-ajustes, .icono-notas{
+      display: unset;
+      
+  }
   .navbar{
     display: none;
   }
+
+  .icono-notas{
+    margin-bottom: 2%;
+  }
+  
 }
 
 /* ----Iphone 4/5 */
 @media only screen and (max-width:346px){
   .brand-icon{
-    width:35%;
+    width:70%;
     height: auto;
   }
 }

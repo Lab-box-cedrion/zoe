@@ -1,95 +1,139 @@
-import React from "react";
+import React, { useState } from "react";
+import Cabecera from "../Cabecera/Cabecera";
+import Pie from "../Footer/Pie";
 
+import Intro from "./Intro";
+
+import { InputText } from "primereact/inputtext";
 import "./SelectParametersForm.scss";
 
-import { Container, Row, Col } from "react-bootstrap";
-
 function SelectParametersForm() {
+  // contiene los nombres de los campos de los input
+  const date = new Date();
+  var options = {
+    weekday: "short",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  date.toLocaleString("es-Es", options);
+  const [name, setName] = useState("");
+  const [time, setTime] = useState(null);
+  const [tension, setTension] = useState(null);
+  const [amperage, setAmperage] = useState(null);
+  const [temperature, setTemperature] = useState(null);
+  const [humidity, setHumidity] = useState(null);
+  const [pulsedLight, setpulsedLight] = useState("true");
+
+  /* 
+    microorganismos: "", */
+
+  const submitInfo = (event) => {
+    event.preventDefault();
+    console.log("submit info");
+  };
+
   return (
     <React.Fragment>
-      <Container>
-        <Row>
-          <Col className="intro">
-            <h1>Selección de parámetros</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-              nihil nesciunt sequi libero accusamus dolore corrupti autem
-              maxime, perspiciatis incidunt, et, necessitatibus soluta
-              laboriosam dolores sit vitae nobis amet sint?
-            </p>
-          </Col>
-        </Row>
-        <Row>
-          <Col sm={12} md={6}>
-            <form className="form-parameters">
-              <label className="fecha">
-                <input type="date"></input>
-                <input type="text" placeholder="Nombre"></input>
-              </label>
-              <label className="tiempo">
-                <input
-                  type="number"
-                  name="tiempo"
-                  placeholder="Tiempo h:mm:ss"
-                  value="hola"
-                ></input>
-                <button className="btn plus ">&#9650;</button>
-                <button className="btn minus">&#9660;</button>
-              </label>
-              <label className="tension">
-                <input
-                  type="number"
-                  name="tension"
-                  placeholder="Tension KV"
-                  value="hola"
-                ></input>
-                <button className="btn plus ">&#9650;</button>
-                <button className="btn minus">&#9660;</button>
-              </label>
-              <label className="amperaje">
-                <input
-                  type="number"
-                  name="amperaje"
-                  placeholder="Amperaje mA"
-                  value="hola"
-                ></input>
-                <button className="btn plus ">&#9650;</button>
-                <button className="btn minus">&#9660;</button>
-              </label>
-              <label className="temperatura">
-                <input
-                  type="number"
-                  name="temperatura"
-                  placeholder="Temperatura ºC"
-                  value="hola"
-                ></input>
-                <button className="btn plus ">&#9650;</button>
-                <button className="btn minus">&#9660;</button>
-              </label>
-              <label className="humedad">
-                <input
-                  type="number"
-                  name="humedad"
-                  placeholder="Humedad %"
-                  value="hola"
-                ></input>
-                <button className="btn plus ">&#9650;</button>
-                <button className="btn minus">&#9660;</button>
-              </label>
-              <label className="luz-pulsada">
-                <input
-                  type="number"
-                  name="luzPulsada"
-                  placeholder="Temperatura ºC"
-                  value="hola"
-                ></input>
-                <button className="btn plus ">&#9650;</button>
-                <button className="btn minus">&#9660;</button>
-              </label>
-            </form>
-          </Col>
-        </Row>
-      </Container>
+      <Cabecera />
+
+      <section>
+        <Intro />
+        <form
+          onSubmit={(event) => submitInfo(event)}
+          className=" containerCss form-parameters"
+        >
+          <div className="date">
+            <label htmlFor="fecha">Fecha</label>
+            <input
+              type="input"
+              className="input"
+              name="fecha"
+              value={date}
+              placeholder={date}
+            ></input>
+          </div>
+          <div className="name">
+            <span className="p-float-label">
+              <InputText
+                id="float-input"
+                className="input"
+                type="text"
+                size="30"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <label htmlFor="float-input">Nombre (opcional)</label>
+            </span>
+          </div>
+          <div className="time">
+            <span className="p-float-label">
+              <InputText
+                id="float-input"
+                className="input"
+                type="text"
+                size="30"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+              />
+              <label htmlFor="float-input">Tiempo h:m:s</label>
+            </span>
+          </div>
+          <div className="tension">
+            <span className="p-float-label">
+              <InputText
+                id="float-input"
+                className="input"
+                type="text"
+                size="30"
+                value={tension}
+                onChange={(e) => setTension(e.target.value)}
+              />
+              <label htmlFor="float-input">Tensión Kv</label>
+            </span>
+          </div>
+          <div className="amperage">
+            <span className="p-float-label">
+              <InputText
+                id="float-input"
+                className="input"
+                type="text"
+                size="30"
+                value={amperage}
+                onChange={(e) => setAmperage(e.target.value)}
+              />
+              <label htmlFor="float-input">Amperaje mA</label>
+            </span>
+          </div>
+          <div className="temperature">
+            <span className="p-float-label">
+              <InputText
+                id="float-input"
+                className="input"
+                type="text"
+                size="30"
+                value={temperature}
+                onChange={(e) => setTemperature(e.target.value)}
+              />
+              <label htmlFor="float-input">Temperatura ºC</label>
+            </span>
+          </div>
+          <div className="humidity">
+            <span className="p-float-label">
+              <InputText
+                id="float-input"
+                className="input"
+                type="text"
+                size="30"
+                value={humidity}
+                onChange={(e) => setHumidity(e.target.value)}
+              />
+              <label htmlFor="float-input">Humedad %</label>
+            </span>
+          </div>
+        </form>
+      </section>
+      <Pie />
     </React.Fragment>
   );
 }

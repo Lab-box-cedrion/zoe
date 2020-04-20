@@ -5,7 +5,7 @@ import DateBox from './DateBox';
 import 'primereact/resources/themes/nova-dark/theme.css';
 
 
-export default class H_parametros extends Component {
+export default class HParametros extends Component {
     state = {  }
     render() { 
         return (  

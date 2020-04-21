@@ -1,0 +1,4 @@
+.container-notas{
+  display: flex;
+  flex-flow: row wrap;
+}

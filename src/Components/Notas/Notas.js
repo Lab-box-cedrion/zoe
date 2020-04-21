@@ -11,11 +11,22 @@ const Notas = () => {
   return (  
     <Fragment> 
       <Cabecera />
-        <div className="container-notas">
-          <input type="text" id="buscar" name="buscar" placeholder="Buscar" />
-          <div className="fecha-proyecto">dd-mm-aa</div>
-          <div className="nombre-notas">Proyecto 1</div>
+      
+        <div className="container-primero">
+          <input type="text" placeholder="Buscar"/>
+          <div className="item-primero">dd-mm-aa</div>
+          <div className="item-primero">Nombre</div>
         </div>
+
+        <div className="container-segundo">
+          <div className="item-segundo"></div>
+          <textarea></textarea>
+        </div>
+
+        <div className="container-tercero">
+          <input type="submit" className="guardar-nota" value="GUARDAR NOTA" />
+        </div>
+      
 
       <Pie />
 

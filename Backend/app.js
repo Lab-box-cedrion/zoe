@@ -10,7 +10,6 @@ const bodyParser = require("body-parser");
 
 const http = require("http");
 
-const app = express();
 const server = http.createServer(app);
 
 app.use(

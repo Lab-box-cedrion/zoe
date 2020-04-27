@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Cabecera from "../Cabecera/Cabecera";
 import Pie from "../Footer/Pie";
 import "./Notas.css";
@@ -6,8 +6,11 @@ import "./Notas.css";
 
 const Notas = () => {
 
- 
+  const [notas, guardarNotas] = useState({
+    texto: "",
+  });
 
+ 
   return (  
     <Fragment> 
       <Cabecera />
@@ -17,17 +20,23 @@ const Notas = () => {
           <div className="item-primero">dd-mm-aa</div>
           <div className="item-primero">Nombre</div>
         </div>
-
+        <form>
         <div className="container-segundo">
-          <div className="item-segundo"></div>
-          <textarea></textarea>
+          <div className="item-segundo">
+            <div className="nota"></div>
+            <div className="nota"></div>
+            <div className="nota"></div>
+            <div className="nota"></div>
+          </div>
+          
+          <textarea onChange={(event)=>guardarNotas({...notas, texto: event.target.value})}></textarea>
         </div>
-
+        </form>
         <div className="container-tercero">
-          <input type="submit" className="guardar-nota" value="GUARDAR NOTA" />
+          <input type="submit" className="guardar-nota" value="GUARDAR NOTA" onClick={()=> console.log("Nota guardada")}/>
         </div>
       
-
+      
       <Pie />
 
     </Fragment>

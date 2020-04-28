@@ -43,7 +43,7 @@ export default class Clock extends Component {
     render () {
 
         if(this.state.moveOn === true) {
-            return <Redirect to='/ajustes' />
+            return <Redirect to='/historicos' />
         }
 
         return (

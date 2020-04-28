@@ -1,0 +1,92 @@
+.primer-container{
+  display:flex;
+  flex-flow: row wrap;
+  height: 10vh;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.primer-item{
+  height: 50%;
+  width: 19%;
+  background-color: #2f3133;
+  border-radius: 1rem;
+  color: #BB86FC;
+  font-weight: bold;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.segundo-container{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  height: 35vh;
+}
+
+.segundo-item{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 20%;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+
+.paracircle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:  50%;
+  height: 70%;
+  border-radius: 100%;
+  cursor: pointer;
+  margin-bottom: 4%;
+  background: linear-gradient(145deg, #414141, #373737);
+box-shadow:  5px 5px 10px #1f1f1f, 
+             -5px -5px 10px #5b5b5b;
+}
+
+.paracircle p {
+  color: #BB86FC;
+  font-weight: bold;
+  font-size: 2.7rem;
+}
+
+.parameter{
+  width: 50%;
+  height: 20%;
+}
+
+.parameter p{
+  color: #03DAC6;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.tercer-container{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  height: 35vh;
+}
+
+.tercer-item{
+  
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 20%;
+  margin-right: 2%;
+  margin-left: 2%;
+}

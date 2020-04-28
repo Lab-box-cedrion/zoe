@@ -56,13 +56,15 @@
   border-top: none;
   
 }
+
+
 .dropdown-item{
   color:#E5E5E5;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .dropdown-item:hover{
-  color: #9B51E0 ;
+  color: #BB86FC  ;
   ;
   background-color: #2c2c2c;
 }

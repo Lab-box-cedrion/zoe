@@ -14,7 +14,7 @@ const Routes = () => {
       <Route path="/ajustes" component={ SelectParameters } />
       <Route path="/historicos" component={ Historicos } />
       <Route path="/historicos_grafica" component={ HGrafica } />
-      <Route path="/notas" component={Notas} />
+      <Route path="/notas" component={ Notas } />
       <Route path="/historicos_parametros" component={ HParametros } />
     </Router>
   );

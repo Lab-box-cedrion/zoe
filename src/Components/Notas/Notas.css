@@ -92,13 +92,13 @@ box-shadow:  10px 10px 20px #161616,
   border-radius: 1rem;
   background: #383838;
   box-shadow:  10px 10px 20px #161616, 
-             -10px -10px 20px #5a5a5a;
+             -10px -10px 20px #424242;
   
 }
 
 .nota:hover{
-  box-shadow:  10px 10px 20px #686868, 
-             -10px -10px 20px #696969;
+  box-shadow:  10px 10px 20px #555555, 
+             -9px -9px 20px #4b4b4b;
 }
 
 .nota:active{

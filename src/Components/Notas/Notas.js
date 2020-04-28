@@ -9,7 +9,6 @@ const Notas = () => {
   const [notas, guardarNotas] = useState({
     texto: "",
   });
-
  
   return (  
     <Fragment> 
@@ -23,13 +22,16 @@ const Notas = () => {
         <form>
         <div className="container-segundo">
           <div className="item-segundo">
-            <div className="nota"></div>
-            <div className="nota"></div>
-            <div className="nota"></div>
-            <div className="nota"></div>
+            <div className="nota"><p>Nota de ejemplo</p></div>
+            <div className="nota"><p>Nota de ejemplo</p></div>
+            <div className="nota"><p>Nota de ejemplo</p></div>
+            <div className="nota"><p>Nota de ejemplo</p></div>
+            
+          
           </div>
           
-          <textarea onChange={(event)=>guardarNotas({...notas, texto: event.target.value})}></textarea>
+          <textarea placeholder="Escribe tus notas aquí..."
+           onChange={(event)=>guardarNotas({...notas, texto: event.target.value})}></textarea>
         </div>
         </form>
         <div className="container-tercero">

@@ -3,7 +3,7 @@
   text-align: center;
   display: flex;
   justify-content: space-around;
-  height: 6.6rem;
+  height: 10.5vh;
   align-items: flex-end;
 }
 
@@ -51,7 +51,7 @@
 .container-segundo{
   display: flex;
   justify-content: space-around;
-  height:24.3rem; 
+  height:43.5vh; 
   margin-top: 2.5%;
 }
 
@@ -71,9 +71,13 @@ box-shadow:  10px 10px 20px #161616,
              -10px -10px 20px #5a5a5a;
 }
 
+.container-segundo textarea::placeholder{
+  color: white;
+}
+
 .item-segundo{
-  display: inline-flex;
-  flex-flow: column wrap;
+  display: flex;
+  flex-flow: column nowrap;
   align-items: center;
   height: 100%;
   width: 20%;
@@ -82,6 +86,7 @@ box-shadow:  10px 10px 20px #161616,
   background: #383838;
   box-shadow:  10px 10px 20px #161616, 
              -10px -10px 20px #5a5a5a;
+  overflow: auto;
   
 }
 
@@ -93,7 +98,17 @@ box-shadow:  10px 10px 20px #161616,
   background: #383838;
   box-shadow:  10px 10px 20px #161616, 
              -10px -10px 20px #424242;
-  
+   
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.nota p{
+  margin-top: 8%;
+  font-weight: bold ;
+  color: #BB86FC;
+  font-size:1.1rem;
 }
 
 .nota:hover{
@@ -110,7 +125,7 @@ box-shadow:  10px 10px 20px #161616,
 .container-tercero{
   display: flex;
   justify-content: flex-end;
-  height: 3rem;
+  height: 5vh;
   margin-top: 2.5%;
 }
 
@@ -136,9 +151,56 @@ box-shadow:  5px 5px 10px #181818,
 
 /* MEDIA QUERIES */
 @media screen and (max-width:574px){
+
+  .container-primero{
+    flex-flow: column wrap;
+    height: 30%;
+    align-items: center;
+  }
+
+  .item-primero, .container-primero input{
+    margin-top: 1.5%;
+    width: 90%;
+  }
+
   .container-tercero input{
   flex-grow: 1;
   margin-right: 4.7%;
   margin-left:4.7%;
   }
+
 }
+
+/* Media query iphon 5 y 6 */
+@media screen and (max-height:736px){
+  .container-primero{
+    height: 18vh;
+  }
+
+  .item-primero, .container-primero input{
+    height: 28%;
+    margin-top: 0;
+  }
+
+  .container-segundo{
+    height: 40vh;;
+  }
+
+}
+
+/* Media query iphone 4 */
+@media screen and (max-height: 599px){
+
+  .container-segundo{
+    height: 33vh;
+  }
+}
+
+@media screen and (max-width: 387px){
+
+  .nota p{
+    font-size: 0.75rem;
+  }
+}
+
+

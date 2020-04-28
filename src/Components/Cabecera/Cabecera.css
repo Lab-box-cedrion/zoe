@@ -66,6 +66,15 @@
   background-color: #2c2c2c;
 }
 
+/* MODAL */
+.modal-content{
+  color:black;
+}
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
 
 /* ---------Media Queries(Smartphone)---------- */
 

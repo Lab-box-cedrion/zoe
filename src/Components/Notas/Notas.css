@@ -1,0 +1,144 @@
+
+.container-primero{
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  height: 6.6rem;
+  align-items: flex-end;
+}
+
+.container-primero input{
+  width: 20%;
+  border:none;
+  border-radius: 1.5rem;
+  height: 3rem;
+  background-color: #1e1e1f;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0 2rem;
+  border-radius: 50px;
+  background: #1e1e1e;
+  box-shadow: inset 9px 9px 18px #0c0c0c, 
+            inset -9px -9px 18px #383838;
+  
+}
+
+.container-primero input::placeholder{
+  color:white;
+  text-align: center;
+  font-size: 1.3rem;
+ 
+}
+
+.item-primero{
+  
+  width: 20%;
+  border-radius: 1rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #BB86FC;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: #2f3133;
+  background: #2f3133;
+  box-shadow:  5px 5px 10px #191a1c, 
+             -5px -5px 10px #45484a;
+
+}
+
+.container-segundo{
+  display: flex;
+  justify-content: space-around;
+  height:24.3rem; 
+  margin-top: 2.5%;
+}
+
+.container-segundo textarea{
+  resize: none;
+  height:100%; 
+  width: 65%;
+  border:none;
+  background-color: #383838;
+  color: white;
+  font-size: 1.3rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  border-radius: 1rem;
+  background: #383838;
+box-shadow:  10px 10px 20px #161616, 
+             -10px -10px 20px #5a5a5a;
+}
+
+.item-segundo{
+  display: inline-flex;
+  flex-flow: column wrap;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+  margin-left: 2.5%;
+  border-radius: 1rem;
+  background: #383838;
+  box-shadow:  10px 10px 20px #161616, 
+             -10px -10px 20px #5a5a5a;
+  
+}
+
+.nota{
+  width: 90%;
+  height: 20%;
+  margin-top: 3.5%;
+  border-radius: 1rem;
+  background: #383838;
+  box-shadow:  10px 10px 20px #161616, 
+             -10px -10px 20px #424242;
+  
+}
+
+.nota:hover{
+  box-shadow:  10px 10px 20px #555555, 
+             -9px -9px 20px #4b4b4b;
+}
+
+.nota:active{
+  background: #3d3d3d;
+  box-shadow: inset 5px 5px 10px #181818, 
+            inset -5px -5px 10px #626262;
+}
+
+.container-tercero{
+  display: flex;
+  justify-content: flex-end;
+  height: 3rem;
+  margin-top: 2.5%;
+}
+
+.container-tercero input{
+  height: 100%;
+  margin-right: 3.7%;
+  border: none;
+  border-radius: 1rem;
+  display: inline-flex;
+  width:22rem;
+  cursor: pointer;
+  background: linear-gradient(145deg, #BB86FC, #BB86FC);
+box-shadow:  5px 5px 10px #181818, 
+             -5px -5px 10px #626262;
+  
+}
+
+.container-tercero input:active{
+  background: #BB86FC;
+  box-shadow: inset 5px 5px 10px #181818, 
+              inset -5px -5px 10px #626262;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width:574px){
+  .container-tercero input{
+  flex-grow: 1;
+  margin-right: 4.7%;
+  margin-left:4.7%;
+  }
+}

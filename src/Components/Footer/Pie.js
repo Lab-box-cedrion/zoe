@@ -37,7 +37,8 @@ const Pie = () => {
         <Modal.Header closeButton>
           <Modal.Title>INFORMACIÓN</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body><h5><em>FORMAS DE USO DE ESTA APLICACIÓN</em></h5>
+        <p>1. Acceso a los ajustes de campos de selección desde <strong>AJUSTES</strong>. Desde aquí se pueden acceder a las <strong>NOTAS</strong>, o si se quiere directamente desde el submenú de navegación de Ajustes.</p><p>2. Una vez hechos los campos de selección en el apartado de ajustes, se crean los resultados del experimento que se puede ver desde el botón de ver <strong>resultado de experimento</strong>. Tiene acceso directo desde el menú de navegación, <strong>HISTÓRICOS</strong>, donde se muestra el último, o todos los anteriores</p><p>Clicando sobre un parámetro se accede a la <strong>gráfica</strong>.</p></Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Salir

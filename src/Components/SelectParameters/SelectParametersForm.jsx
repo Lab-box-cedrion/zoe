@@ -5,9 +5,8 @@ import Pie from "../Footer/Pie";
 import Intro from "./Intro";
 
 import { InputText } from "primereact/inputtext";
-import { Button } from "primereact/button";
-import { Checkbox } from "primereact/checkbox";
 import { MultiSelect } from "primereact/multiselect";
+import { InputSwitch } from "primereact/inputswitch";
 
 import "./SelectParametersForm.scss";
 
@@ -55,17 +54,15 @@ function SelectParametersForm() {
             </label>
           </div>
           <div className="name">
-            <span className="p-float-label name">
-              <InputText
-                id="float-input name"
-                className="input"
-                type="text"
-                size="30"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <label htmlFor="float-input">Nombre (opcional)</label>
-            </span>
+            {" "}
+            <label htmlFor="float-input"></label>
+            <input
+              className="i_name"
+              type="text"
+              placeholder="Nombre (opcional)"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
           <div className="time">
             <span className="p-float-label">
@@ -73,22 +70,26 @@ function SelectParametersForm() {
                 id="float-input"
                 className="input"
                 type="text"
-                size="30"
+                size="25"
                 value={time}
-                onChange={(e) => setTime(Number(e.target.value))}
+                onChange={(e) => setTime(e.target.value.replace(/[^0-9]/g, ""))}
               />
               <label htmlFor="float-input">Tiempo h:m:s</label>
             </span>
-            <Button
-              className="btn plus"
-              icon="pi pi-caret-up"
+            <button
+              className="button"
+              type="submit"
               onClick={() => setTime(time + 10)}
-            />
-            <Button
-              className="btn minus"
-              icon="pi pi-caret-down"
+            >
+              <i className="pi pi-caret-up" style={{ fontSize: "1em" }}></i>
+            </button>
+            <button
+              className="button"
+              type="submit"
               onClick={() => setTime(time - 10)}
-            />
+            >
+              <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
+            </button>
           </div>
           <div className="tension">
             <span className="p-float-label">
@@ -96,22 +97,28 @@ function SelectParametersForm() {
                 id="float-input"
                 className="input"
                 type="text"
-                size="30"
+                size="25"
                 value={tension}
-                onChange={(e) => setTension(Number(e.target.value))}
+                onChange={(e) =>
+                  setTension(e.target.value.replace(/[^0-9]/g, ""))
+                }
               />
               <label htmlFor="float-input">Tensión Kv</label>
             </span>
-            <Button
-              className="btn plus"
-              icon="pi pi-caret-up"
+            <button
+              className="button"
+              type="submit"
               onClick={() => setTension(tension + 10)}
-            />
-            <Button
-              className="btn minus"
-              icon="pi pi-caret-down"
+            >
+              <i className="pi pi-caret-up" style={{ fontSize: "1em" }}></i>
+            </button>
+            <button
+              className="button"
+              type="submit"
               onClick={() => setTension(tension - 10)}
-            />
+            >
+              <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
+            </button>
           </div>
           <div className="amperage">
             <span className="p-float-label">
@@ -119,22 +126,28 @@ function SelectParametersForm() {
                 id="float-input"
                 className="input"
                 type="text"
-                size="30"
+                size="25"
                 value={amperage}
-                onChange={(e) => setAmperage(Number(e.target.value))}
+                onChange={(e) =>
+                  setAmperage(e.target.value.replace(/[^0-9]/g, ""))
+                }
               />
               <label htmlFor="float-input">Amperaje mA</label>
             </span>
-            <Button
-              className="btn plus"
-              icon="pi pi-caret-up"
+            <button
+              className="button"
+              type="submit"
               onClick={() => setAmperage(amperage + 10)}
-            />
-            <Button
-              className="btn minus"
-              icon="pi pi-caret-down"
+            >
+              <i className="pi pi-caret-up" style={{ fontSize: "1em" }}></i>
+            </button>
+            <button
+              className="button"
+              type="submit"
               onClick={() => setAmperage(amperage + 10)}
-            />
+            >
+              <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
+            </button>
           </div>
           <div className="temperature">
             <span className="p-float-label">
@@ -142,22 +155,28 @@ function SelectParametersForm() {
                 id="float-input"
                 className="input"
                 type="text"
-                size="30"
+                size="25"
                 value={temperature}
-                onChange={(e) => setTemperature(Number(e.target.value))}
+                onChange={(e) =>
+                  setTemperature(e.target.value.replace(/[^0-9]/g, ""))
+                }
               />
               <label htmlFor="float-input">Temperatura ºC</label>
             </span>
-            <Button
-              className="btn plus"
-              icon="pi pi-caret-up"
+            <button
+              className="button"
+              type="submit"
               onClick={() => setTemperature(temperature + 10)}
-            />
-            <Button
-              className="btn minus"
-              icon="pi pi-caret-down"
+            >
+              <i className="pi pi-caret-up" style={{ fontSize: "1em" }}></i>
+            </button>
+            <button
+              className="button"
+              type="submit"
               onClick={() => setTemperature(temperature - 10)}
-            />
+            >
+              <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
+            </button>
           </div>
           <div className="humidity">
             <span className="p-float-label">
@@ -165,35 +184,40 @@ function SelectParametersForm() {
                 id="float-input"
                 className="input"
                 type="text"
-                size="30"
+                size="25"
                 value={humidity}
-                onChange={(e) => setHumidity(Number(e.target.value))}
+                onChange={(e) =>
+                  setHumidity(e.target.value.replace(/[^0-9]/g, ""))
+                }
               />
               <label htmlFor="float-input">Humedad %</label>
             </span>
-            <Button
-              className="btn plus"
-              icon="pi pi-caret-up"
+            <button
+              className="button"
+              type="submit"
               onClick={() => setHumidity(humidity + 10)}
-            />
-            <Button
-              className="btn minus"
-              icon="pi pi-caret-down"
+            >
+              <i className="pi pi-caret-up" style={{ fontSize: "1em" }}></i>
+            </button>
+            <button
+              className="button"
+              type="submit"
               onClick={() => setHumidity(humidity - 10)}
-            />
+            >
+              <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
+            </button>
           </div>
           <div className="pulsedLight">
             <h3 className="first">Luz pulsada</h3>
-            <Checkbox
+            <InputSwitch
               checked={pulsedLight}
-              onChange={(e) => setpulsedLight(e.checked)}
+              onChange={(e) => setpulsedLight(e.target.value)}
             />
-            <p>
-              Checked:{" "}
-              <span style={{ fontWeight: "bold" }}>
-                {pulsedLight ? "true" : "false"}
-              </span>
-            </p>
+            {/*               Encendida:{" "}
+             */}{" "}
+            <span className="pulsedLight-label" style={{ fontWeight: "bold" }}>
+              {pulsedLight ? "Encendida" : "Apagada"}
+            </span>
           </div>
           <div className="microorganisms">
             <MultiSelect
@@ -206,7 +230,15 @@ function SelectParametersForm() {
               placeholder="Elige microorganismo"
             />
           </div>
-          <button type="submit">Enviar</button>
+          <button className="aply-parameters" type="submit">
+            <span>APLICAR PARÁMETROS</span>{" "}
+          </button>
+          <button className="see-results" type="submit">
+            <span>VER RESULTADOS</span>{" "}
+          </button>
+          <button className="go-notes" type="submit">
+            <span>IR A NOTAS</span>{" "}
+          </button>
         </form>
       </section>
       <Pie />

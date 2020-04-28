@@ -14,7 +14,7 @@ input[type="number"] {
 }
 
 .form-parameters {
-  height: 60vh;
+  height: max-content;
   padding: 20em 0 0 0.5em;
   margin: 1em 1em 0 1em;
   background-color: #292929;
@@ -23,7 +23,6 @@ input[type="number"] {
   & .input {
     height: 4em;
     background: #292929;
-
     box-sizing: border-box;
     border-radius: 0.4375em;
     margin: 0 0.3em 0 0;
@@ -39,34 +38,22 @@ input[type="number"] {
   & label {
     padding: 0.1em 0 0 1em;
   }
+  & .i_name {
+    width: 338px;
+    height: 50px;
+    background: #1e1e1f;
+    border: 1px solid #bb86fc;
+    box-sizing: border-box;
+    box-shadow: inset -5px -5px 10px #242529, inset 5px 5px 10px #0a0a0a;
+    border-radius: 30px;
+  }
 }
 
-.button {
-  width: 2em;
-  height: 2em;
-  background-color: #b096ea;
-  border: none;
-  margin: 0 0.1em 0;
-  border-radius: 50%;
-  padding: 0.2 0.5em 0.5em 0.5em;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1.5em;
-  color: blue;
-
-  /* box-shadow: 0px 0.25em 0.116em #000000; */
-}
-.button:hover {
-  background-color: greenyellow;
-  color: yellow;
-}
 .containerCss {
   max-width: 1200px;
   margin: 10px auto;
   padding: 1em 1.2em;
-  width: 100%;
+  width: 80%;
   display: grid;
   /* Define Auto Row size */
   grid-auto-rows: min-content;
@@ -75,6 +62,8 @@ input[type="number"] {
   grid-gap: 2em;
 }
 .date {
+  width: 338px;
+  height: 50px;
   background-color: #1e1e1f;
   box-shadow: inset -5px -5px 10px #242529, inset 5px 5px 10px #0a0a0a;
   border-radius: 30px;
@@ -93,9 +82,71 @@ input[type="number"] {
   & .p-button {
     border-radius: 100%;
     width: 40px;
-    height: 3em;
+    height: 40px;
     background-color: #bb86fc;
     border: 1px solid #bb86fc;
     margin: 0.2em;
   }
+}
+.pulsedLight {
+  display: flex;
+  align-items: center;
+  & h3 {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    letter-spacing: -0.015em;
+    color: #e5e5e5;
+    margin: 0 1em 0 0;
+  }
+
+  & .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+    background: linear-gradient(94.05deg, #bb86fc 14.73%, #03dac6 97.52%);
+    border-radius: 37.0526px;
+  }
+  & .pulsedLight-label {
+    padding-left: 1em;
+  }
+}
+
+#float-input {
+  color: #e5e5e5;
+  font-size: 1rem;
+}
+.button {
+  width: 44px;
+  height: 44px;
+  background-color: #b096ea;
+  border: none;
+  margin: 0 0.1em 0;
+  border-radius: 50%;
+  padding: 0.2 0.5em 0.5em 0.5em;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5em;
+  color: #fff;
+}
+.aply-parameters {
+  border: none;
+  border-radius: 4px;
+  background: #bb86fc;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  letter-spacing: -0.015em;
+
+  color: #2c2c2c;
 }

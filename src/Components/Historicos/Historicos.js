@@ -87,6 +87,31 @@ const Historicos = () => {
                         Nombre
                         </section>
                     </article>
+                    <article className='pair'>
+                        <section className= 'date-time'>
+                        aa mm dd hh:mm 
+                        </section>
+                        <section className='name'>
+                        Nombre
+                        </section>
+                    </article>
+                    <article className='pair'>
+                        <section className= 'date-time'>
+                        aa mm dd hh:mm 
+                        </section>
+                        <section className='name'>
+                        Nombre
+                        </section>
+                    </article>
+                    <article className='pair'>
+                        <section className= 'date-time'>
+                        aa mm dd hh:mm 
+                        </section>
+                        <section className='name'>
+                        Nombre
+                        </section>
+                    </article>
+                    
                     
                     </main>
                 <Pie />

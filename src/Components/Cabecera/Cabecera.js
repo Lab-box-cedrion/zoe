@@ -37,15 +37,15 @@ const Cabecera = () => {
           <Nav className="mr-auto">
             {/* ----INICIO DEL MODAL---- */}
             <Nav.Link><Button variant="primary" onClick={handleShow}>
-            INFO
+            Info
             </Button></Nav.Link>
             {/* ----FIN DEL MODAL---- */}
-            <NavDropdown title="AJUSTES" id="collasible-nav-dropdown">
-              <NavDropdown.Item>NOTAS</NavDropdown.Item>
+            <NavDropdown title="Ajustes" id="collasible-nav-dropdown">
+              <NavDropdown.Item>Notas</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link>HISTÓRICOS</Nav.Link>
-            <Nav.Link>MAX/MIN</Nav.Link>
+            <Nav.Link>Históricos</Nav.Link>
+            <Nav.Link>Max/Min</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

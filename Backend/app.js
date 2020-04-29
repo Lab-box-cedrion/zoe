@@ -49,25 +49,24 @@ mySerial.on("open", function () {
   console.log("Opened Serial Port");
 });
 
-const experimentoGeneral = { proyecto: [] };
+const date = new Date().toLocaleString("es-Es");
+const globalExperiment = { experiment: date, temperature: [], humidity: [] };
+
+let duration = 0;
 //recibo datos de Arduino, cuando están los datos los queremos enviar a todos los clientes
 mySerial.on("data", function (data) {
-  let datos = data.toString().split(",");
-  let date = new Date().toLocaleString("es-Es");
+  let data = data.toString().split(",");
 
-  let experiment = { date: date, humedad: "", temperatura: "" };
-  experimentoGeneral.proyecto.push(experiment);
+  globalExperiment.humidity.push(data[0]);
+  globalExperiment.temperature.push(data[1]);
 
-  experiment.humedad = datos[0];
-  experiment.temperatura = datos[1];
-  let experimentJson = JSON.stringify(experiment);
-
-  console.log(experimentoGeneral);
+  /*   let experimentJson = JSON.stringify(globalExperiment);
+   */
+  console.log(globalExperiment);
   console.log("que soy");
-  /* io.emit("arduino: data", {
-    //emite a todos los usuarios
-    value: data.toString(), // vamos a mandar el número, par clave valor
-  }); */
+
+  /*   mySerial.close();
+   */
 });
 
 console.log("estoy fuera");

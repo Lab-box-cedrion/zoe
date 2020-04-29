@@ -36,7 +36,7 @@ const Cabecera = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             {/* ----INICIO DEL MODAL---- */}
-            <Nav.Link><Button variant="primary" onClick={handleShow}>
+            <Nav.Link><Button className='boton-modal' variant="primary" onClick={handleShow}>
             Info
             </Button></Nav.Link>
             {/* ----FIN DEL MODAL---- */}

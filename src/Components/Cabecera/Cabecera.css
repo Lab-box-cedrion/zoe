@@ -77,6 +77,22 @@
   display: flex;
   justify-content: center;
 }
+.boton-modal {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 1.2rem;
+}
+boton-modal:focus {
+  color: #BB86FC;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+
+
+
+
+
 
 
 /* ---------Media Queries(Smartphone)---------- */

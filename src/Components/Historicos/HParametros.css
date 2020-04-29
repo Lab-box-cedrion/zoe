@@ -40,23 +40,24 @@
 }
 
 .paracircle{
-  display: flex;
+  
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  width:  50%;
-  height: 70%;
-  border-radius: 100%;
+  width: 11vw;
+  height: 11vw;
+  border-radius: 50%;
   cursor: pointer;
   margin-bottom: 4%;
   background: linear-gradient(145deg, #414141, #373737);
-box-shadow:  5px 5px 10px #1f1f1f, 
+  box-shadow:  5px 5px 10px #1f1f1f, 
              -5px -5px 10px #5b5b5b;
 }
 
 .paracircle p {
   color: #BB86FC;
   font-weight: bold;
-  font-size: 2.7rem;
+  font-size: 2.9vw;
 }
 
 .parameter{

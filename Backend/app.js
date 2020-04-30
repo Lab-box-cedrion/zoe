@@ -52,24 +52,39 @@ mySerial.on("open", function () {
 const date = new Date().toLocaleString("es-Es");
 const globalExperiment = { experiment: date, temperature: [], humidity: [] };
 
-let duration = 0;
+let start = false;
 //recibo datos de Arduino, cuando están los datos los queremos enviar a todos los clientes
 mySerial.on("data", function (data) {
   let dataOne = data.toString().split(",");
 
-  globalExperiment.humidity.push(dataOne[0]);
-  globalExperiment.temperature.push(dataOne[1]);
+  globalExperiment.humidity.push(parseFloat(dataOne[0]));
+  globalExperiment.temperature.push(parseFloat(dataOne[1]));
 
   let experimentJson = JSON.stringify(globalExperiment);
   console.log(experimentJson);
   console.log("que soy");
-
-  /*   mySerial.close();
-   */
 });
 
-console.log("estoy fuera");
+function a() {
+  mySerial.close();
+}
+let tiempo = 8;
+let duration = tiempo * 1000 + 2000;
+function closeSerialPort() {
+  let intervalo = setTimeout(a, duration);
+  console.log("hola", globalExperiment);
+}
+closeSerialPort();
 
+app.post("/insertar-data", (req, res) => {
+  database.query("INSERT INTO prueba SET ?", req.body, (error, results) => {
+    if (error) {
+      res.status(400).send(error);
+    } else {
+      res.status(201).send(results);
+    }
+  });
+});
 // recojo errores
 mySerial.on("err", function (data) {
   console.log(err.message);

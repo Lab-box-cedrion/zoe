@@ -68,7 +68,7 @@ mySerial.on("data", function (data) {
 function a() {
   mySerial.close();
 }
-let tiempo = 8;
+let tiempo = 10;
 let duration = tiempo * 1000 + 2000;
 function closeSerialPort() {
   let intervalo = setTimeout(a, duration);

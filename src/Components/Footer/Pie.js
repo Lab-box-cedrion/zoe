@@ -3,6 +3,7 @@ import "./Pie.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInfoCircle,faHistory,faTasks} from "@fortawesome/free-solid-svg-icons";
 import {Nav, Button, Modal} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const Pie = () => {
 
@@ -26,8 +27,8 @@ const Pie = () => {
         </Button>
       </Nav.Link></div>
           {/* Modal termina aquí  */}
-        <div className="icono-sub"><FontAwesomeIcon icon={faHistory} /></div>
-        <div className="icono-sub"><FontAwesomeIcon icon={faTasks} /></div>
+        <div className="icono-sub"><Link to="/historicos"><FontAwesomeIcon icon={faHistory} /></Link></div>
+        <div className="icono-sub"><Link to="maxmin"><FontAwesomeIcon icon={faTasks} /></Link></div>
       </div>
 
       {/* Icono de copyright */}

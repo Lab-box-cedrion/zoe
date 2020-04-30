@@ -23,7 +23,7 @@ const Cabecera = () => {
   return (
     <div id="cabecera">
       {/* ICONO DE RUEDA DE AJUSTES VISIBLE SOLO EN MÓVILES */}
-      <div className="rueda-ajustes"><FontAwesomeIcon icon={faCog} /></div>
+      <div className="rueda-ajustes"><Link to="/ajustes"><FontAwesomeIcon icon={faCog} /></Link></div>
       {/* ICONO-LOGO DE CEDRIÓN */}
       <img
         className="brand-icon"
@@ -41,16 +41,17 @@ const Cabecera = () => {
             </Button></Nav.Link>
             {/* ----FIN DEL MODAL---- */}
             <NavDropdown title="Ajustes" id="collasible-nav-dropdown">
-              <NavDropdown.Item>Notas</NavDropdown.Item>
+            <NavDropdown.Item><Link to="/ajustes">Ajustes</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/notas">Notas</Link></NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link>Históricos</Nav.Link>
-            <Nav.Link>Max/Min</Nav.Link>
+            <Nav.Link><Link to="/historicos">Históricos</Link></Nav.Link>
+            <Nav.Link><Link to="/maxmin">Max/Min</Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
       {/* ICONO DE NOTAS VISIBLE SOLO EN DISPOSITIVOS MÓVIL */}
-      <div className="icono-notas"><FontAwesomeIcon icon={faClipboard} /></div>
+      <div className="icono-notas"><Link to="/notas"><FontAwesomeIcon icon={faClipboard} /></Link></div>
       {/* CONTENIDO DEL MODAL */}
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>

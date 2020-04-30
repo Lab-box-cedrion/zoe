@@ -55,14 +55,13 @@ const globalExperiment = { experiment: date, temperature: [], humidity: [] };
 let duration = 0;
 //recibo datos de Arduino, cuando están los datos los queremos enviar a todos los clientes
 mySerial.on("data", function (data) {
-  let data = data.toString().split(",");
+  let dataOne = data.toString().split(",");
 
-  globalExperiment.humidity.push(data[0]);
-  globalExperiment.temperature.push(data[1]);
+  globalExperiment.humidity.push(dataOne[0]);
+  globalExperiment.temperature.push(dataOne[1]);
 
-  /*   let experimentJson = JSON.stringify(globalExperiment);
-   */
-  console.log(globalExperiment);
+  let experimentJson = JSON.stringify(globalExperiment);
+  console.log(experimentJson);
   console.log("que soy");
 
   /*   mySerial.close();

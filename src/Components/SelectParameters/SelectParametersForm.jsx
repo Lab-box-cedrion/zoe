@@ -5,10 +5,9 @@ import Pie from "../Footer/Pie";
 import Intro from "./Intro";
 
 import { InputText } from "primereact/inputtext";
-import { MultiSelect } from "primereact/multiselect";
 import { InputSwitch } from "primereact/inputswitch";
 
-import "./SelectParametersForm.scss";
+import "./prueba.scss";
 
 function SelectParametersForm() {
   // contiene los nombres de los campos de los input
@@ -42,29 +41,31 @@ function SelectParametersForm() {
     <React.Fragment>
       <Cabecera />
 
-      <section>
+      <section className="grid">
         <Intro />
         <form
           onSubmit={(event) => submitInfo(event)}
-          className="containerCss form-parameters"
+          className="wraper form-parameters"
         >
-          <div className="date">
-            <label htmlFor="fecha">
-              <span>{date}</span>
-            </label>
+          <div>
+            <p className="date item">
+              <label htmlFor="fecha">
+                <span>{date}</span>
+              </label>
+            </p>
           </div>
-          <div className="name">
-            {" "}
+
+          <div className="name item">
             <label htmlFor="float-input"></label>
             <input
-              className="i_name"
+              className="input_name"
               type="text"
               placeholder="Nombre (opcional)"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-          <div className="time">
+          <div className="time item">
             <span className="p-float-label">
               <InputText
                 id="float-input"
@@ -91,7 +92,7 @@ function SelectParametersForm() {
               <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
             </button>
           </div>
-          <div className="tension">
+          <div className="tension item">
             <span className="p-float-label">
               <InputText
                 id="float-input"
@@ -120,7 +121,7 @@ function SelectParametersForm() {
               <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
             </button>
           </div>
-          <div className="amperage">
+          <div className="amperage item">
             <span className="p-float-label">
               <InputText
                 id="float-input"
@@ -149,7 +150,7 @@ function SelectParametersForm() {
               <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
             </button>
           </div>
-          <div className="temperature">
+          <div className="temperature item">
             <span className="p-float-label">
               <InputText
                 id="float-input"
@@ -178,7 +179,7 @@ function SelectParametersForm() {
               <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
             </button>
           </div>
-          <div className="humidity">
+          <div className="humidity item">
             <span className="p-float-label">
               <InputText
                 id="float-input"
@@ -207,7 +208,7 @@ function SelectParametersForm() {
               <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
             </button>
           </div>
-          <div className="pulsedLight">
+          <div className="pulsedLight item">
             <h3 className="first">Luz pulsada</h3>
             <InputSwitch
               checked={pulsedLight}
@@ -219,26 +220,42 @@ function SelectParametersForm() {
               {pulsedLight ? "Encendida" : "Apagada"}
             </span>
           </div>
-          <div className="microorganisms">
-            <MultiSelect
-              value={microorganisms}
-              options={microorganismsSelectItems}
-              onChange={(e) => selectMicroorganisms((microorganisms: e.value))}
-              style={{ minWidth: "12em" }}
-              filter={true}
-              filterPlaceholder="Búsqueda"
-              placeholder="Elige microorganismo"
-            />
+          <div className="microorganisms item">
+            <label for="cars">Elige microorganismo:</label>
+            <select className="microorganismo">
+              <option value="Pseudomonas aeruginosa">
+                Pseudomonas aeruginosa
+              </option>
+              <option value="Listeria Monocytogenes">
+                Listeria Monocytogenes
+              </option>
+              <option value="Escherichia Coli">Escherichia Coli</option>
+              <option value="Staphylococcus aureus">
+                Staphylococcus aureus
+              </option>
+              <option value=" Salmonella typhimurium">
+                Salmonella typhimurium
+              </option>
+            </select>
           </div>
-          <button className="aply-parameters" type="submit">
-            <span>APLICAR PARÁMETROS</span>{" "}
-          </button>
-          <button className="see-results" type="submit">
-            <span>VER RESULTADOS</span>{" "}
-          </button>
-          <button className="go-notes" type="submit">
-            <span>IR A NOTAS</span>{" "}
-          </button>
+          <div className="item">
+            <button
+              className="aply-parameters forms buttons item"
+              type="submit"
+            >
+              <span>APLICAR PARÁMETROS</span>{" "}
+            </button>
+          </div>
+          <div className="item">
+            <button className="see-results forms buttons item" type="submit">
+              <span>VER RESULTADOS</span>{" "}
+            </button>
+          </div>
+          <div className="item">
+            <button className="go-notes notes buttons item" type="submit">
+              <span>IR A NOTAS</span>{" "}
+            </button>
+          </div>
         </form>
       </section>
       <Pie />

@@ -32,10 +32,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.listen(PORT, () => {
-  console.log(`Conectado al puerto ${PORT}`);
-});
-
 //conexion arduino
 
 const Serialport = require("serialport");
@@ -70,11 +66,13 @@ const datosJson = function () {
   let humString = globalExperiment.humidity.join(",");
   globalExperiment.temperature = temString;
   globalExperiment.humidity = humString;
+
   let experimentJson = JSON.stringify(globalExperiment);
   console.log("Soy un superJSON", experimentJson);
   return experimentJson;
 };
-let tiempo = 4;
+
+let tiempo = 90;
 let duration = tiempo * 1000 + 2000;
 function closeSerialPort() {
   let intervalo = setTimeout(datosJson, duration);
@@ -82,10 +80,14 @@ function closeSerialPort() {
 closeSerialPort();
 
 app.post("/insertar-data", (req, res) => {
+  req.body = datosJson;
+  console.log("request", req.body);
   database.query("INSERT INTO prueba SET ?", req.body, (error, results) => {
     if (error) {
+      console.log(error);
       res.status(400).send(error);
     } else {
+      console.log(error);
       res.status(201).send(results);
     }
   });
@@ -97,4 +99,8 @@ mySerial.on("err", function (data) {
 
 server.listen(3000, () => {
   console.log("server on port ", 3000);
+});
+
+app.listen(PORT, () => {
+  console.log(`Conectado al puerto ${PORT}`);
 });

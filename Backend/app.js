@@ -59,20 +59,25 @@ mySerial.on("data", function (data) {
 
   globalExperiment.humidity.push(parseFloat(dataOne[0]));
   globalExperiment.temperature.push(parseFloat(dataOne[1]));
-
-  let experimentJson = JSON.stringify(globalExperiment);
-  console.log(experimentJson);
+  console.log(globalExperiment);
   console.log("que soy");
 });
 
-function a() {
+const datosJson = function () {
   mySerial.close();
-}
-let tiempo = 10;
+  console.log("hola", globalExperiment);
+  let temString = globalExperiment.temperature.join(",");
+  let humString = globalExperiment.humidity.join(",");
+  globalExperiment.temperature = temString;
+  globalExperiment.humidity = humString;
+  let experimentJson = JSON.stringify(globalExperiment);
+  console.log("Soy un superJSON", experimentJson);
+  return experimentJson;
+};
+let tiempo = 4;
 let duration = tiempo * 1000 + 2000;
 function closeSerialPort() {
-  let intervalo = setTimeout(a, duration);
-  console.log("hola", globalExperiment);
+  let intervalo = setTimeout(datosJson, duration);
 }
 closeSerialPort();
 

@@ -6,46 +6,47 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 
 
-export default class LineChartDemo extends Component {
+class LineChart extends Component {
 
     render() {
-        const data = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [
-                {
-                    label: 'First Dataset',
-                    data: [65, 59, 80, 81, 56, 55, 40],
-                    fill: false,
-                    backgroundColor: '#42A5F5',
-                    borderColor: '#42A5F5'
-                },
-                {
-                    label: 'Second Dataset',
-                    data: [28, 48, 40, 19, 86, 27, 90],
-                    fill: false,
-                    backgroundColor: '#66BB6A',
-                    borderColor: '#66BB6A'
-                }
-            ]
-        };
+        // const data = {
+        //     labels: ['t1', 't2', 't3', 't4', 't5', 't6', 't7'],
+        //     datasets: [
+        //         {
+        //             label: 'Temperatura',
+        //             data: [65, 59, 80, 81, 56, 55, 40],
+        //             fill: false,
+        //             backgroundColor: '#a4ade9',
+        //             borderColor: '#a4ade9'
+        //         },
+        //         {
+        //             label: 'Humedad',
+        //             data: [28, 48, 40, 19, 86, 27, 90],
+        //             fill: false,
+        //             backgroundColor: '#84dfc4',
+        //             borderColor: '#84dfc4'
+        //         }
+        //     ]
+        // };
 
         const multiAxisData = {
-			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+			labels: ['t1', 't2', 't3', 't4', 't5', 't6', 't7'],
 			datasets: [{
-                label: 'Dataset 1',
+                label: 'Temperatura',
                 fill: false,
-				backgroundColor: '#42A5F5',
-                borderColor: '#42A5F5',
+				backgroundColor: '#a4ade9',
+                borderColor: '#a4ade9',
 				yAxisID: 'y-axis-1',
 				data: [65, 59, 80, 81, 56, 55, 10]
 			}, {
-                label: 'Dataset 2',
+                label: 'Humedad',
                 fill: false,
-				backgroundColor: '#66BB6A',
-                borderColor: '#66BB6A',
+				backgroundColor: '#84dfc4',
+                borderColor: '#84dfc4',
 				yAxisID: 'y-axis-2',
 				data: [28, 48, 40, 19, 86, 27, 90]
-			}]
+            },
+        ]
         };
 
         const multiAxisOptions = {
@@ -64,33 +65,33 @@ export default class LineChartDemo extends Component {
                     position: 'right',
                     id: 'y-axis-2',
                     gridLines: {
-                        drawOnChartArea: false
+                    drawOnChartArea: false
                     }
                 }]
             }
         }
 
         const lineStylesData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['t1', 't2', 't3', 't4', 't5', 't6', 't7'],
             datasets: [
                 {
-                    label: 'First Dataset',
+                    label: 'Temperatura',
                     data: [65, 59, 80, 81, 56, 55, 40],
                     fill: false,
-                    borderColor: '#42A5F5'
+                    borderColor: '#a4ade9'
                 },
                 {
-                    label: 'Second Dataset',
+                    label: 'Humedad',
                     data: [28, 48, 40, 19, 86, 27, 90],
                     fill: false,
                     borderDash: [5, 5],
-                    borderColor: '#66BB6A'
+                    borderColor: '#84dfc4'
                 },
                 {
                     label: 'Third Dataset',
                     data: [12, 51, 62, 33, 21, 62, 45],
                     fill: true,
-                    borderColor: '#FFA726',
+                    borderColor: '#ffc68a',
                     backgroundColor: '#FFCC80'
                 }
             ]
@@ -98,24 +99,28 @@ export default class LineChartDemo extends Component {
 
         return (
             <div>
-                <div className="content-section introduction">
+                <div className="content-section-introduction">
                     <div className="feature-intro">
-                        <h1>LineChart</h1>
-                        <p>A line chart or line graph is a type of chart which displays information as a series of data points called 'markers' connected by straight line segments.</p>
+                        {/* <h1 className= 'title-section'>Diagrama de parámetros</h1> */}
+                        <p>Visualización de los parámetros recogidos.
+                            Clica en la leyenda de un parámetro para ocultarlo o mostrarlo.
+                            Sitúa el cursor sobre los nodos para ver el dato exacto.</p>
                     </div>
                 </div>
 
-                <div className="content-section implementation">
-                    <h3>Basic</h3>
-                    <Chart type="line" data={data} />
+                <div className="content-section-implementation">
+                    {/* <h3>Basic</h3>
+                    <Chart className= "depth-line" type="line" data={data} /> */}
 
-                    <h3>Multi Axis</h3>
-                    <Chart type="line" data={multiAxisData} options={multiAxisOptions} />
+                    <h3>Diagrama de Humedad y temperatura</h3>
+                    <Chart type="line" data={multiAxisData, lineStylesData} options={multiAxisOptions} />
 
-                    <h3>Line Styles</h3>
-                    <Chart type="line" data={lineStylesData}  />
+                    {/* <h3>Line Styles</h3>
+                    <Chart type="line" data={lineStylesData}  /> */}
                 </div>
             </div>
         )
     }
 }
+
+export default LineChart;

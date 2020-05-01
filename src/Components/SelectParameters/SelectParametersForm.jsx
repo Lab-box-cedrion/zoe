@@ -5,7 +5,6 @@ import Pie from "../Footer/Pie";
 import Intro from "./Intro";
 
 import { InputText } from "primereact/inputtext";
-import { MultiSelect } from "primereact/multiselect";
 import { InputSwitch } from "primereact/inputswitch";
 
 import "./prueba.scss";

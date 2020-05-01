@@ -38,7 +38,9 @@ const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
 const parser = new Readline();
 
-const mySerial = new Serialport("/dev/ttyUSB0", { baudRate: 9600 });
+const macPort = "/dev/cu.usbserial-14220";
+const linuxPort = "/dev/ttyUSB0";
+const mySerial = new Serialport(macPort, { baudRate: 9600 });
 
 //abro la conexión puerto serie
 mySerial.on("open", function () {
@@ -55,29 +57,31 @@ mySerial.on("data", function (data) {
 
   globalExperiment.humidity.push(parseFloat(dataOne[0]));
   globalExperiment.temperature.push(parseFloat(dataOne[1]));
+
   console.log(globalExperiment);
   console.log("que soy");
 });
 
-const datosJson = function () {
+const dataJson = function () {
   mySerial.close();
   console.log("hola", globalExperiment);
-  let temString = globalExperiment.temperature.join(",");
-  let humString = globalExperiment.humidity.join(",");
-  globalExperiment.temperature = temString;
-  globalExperiment.humidity = humString;
+  let temperatureString = globalExperiment.temperature.join(",");
+  let humidityString = globalExperiment.humidity.join(",");
+  globalExperiment.temperature = temperatureString;
+  globalExperiment.humidity = humidityString;
 
   let experimentJson = JSON.stringify(globalExperiment);
   console.log("Soy un superJSON", experimentJson);
   return experimentJson;
 };
 
-let tiempo = 90;
-let duration = tiempo * 1000 + 2000;
-function closeSerialPort() {
-  let intervalo = setTimeout(datosJson, duration);
+let time = 90;
+let experimentDuration = time * 1000 + 2000;
+
+function closeSerialPort(duration) {
+  let intervalo = setTimeout(dataJson, duration);
 }
-closeSerialPort();
+closeSerialPort(experimentDuration);
 
 app.post("/insertar-data", (req, res) => {
   req.body = datosJson;
@@ -94,7 +98,7 @@ app.post("/insertar-data", (req, res) => {
 });
 // recojo errores
 mySerial.on("err", function (data) {
-  console.log(err.message);
+  console.log(data.message);
 });
 
 server.listen(3000, () => {

@@ -42,11 +42,11 @@ function SelectParametersForm() {
     <React.Fragment>
       <Cabecera />
 
-      <section className="wrapper">
+      <section className="grid">
         <Intro />
         <form
           onSubmit={(event) => submitInfo(event)}
-          className="wrapper form-parameters"
+          className="wraper form-parameters"
         >
           <div>
             <p className="date item">

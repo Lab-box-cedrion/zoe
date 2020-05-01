@@ -32,10 +32,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.listen(PORT, () => {
-  console.log(`Conectado al puerto ${PORT}`);
-});
-
 //conexion arduino
 
 const Serialport = require("serialport");
@@ -52,24 +48,50 @@ mySerial.on("open", function () {
 const date = new Date().toLocaleString("es-Es");
 const globalExperiment = { experiment: date, temperature: [], humidity: [] };
 
-let duration = 0;
+let start = false;
 //recibo datos de Arduino, cuando están los datos los queremos enviar a todos los clientes
 mySerial.on("data", function (data) {
   let dataOne = data.toString().split(",");
 
-  globalExperiment.humidity.push(dataOne[0]);
-  globalExperiment.temperature.push(dataOne[1]);
-
-  let experimentJson = JSON.stringify(globalExperiment);
-  console.log(experimentJson);
+  globalExperiment.humidity.push(parseFloat(dataOne[0]));
+  globalExperiment.temperature.push(parseFloat(dataOne[1]));
+  console.log(globalExperiment);
   console.log("que soy");
-
-  /*   mySerial.close();
-   */
 });
 
-console.log("estoy fuera");
+const datosJson = function () {
+  mySerial.close();
+  console.log("hola", globalExperiment);
+  let temString = globalExperiment.temperature.join(",");
+  let humString = globalExperiment.humidity.join(",");
+  globalExperiment.temperature = temString;
+  globalExperiment.humidity = humString;
 
+  let experimentJson = JSON.stringify(globalExperiment);
+  console.log("Soy un superJSON", experimentJson);
+  return experimentJson;
+};
+
+let tiempo = 90;
+let duration = tiempo * 1000 + 2000;
+function closeSerialPort() {
+  let intervalo = setTimeout(datosJson, duration);
+}
+closeSerialPort();
+
+app.post("/insertar-data", (req, res) => {
+  req.body = datosJson;
+  console.log("request", req.body);
+  database.query("INSERT INTO prueba SET ?", req.body, (error, results) => {
+    if (error) {
+      console.log(error);
+      res.status(400).send(error);
+    } else {
+      console.log(error);
+      res.status(201).send(results);
+    }
+  });
+});
 // recojo errores
 mySerial.on("err", function (data) {
   console.log(err.message);
@@ -77,4 +99,8 @@ mySerial.on("err", function (data) {
 
 server.listen(3000, () => {
   console.log("server on port ", 3000);
+});
+
+app.listen(PORT, () => {
+  console.log(`Conectado al puerto ${PORT}`);
 });

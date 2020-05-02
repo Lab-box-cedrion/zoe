@@ -61,15 +61,9 @@ class LineChart extends Component {
                     display: true,
                     position: 'left',
                     id: 'y-axis-1',
-                }, {
-                    type: 'linear',
-                    display: true,
-                    position: 'right',
-                    id: 'y-axis-2',
-                    gridLines: {
-                    drawOnChartArea: false
-                    }
-                }]
+                }, 
+                // 
+            ]
             }
         }
 

@@ -10,8 +10,6 @@ export default class HGrafica extends Component {
         return ( 
             <Fragment>
                 <Cabecera />
-                {/* <h1 className= 'title'>Diagrama de humedad y temperatura</h1> */}
-               
                 <LineChart />
                 <Pie />
             </Fragment>

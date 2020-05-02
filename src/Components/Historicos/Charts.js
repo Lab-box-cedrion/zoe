@@ -36,7 +36,8 @@ class LineChart extends Component {
                 fill: false,
 				backgroundColor: '#a4ade9',
                 borderColor: '#a4ade9',
-				yAxisID: 'y-axis-1',
+                yAxisID: 'y-axis-1',
+                
 				data: [65, 59, 80, 81, 56, 55, 10]
 			}, {
                 label: 'Humedad',
@@ -53,6 +54,7 @@ class LineChart extends Component {
             responsive: true,
             hoverMode: 'index',
             stacked: false,
+            fontSize: 500,
             scales: {
                 yAxes: [{
                     type: 'linear',
@@ -93,30 +95,37 @@ class LineChart extends Component {
                     fill: true,
                     borderColor: '#ffc68a',
                     backgroundColor: '#FFCC80'
+                    
                 }
             ]
         };
 
+        
+
         return (
-            <div>
+            <div className='outerbox'>
                 <div className="content-section-introduction">
                     <div className="feature-intro">
-                        {/* <h1 className= 'title-section'>Diagrama de parámetros</h1> */}
-                        <p>Visualización de los parámetros recogidos.
+                        <h1 className= 'title-section'>Diagrama de parámetros</h1>
+                        <p className='instructions'>Visualización de los parámetros recogidos.
                             Clica en la leyenda de un parámetro para ocultarlo o mostrarlo.
                             Sitúa el cursor sobre los nodos para ver el dato exacto.</p>
                     </div>
+                    <main className= 'container-charts'>
+                    <article className='pair-charts'>
+                        <section className= 'date-time-charts'>
+                        aa mm dd hh:mm 
+                        </section>
+                        <section className='name-charts'>
+                        Nombre
+                        </section>
+                    </article>
+                    </main>
                 </div>
 
                 <div className="content-section-implementation">
-                    {/* <h3>Basic</h3>
-                    <Chart className= "depth-line" type="line" data={data} /> */}
-
-                    <h3>Diagrama de Humedad y temperatura</h3>
                     <Chart type="line" data={multiAxisData, lineStylesData} options={multiAxisOptions} />
 
-                    {/* <h3>Line Styles</h3>
-                    <Chart type="line" data={lineStylesData}  /> */}
                 </div>
             </div>
         )

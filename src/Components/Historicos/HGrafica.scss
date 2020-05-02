@@ -54,7 +54,29 @@
 
             }
         }
+        
 }
 
 
-// MEDIA QUERIES 
+// MEDIA QUERIES  
+
+  // Ipad
+  @media screen and (max-width:1024px) {
+
+  
+
+}
+
+// iphone 6, 7, 8 plus
+@media screen and (max-width:736px) {
+
+     .data-container-charts {
+        transform: rotate(90deg);
+      }
+      
+      
+}
+
+ // iphone 6, 7, 8 plus
+ @media screen and (max-width:736px) {
+ }

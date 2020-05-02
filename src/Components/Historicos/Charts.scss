@@ -1,6 +1,19 @@
-body {
+.outerbox {
     color: #E5E5E5;
     background-color: #3D3D3D;
+    bottom:30px;
+    height: 900px;
+    
+
+.chartjs-render-monitor {
+    animation: chartjs-render-animation 0.001s;
+    margin: 2rem;
+    max-width:90%;
+    border-radius: 20px;
+    background: #2C2C2C;
+    padding: 30px;
+    box-shadow:  31px -31px 61px #252525, 
+             -31px 31px 61px #333333;
     
 }
 .content-section-introduction {
@@ -8,9 +21,67 @@ body {
     .feature-intro {
         margin: 2rem;
     }
+    .title-section {
+        font-size: 30px;
+    }
     
 }
-.content-section-implementation {
-    margin: 3rem;
+.container-charts {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 2.5rem;
+    column-gap: 2.5rem;
+    grid-row-gap: 1rem;
+    row-gap: 1rem;
+    .pair-charts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1rem;
+        .date-time-charts {
+            background: rgba(34, 37, 42, 0.51);
+            height: 40px;
+            filter: blur(0.5px);
+            border-radius: 18px;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 33px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: -0.015em;
+            color: #BB86FC;
+
+        } 
+        .name-charts {
+            background: rgba(34, 37, 42, 0.51);
+            filter: blur(0.5px);
+            border-radius: 18px;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 33px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: -0.015em;
+            color: #BB86FC;
+
+        }
+    }
+
+}
+
+@media screen and (max-width:736px) {
+
+    .content-section-introduction{
+        transform: rotate(90deg);
+    
+    .canvas {
+    transform: rotate(90deg);
+    }
+
+    }
+}
 }
 

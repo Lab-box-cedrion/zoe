@@ -10,7 +10,7 @@
         width: 207px;
         height: 45px;
         font-family: 'Nunito', sans-serif;
-        font-weight: bold;
+        font-weight: 600;
         font-size: 30px;
         line-height: 37px;
         display: flex;
@@ -53,6 +53,19 @@
                 justify-content: center;
                 letter-spacing: -0.015em;
                 color: #BB86FC;
+                &:hover {
+                    color: #84dfc4;
+                    background: rgba(34, 37, 42, 0.7);
+                }
+                &:active {
+                    color: #84dfe2;
+                    background: rgba(34, 37, 42, 0.7);
+                    border: 0.56px solid #84DFE2;
+                }
+                &:visited {
+                    color: #7F7F7F;
+                    background: rgba(34, 37, 42, 0.3);
+                }
 
             } 
             .name {
@@ -67,6 +80,18 @@
                 align-items: center;
                 letter-spacing: -0.015em;
                 color: #BB86FC;
+                &:hover {
+                    color: #84dfc4;
+                    background: rgba(34, 37, 42, 0.7);
+                }
+                &:active {
+                    color: #84dfe2;
+                    background: rgba(34, 37, 42, 0.7);
+                }
+                &:visited {
+                    color: #7F7F7F;
+                    background: rgba(34, 37, 42, 0.7);
+                }
 
             }
         }

@@ -24,6 +24,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-column-gap: 1rem;
+            
             .date-time-charts {
                 background: rgba(34, 37, 42, 0.51);
                 height: 40px;
@@ -53,11 +54,10 @@
                 color: #BB86FC;
 
             }
+            
         }
         
 }
-
-
 // MEDIA QUERIES  
 
   // Ipad

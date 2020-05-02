@@ -33,7 +33,6 @@ class LineChart extends Component {
 			labels: ['t1', 't2', 't3', 't4', 't5', 't6', 't7'],
 			datasets: [{
                 label: 'Temperatura',
-                fontColor: 'rgb(255, 255, 255)',
                 fill: false,
 				backgroundColor: '#a4ade9',
                 borderColor: '#a4ade9',
@@ -42,7 +41,6 @@ class LineChart extends Component {
 				data: [65, 59, 80, 81, 56, 55, 10]
 			}, {
                 label: 'Humedad',
-                fontColor: 'rgb(255, 255, 255)',
                 fill: false,
 				backgroundColor: '#84dfc4',
                 borderColor: '#84dfc4',

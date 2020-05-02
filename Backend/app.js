@@ -96,9 +96,11 @@ app.post("/insertar-data", (req, res) => {
     }
   });
 });
+
+
 // recojo errores
 mySerial.on("err", function (data) {
-  console.log(data.message);
+  console.log(err.message);
 });
 
 server.listen(3000, () => {

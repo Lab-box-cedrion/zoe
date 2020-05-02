@@ -45,7 +45,7 @@ function SelectParametersForm() {
         <Intro />
         <form
           onSubmit={(event) => submitInfo(event)}
-          className="wraper form-parameters"
+          className="grid-form form-parameters"
         >
           <div>
             <p className="date item">
@@ -56,7 +56,7 @@ function SelectParametersForm() {
           </div>
 
           <div className="name item">
-            <label htmlFor="float-input"></label>
+            <label htmlFor="name-input"></label>
             <input
               className="input_name"
               type="text"
@@ -78,14 +78,14 @@ function SelectParametersForm() {
               <label htmlFor="float-input">Tiempo h:m:s</label>
             </span>
             <button
-              className="button"
+              className="button plus"
               type="submit"
               onClick={() => setTime(time + 10)}
             >
               <i className="pi pi-caret-up" style={{ fontSize: "1em" }}></i>
             </button>
             <button
-              className="button"
+              className="button minus"
               type="submit"
               onClick={() => setTime(time - 10)}
             >
@@ -107,14 +107,14 @@ function SelectParametersForm() {
               <label htmlFor="float-input">Tensión Kv</label>
             </span>
             <button
-              className="button"
+              className="button plus"
               type="submit"
               onClick={() => setTension(tension + 10)}
             >
               <i className="pi pi-caret-up" style={{ fontSize: "1em" }}></i>
             </button>
             <button
-              className="button"
+              className="button minus"
               type="submit"
               onClick={() => setTension(tension - 10)}
             >
@@ -136,14 +136,14 @@ function SelectParametersForm() {
               <label htmlFor="float-input">Amperaje mA</label>
             </span>
             <button
-              className="button"
+              className="button plus"
               type="submit"
               onClick={() => setAmperage(amperage + 10)}
             >
               <i className="pi pi-caret-up" style={{ fontSize: "1em" }}></i>
             </button>
             <button
-              className="button"
+              className="button minus"
               type="submit"
               onClick={() => setAmperage(amperage + 10)}
             >
@@ -165,14 +165,14 @@ function SelectParametersForm() {
               <label htmlFor="float-input">Temperatura ºC</label>
             </span>
             <button
-              className="button"
+              className="button plus"
               type="submit"
               onClick={() => setTemperature(temperature + 10)}
             >
               <i className="pi pi-caret-up" style={{ fontSize: "1em" }}></i>
             </button>
             <button
-              className="button"
+              className="button minus"
               type="submit"
               onClick={() => setTemperature(temperature - 10)}
             >
@@ -194,14 +194,14 @@ function SelectParametersForm() {
               <label htmlFor="float-input">Humedad %</label>
             </span>
             <button
-              className="button"
+              className="button plus"
               type="submit"
               onClick={() => setHumidity(humidity + 10)}
             >
               <i className="pi pi-caret-up" style={{ fontSize: "1em" }}></i>
             </button>
             <button
-              className="button"
+              className="button minus"
               type="submit"
               onClick={() => setHumidity(humidity - 10)}
             >
@@ -209,7 +209,7 @@ function SelectParametersForm() {
             </button>
           </div>
           <div className="pulsedLight item">
-            <h3 className="first">Luz pulsada</h3>
+            <h3 className="title-light">Luz pulsada</h3>
             <InputSwitch
               checked={pulsedLight}
               onChange={(e) => setpulsedLight(e.target.value)}
@@ -220,7 +220,7 @@ function SelectParametersForm() {
               {pulsedLight ? "Encendida" : "Apagada"}
             </span>
           </div>
-          <div className="microorganisms item">
+          <div className="microorganisms">
             <label for="cars">Elige microorganismo:</label>
             <select className="microorganismo">
               <option value="Pseudomonas aeruginosa">

@@ -9,8 +9,8 @@
     animation: chartjs-render-animation 0.001s;
     margin: 2rem;
     max-width:90%;
-    border-radius: 20px;
-    background: #2C2C2C;
+    border-radius: 15px;
+    background: rgb(7, 7, 7);
     padding: 30px;
     box-shadow:  31px -31px 61px #252525, 
              -31px 31px 61px #333333;
@@ -22,7 +22,14 @@
         margin: 2rem;
     }
     .title-section {
+        font-family: 'Nunito', sans-serif;
+        font-weight: bold;
         font-size: 30px;
+        line-height: 37px;
+    }
+    .instructions {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 100;
     }
     
 }
@@ -57,6 +64,7 @@
             background: rgba(34, 37, 42, 0.51);
             filter: blur(0.5px);
             border-radius: 18px;
+            
             font-weight: 600;
             font-size: 20px;
             line-height: 33px;
@@ -71,16 +79,16 @@
 
 }
 
-@media screen and (max-width:736px) {
+// @media screen and (max-width:736px) {
 
-    .content-section-introduction{
-        transform: rotate(90deg);
+//     .content-section-introduction{
+//         transform: rotate(90deg);
     
-    .canvas {
-    transform: rotate(90deg);
-    }
+//     .canvas {
+//     transform: rotate(90deg);
+//     }
 
-    }
-}
+//     }
+// }
 }
 

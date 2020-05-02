@@ -28,11 +28,12 @@ class LineChart extends Component {
         //         }
         //     ]
         // };
-
-        const multiAxisData = {
+        
+        const singleAxisData = {
 			labels: ['t1', 't2', 't3', 't4', 't5', 't6', 't7'],
 			datasets: [{
                 label: 'Temperatura',
+                fontColor: 'rgb(255, 255, 255)',
                 fill: false,
 				backgroundColor: '#a4ade9',
                 borderColor: '#a4ade9',
@@ -41,16 +42,18 @@ class LineChart extends Component {
 				data: [65, 59, 80, 81, 56, 55, 10]
 			}, {
                 label: 'Humedad',
+                fontColor: 'rgb(255, 255, 255)',
                 fill: false,
 				backgroundColor: '#84dfc4',
                 borderColor: '#84dfc4',
 				yAxisID: 'y-axis-2',
 				data: [28, 48, 40, 19, 86, 27, 90]
             },
+            
         ]
         };
 
-        const multiAxisOptions = {
+        const singleAxisOptions = {
             responsive: true,
             hoverMode: 'index',
             stacked: false,
@@ -61,10 +64,10 @@ class LineChart extends Component {
                     display: true,
                     position: 'left',
                     id: 'y-axis-1',
-                }, 
-                // 
+
+                }
             ]
-            }
+        }
         }
 
         const lineStylesData = {
@@ -72,23 +75,28 @@ class LineChart extends Component {
             datasets: [
                 {
                     label: 'Temperatura',
+                    fontColor: 'rgb(255, 255, 255)',
                     data: [65, 59, 80, 81, 56, 55, 40],
                     fill: false,
-                    borderColor: '#a4ade9'
+                    borderColor: '#a4ade9',
+                    backgroundColor:'white'
                 },
                 {
                     label: 'Humedad',
+                    fontColor: 'rgb(255, 255, 255)',
                     data: [28, 48, 40, 19, 86, 27, 90],
-                    fill: false,
+                    fill: true,
                     borderDash: [5, 5],
-                    borderColor: '#84dfc4'
+                    borderColor: '#84dfc4',
+                    backgroundColor: 'rgba(132, 223, 196, 0.7)'
                 },
                 {
                     label: 'Third Dataset',
+                    fontColor: 'rgb(255, 255, 255)',
                     data: [12, 51, 62, 33, 21, 62, 45],
                     fill: true,
                     borderColor: '#ffc68a',
-                    backgroundColor: '#FFCC80'
+                    backgroundColor: 'rgba(255, 198, 138)'
                     
                 }
             ]
@@ -118,7 +126,7 @@ class LineChart extends Component {
                 </div>
 
                 <div className="content-section-implementation">
-                    <Chart type="line" data={multiAxisData, lineStylesData} options={multiAxisOptions} />
+                    <Chart type="line" data={singleAxisData, lineStylesData} option= {singleAxisOptions}/>
 
                 </div>
             </div>

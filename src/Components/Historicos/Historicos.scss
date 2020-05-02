@@ -9,13 +9,13 @@
         margin: 2rem 2rem;
         width: 207px;
         height: 45px;
-        font-family: Open Sans;
+        font-family: 'Nunito', sans-serif;
         font-weight: bold;
         font-size: 30px;
         line-height: 37px;
         display: flex;
         align-items: center;
-        letter-spacing: -0.015em;
+        letter-spacing: 0;
         color: #E5E5E5;
 
     }
@@ -24,6 +24,9 @@
         right: 30%;
         margin: 5rem  2rem;
         font-size: 14px;
+        color: #E5E5E5;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 100;
     }
 }
 .data-container {

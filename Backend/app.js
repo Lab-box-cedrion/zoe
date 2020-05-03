@@ -97,7 +97,6 @@ app.post("/insertar-data", (req, res) => {
   });
 });
 
-
 // recojo errores
 mySerial.on("err", function (data) {
   console.log(err.message);

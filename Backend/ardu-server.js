@@ -1,18 +1,18 @@
-//conexion arduino
+const express = require("express");
+const app = express();
+const http = require("http");
+const server = http.createServer(app);
+
+const fetch = require("node-fetch");
 
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
 const parser = new Readline();
-
-const macPort = "/dev/cu.usbserial-14220";
-const linuxPort = "/dev/ttyUSB0";
-const mySerial = new Serialport(linuxPort, { baudRate: 9600 });
-
+const mySerial = new Serialport("/dev/ttyUSB1", { baudRate: 9600 });
 //abro la conexión puerto serie
 mySerial.on("open", function () {
   console.log("Opened Serial Port");
 });
-
 const date = new Date().toLocaleString("es-Es");
 const globalExperiment = { experiment: date, temperature: [], humidity: [] };
 
@@ -21,39 +21,49 @@ let start = false;
 mySerial.on("data", function (data) {
   let dataOne = data.toString().split(",");
 
+  //let experimentJson = JSON.stringify(globalExperiment);
   globalExperiment.humidity.push(parseFloat(dataOne[0]));
   globalExperiment.temperature.push(parseFloat(dataOne[1]));
-
   console.log(globalExperiment);
   console.log("que soy");
+
+  /*   mySerial.close();
+   */
 });
 
-const dataJson = function () {
+console.log("estoy fuera");
+const datosJson = function () {
   mySerial.close();
-  console.log("hola", globalExperiment);
-  let temperatureString = globalExperiment.temperature.join(",");
-  let humidityString = globalExperiment.humidity.join(",");
-  globalExperiment.temperature = temperatureString;
-  globalExperiment.humidity = humidityString;
+  console.log("objeto literal", globalExperiment);
+  let temString = globalExperiment.temperature.join(",");
+  let humString = globalExperiment.humidity.join(",");
+  globalExperiment.temperature = temString;
+  globalExperiment.humidity = humString;
 
-  let experimentJson = JSON.stringify(globalExperiment);
-  console.log("Soy un superJSON", experimentJson);
-  return experimentJson;
+  fetch("http://localhost:5005/", {
+    method: "POST",
+    body: JSON.stringify(globalExperiment),
+    headers: {
+      "Content-Type": "aplication/json",
+    },
+  })
+    .then((res) => res.json())
+    .catch((error) => console.error("Error:", error))
+    .then((response) => console.log("Success:", response));
 };
 
-let time = 10;
-let experimentDuration = time * 1000 + 2000;
+let tiempo = 2;
+let duration = tiempo * 1000 + 2000;
 
-function closeSerialPort(duration) {
-  let intervalo = setTimeout(dataJson, duration);
+function closeSerialPort() {
+  let intervalo = setTimeout(datosJson, duration);
 }
-closeSerialPort(experimentDuration);
+closeSerialPort();
 
 // recojo errores
 mySerial.on("err", function (data) {
   console.log(err.message);
 });
-
 server.listen(3000, () => {
   console.log("server on port ", 3000);
 });

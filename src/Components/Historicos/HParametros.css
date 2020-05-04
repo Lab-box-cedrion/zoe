@@ -9,11 +9,14 @@
 .primer-item{
   height: 50%;
   width: 19%;
-  background-color: #2f3133;
-  border-radius: 1rem;
+  background: rgba(34, 37, 42, 0.51);
+  border-radius: 1.125rem;
   color: #BB86FC;
-  font-weight: bold;
-  font-size: 1.3rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: -0.015em;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,15 +52,19 @@
   border-radius: 50%;
   cursor: pointer;
   margin-bottom: 4%;
-  background: linear-gradient(145deg, #414141, #373737);
+  border: 8px solid #31343C;
+  background: linear-gradient(145deg, #2F3033, #222629);
   box-shadow:  5px 5px 10px #1f1f1f, 
              -5px -5px 10px #5b5b5b;
 }
 
 .paracircle p {
   color: #03DAC6;
+  letter-spacing: -0.015em;
+  line-height: 3rem;
+  font-size: 2.25rem;
   font-weight: bold;
-  font-size: 2.9vw;
+  margin-top:7%;
 }
 
 .parameter{
@@ -91,3 +98,6 @@
   margin-right: 2%;
   margin-left: 2%;
 }
+
+/* Media queries */
+

@@ -73,7 +73,9 @@ function SelectParametersForm() {
                 type="text"
                 size="25"
                 value={time}
-                onChange={(e) => setTime(e.target.value.replace(/[^0-9]/g, ""))}
+                onChange={(e) =>
+                  setTime(Number(e.target.value.replace(/[^0-9]/g, "")))
+                }
               />
               <label htmlFor="float-input">Tiempo h:m:s</label>
             </span>
@@ -101,7 +103,7 @@ function SelectParametersForm() {
                 size="25"
                 value={tension}
                 onChange={(e) =>
-                  setTension(e.target.value.replace(/[^0-9]/g, ""))
+                  setTension(Number(e.target.value.replace(/[^0-9]/g, "")))
                 }
               />
               <label htmlFor="float-input">Tensión Kv</label>
@@ -130,7 +132,7 @@ function SelectParametersForm() {
                 size="25"
                 value={amperage}
                 onChange={(e) =>
-                  setAmperage(e.target.value.replace(/[^0-9]/g, ""))
+                  setAmperage(Number(e.target.value.replace(/[^0-9]/g, "")))
                 }
               />
               <label htmlFor="float-input">Amperaje mA</label>
@@ -159,7 +161,7 @@ function SelectParametersForm() {
                 size="25"
                 value={temperature}
                 onChange={(e) =>
-                  setTemperature(e.target.value.replace(/[^0-9]/g, ""))
+                  setTemperature(Number(e.target.value.replace(/[^0-9]/g, "")))
                 }
               />
               <label htmlFor="float-input">Temperatura ºC</label>
@@ -188,7 +190,7 @@ function SelectParametersForm() {
                 size="25"
                 value={humidity}
                 onChange={(e) =>
-                  setHumidity(e.target.value.replace(/[^0-9]/g, ""))
+                  setHumidity(Number(e.target.value.replace(/[^0-9]/g, "")))
                 }
               />
               <label htmlFor="float-input">Humedad %</label>

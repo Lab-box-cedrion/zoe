@@ -46,6 +46,18 @@ app.post("/insertar-data", (req, res) => {
   });
 });
 
+<<<<<<< HEAD
+=======
+// recojo errores
+mySerial.on("err", function (data) {
+  console.log(err.message);
+});
+
+server.listen(3000, () => {
+  console.log("server on port ", 3000);
+});
+
+>>>>>>> 619380816d10e513508c1f0bedb14d629c1e7361
 app.listen(PORT, () => {
   console.log(`Conectado al puerto ${PORT}`);
 });

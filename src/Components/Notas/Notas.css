@@ -48,13 +48,14 @@
 
 .container-segundo{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   height:43.5vh; 
   margin-top: 2.5%;
 }
 
 .container-segundo textarea{
   resize: none;
+  margin-left: 1.5%;
   height:100%; 
   width: 65%;
   border:none;

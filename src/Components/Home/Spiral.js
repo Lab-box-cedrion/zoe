@@ -21,20 +21,17 @@ class Spiral extends Component {
 
     return (
         <div className="Spiral">
-            <div className='brand'>
+            <div className='brand-text'>
             <img
-        className="brand-icon"
-        src="https://s6.gifyu.com/images/cedrion_horizontal_dark_TRANS-01.png"
-        alt="main-icono"
-      />
-      <h1 className='titulo'>LAB - BOX</h1>
-            </div>
+        	className="brand-icon"
+        	src="https://s6.gifyu.com/images/cedrion_horizontal_dark_TRANS-01.png"
+        	alt="main-icono"/>
+      		<h1 className='titulo'>LAB - BOX</h1>
+        	</div>
 			
 				<div className= 'spiral-container'>
                     {this.state.movingSpiral ? 
                         <div onClick={this.redirectComponent}>
-                            <h1 className='titulo'>LAB - BOX</h1>
-                            
                         </div>
                   
                         : <div><div class="lds-ripple"><div></div><div></div></div></div>

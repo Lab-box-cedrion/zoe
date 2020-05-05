@@ -1,16 +1,22 @@
 const express = require("express");
 const app = express();
+
 const PORT = process.env.PORT || 5005;
 require("dotenv").config();
+
 const database = require("./conf");
+
 const bodyParser = require("body-parser");
 const http = require("http");
+
 const server = http.createServer(app);
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
+
 app.use(bodyParser.json());
 // Middleware para no tener problemas con los CORS cuando hagamos peticiones a nuestra API en Heroku
 app.use((req, res, next) => {
@@ -25,6 +31,7 @@ app.use((req, res, next) => {
 });
 
 app.post("/insertar-data", (req, res) => {
+  console.log(req.body);
   database.query("INSERT INTO prueba SET ?", req.body, (error, results) => {
     if (error) {
       console.log(error);

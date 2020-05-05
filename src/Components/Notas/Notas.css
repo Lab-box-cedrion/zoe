@@ -20,6 +20,7 @@
   background: #1E1E1F;
   box-shadow: inset -5px -5px 10px #242529, inset 5px 5px 10px #0A0A0A;
   border-radius: 1.875rem;
+  margin-left: 1.6%;
 }
 
 .container-primero input::placeholder{
@@ -99,6 +100,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .nota p{
@@ -128,7 +130,7 @@
 
 .container-tercero input{
   height: 100%;
-  margin-right: 3.7%;
+  margin-right: 5.7%;
   border: none;
   display: inline-flex;
   width:22rem;

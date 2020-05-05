@@ -25,11 +25,12 @@ const Cabecera = () => {
       {/* ICONO DE RUEDA DE AJUSTES VISIBLE SOLO EN MÓVILES */}
       <div className="rueda-ajustes"><Link to="/ajustes"><FontAwesomeIcon icon={faCog} /></Link></div>
       {/* ICONO-LOGO DE CEDRIÓN */}
-      <img
+      <Link to="/historicos_parametros"><img
         className="brand-icon"
         src="https://s6.gifyu.com/images/cedrion_horizontal_dark_TRANS-01.png"
         alt="main-icono"
       />
+      </Link>
       {/* MENU DE NAVEGACIÓN */}
       <Navbar collapseOnSelect expand="md">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -26,7 +26,11 @@ class Spiral extends Component {
         	className="brand-icon"
         	src="https://s6.gifyu.com/images/cedrion_horizontal_dark_TRANS-01.png"
         	alt="main-icono"/>
-      		<h1 className='titulo'>LAB - BOX</h1>
+			<img
+			className='titulo'
+			src="https://s6.gifyu.com/images/LAB-BOX-01.png"
+			alt="logo-lab-box"/>
+      		{/* <h1 className='titulo'>LAB - BOX</h1> */}
 			<h3 className='motto'> We drive the flow </h3>
         	</div>
 			

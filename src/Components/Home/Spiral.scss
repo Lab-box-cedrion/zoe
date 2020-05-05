@@ -6,16 +6,17 @@ $time: 14s;
 $base-hue: 282; // change for diff colors (180 is turquoise...)
 
 
-
-body {
   .Spiral {
-    height:1000px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     background: #171717;
-    overflow: hidden; // no scrollbars..
+    width: 100%;
+    overflow-y:hidden // no scrollbars..
   }
-  .spiral-container {
-    height: 50px;
-  }
+  // .spiral-container {
+  //   height: 500px;
+  // }
   
   .brand-text {
     margin:2rem;
@@ -41,7 +42,7 @@ body {
       }
   }
   
-}
+
 .wrap {
   position: absolute;
   top: 50%;

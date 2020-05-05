@@ -8,7 +8,7 @@ const fetch = require("node-fetch");
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
 const parser = new Readline();
-const mySerial = new Serialport("/dev/ttyUSB1", { baudRate: 9600 });
+const mySerial = new Serialport("/dev/ttyUSB0", { baudRate: 9600 });
 //abro la conexión puerto serie
 mySerial.on("open", function () {
   console.log("Opened Serial Port");
@@ -40,19 +40,20 @@ const datosJson = function () {
   globalExperiment.temperature = temString;
   globalExperiment.humidity = humString;
 
-  fetch("http://localhost:5005/", {
+  fetch("http://localhost:5005/insertar-data", {
     method: "POST",
-    body: JSON.stringify(globalExperiment),
     headers: {
-      "Content-Type": "aplication/json",
+      "Accept": "application/json",
+      "Content-Type": "application/json"
     },
+    body: JSON.stringify(globalExperiment),
   })
     .then((res) => res.json())
     .catch((error) => console.error("Error:", error))
     .then((response) => console.log("Success:", response));
 };
 
-let tiempo = 2;
+let tiempo = 24;
 let duration = tiempo * 1000 + 2000;
 
 function closeSerialPort() {

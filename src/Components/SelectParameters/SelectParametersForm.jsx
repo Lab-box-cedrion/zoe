@@ -19,7 +19,7 @@ function SelectParametersForm() {
   const [temperature, setTemperature] = useState(null);
   const [humidity, setHumidity] = useState(null);
   const [pulsedLight, setpulsedLight] = useState("true");
-  const [microorganisms, selectMicroorganisms] = useState("value");
+  /* const [microorganisms, selectMicroorganisms] = useState("value"); */
 
   /* 
     Pseudomonas aeruginosa, Listeria Monocytogenes, Escherichia Coli, Staphylococcus aureus, Salmonella typhimurium: "", */
@@ -62,6 +62,7 @@ function SelectParametersForm() {
               type="text"
               placeholder="Nombre (opcional)"
               value={name}
+              autocomplete="off"
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -73,6 +74,7 @@ function SelectParametersForm() {
                 type="text"
                 size="25"
                 value={time}
+                autocomplete="off"
                 onChange={(e) =>
                   setTime(Number(e.target.value.replace(/[^0-9]/g, "")))
                 }
@@ -102,6 +104,7 @@ function SelectParametersForm() {
                 type="text"
                 size="25"
                 value={tension}
+                autocomplete="off"
                 onChange={(e) =>
                   setTension(Number(e.target.value.replace(/[^0-9]/g, "")))
                 }
@@ -131,6 +134,7 @@ function SelectParametersForm() {
                 type="text"
                 size="25"
                 value={amperage}
+                autocomplete="off"
                 onChange={(e) =>
                   setAmperage(Number(e.target.value.replace(/[^0-9]/g, "")))
                 }
@@ -147,7 +151,7 @@ function SelectParametersForm() {
             <button
               className="button minus"
               type="submit"
-              onClick={() => setAmperage(amperage + 10)}
+              onClick={() => setAmperage(amperage - 10)}
             >
               <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
             </button>
@@ -159,6 +163,7 @@ function SelectParametersForm() {
                 className="input"
                 type="text"
                 size="25"
+                autocomplete="off"
                 value={temperature}
                 onChange={(e) =>
                   setTemperature(Number(e.target.value.replace(/[^0-9]/g, "")))
@@ -188,6 +193,7 @@ function SelectParametersForm() {
                 className="input"
                 type="text"
                 size="25"
+                autocomplete="off"
                 value={humidity}
                 onChange={(e) =>
                   setHumidity(Number(e.target.value.replace(/[^0-9]/g, "")))
@@ -218,7 +224,7 @@ function SelectParametersForm() {
             />
             {/*               Encendida:{" "}
              */}{" "}
-            <span className="pulsedLight-label" style={{ fontWeight: "bold" }}>
+            <span className="pulsedLight-label">
               {pulsedLight ? "Encendida" : "Apagada"}
             </span>
           </div>
@@ -242,7 +248,7 @@ function SelectParametersForm() {
           </div>
           <div className="item">
             <button
-              className="aply-parameters forms buttons item"
+              className="aply-parameters parameters buttons item"
               type="submit"
             >
               <span>APLICAR PARÁMETROS</span>{" "}

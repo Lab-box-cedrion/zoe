@@ -28,6 +28,7 @@ class LineChart extends Component {
         //         }
         //     ]
         // };
+    
         
         const singleAxisData = {
 			labels: ['t1', 't2', 't3', 't4', 't5', 't6', 't7'],
@@ -51,11 +52,12 @@ class LineChart extends Component {
         ]
         };
 
-        const singleAxisOptions = {
+        const options = {
             responsive: true,
             hoverMode: 'index',
             stacked: false,
             fontSize: 500,
+            
             scales: {
                 yAxes: [{
                     type: 'linear',
@@ -73,11 +75,14 @@ class LineChart extends Component {
             datasets: [
                 {
                     label: 'Temperatura',
+                    // bodyFontFamily: 'Nunito, sans-serif',
+                    // titleFontFamily: 'Nunito, sans-serif',
                     fontColor: 'rgb(255, 255, 255)',
+                    // titleFontSize: 500,
                     data: [65, 59, 80, 81, 56, 55, 40],
                     fill: false,
                     borderColor: '#a4ade9',
-                    backgroundColor:'white'
+                    backgroundColor:'rgb(255, 255, 255)'
                 },
                 {
                     label: 'Humedad',
@@ -124,7 +129,7 @@ class LineChart extends Component {
                 </div>
 
                 <div className="content-section-implementation">
-                    <Chart type="line" data={singleAxisData, lineStylesData} option= {singleAxisOptions}/>
+                    <Chart type="line" data={singleAxisData, lineStylesData} option= {options}/>
 
                 </div>
             </div>

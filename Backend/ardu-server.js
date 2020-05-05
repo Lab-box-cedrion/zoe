@@ -1,0 +1,69 @@
+const express = require("express");
+const app = express();
+const http = require("http");
+const server = http.createServer(app);
+
+const fetch = require("node-fetch");
+
+const Serialport = require("serialport");
+const Readline = Serialport.parsers.Readline;
+const parser = new Readline();
+const mySerial = new Serialport("/dev/ttyUSB1", { baudRate: 9600 });
+//abro la conexión puerto serie
+mySerial.on("open", function () {
+  console.log("Opened Serial Port");
+});
+const date = new Date().toLocaleString("es-Es");
+const globalExperiment = { experiment: date, temperature: [], humidity: [] };
+
+let start = false;
+//recibo datos de Arduino, cuando están los datos los queremos enviar a todos los clientes
+mySerial.on("data", function (data) {
+  let dataOne = data.toString().split(",");
+
+  //let experimentJson = JSON.stringify(globalExperiment);
+  globalExperiment.humidity.push(parseFloat(dataOne[0]));
+  globalExperiment.temperature.push(parseFloat(dataOne[1]));
+  console.log(globalExperiment);
+  console.log("que soy");
+
+  /*   mySerial.close();
+   */
+});
+
+console.log("estoy fuera");
+const datosJson = function () {
+  mySerial.close();
+  console.log("objeto literal", globalExperiment);
+  let temString = globalExperiment.temperature.join(",");
+  let humString = globalExperiment.humidity.join(",");
+  globalExperiment.temperature = temString;
+  globalExperiment.humidity = humString;
+
+  fetch("http://localhost:5005/", {
+    method: "POST",
+    body: JSON.stringify(globalExperiment),
+    headers: {
+      "Content-Type": "aplication/json",
+    },
+  })
+    .then((res) => res.json())
+    .catch((error) => console.error("Error:", error))
+    .then((response) => console.log("Success:", response));
+};
+
+let tiempo = 2;
+let duration = tiempo * 1000 + 2000;
+
+function closeSerialPort() {
+  let intervalo = setTimeout(datosJson, duration);
+}
+closeSerialPort();
+
+// recojo errores
+mySerial.on("err", function (data) {
+  console.log(err.message);
+});
+server.listen(3000, () => {
+  console.log("server on port ", 3000);
+});

@@ -15,8 +15,9 @@ export default class Clock extends Component {
             moveOn: false
         }
     }
-    
+     
     componentDidMount() {
+        
         this.intervalId = setInterval(
             () => this.tick(),
             1000

@@ -10,23 +10,22 @@
 .container-primero input{
   width: 20%;
   border:none;
-  border-radius: 1.5rem;
   height: 3rem;
-  background-color: #1e1e1f;
-  color: white;
+  color: #E5E5E5;
   font-size: 1.5rem;
+  font-weight: normal;
   padding: 0 2rem;
-  border-radius: 50px;
-  background: #1e1e1e;
-  box-shadow: inset 9px 9px 18px #0c0c0c, 
-            inset -9px -9px 18px #383838;
-  
+  line-height: 2rem;
+  letter-spacing: -0.015em;
+  background: #1E1E1F;
+  box-shadow: inset -5px -5px 10px #242529, inset 5px 5px 10px #0A0A0A;
+  border-radius: 1.875rem;
 }
 
 .container-primero input::placeholder{
   color:white;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.125rem;
  
 }
 
@@ -39,36 +38,35 @@
   justify-content: center;
   align-items: center;
   color: #BB86FC;
-  font-size: 1.3rem;
-  font-weight: bold;
-  background-color: #2f3133;
-  background: #2f3133;
-  box-shadow:  5px 5px 10px #191a1c, 
-             -5px -5px 10px #45484a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  letter-spacing: -0.015em;
+  background: rgba(34, 37, 42, 0.51);
 
 }
 
 .container-segundo{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   height:43.5vh; 
   margin-top: 2.5%;
 }
 
 .container-segundo textarea{
   resize: none;
+  margin-left: 1.5%;
   height:100%; 
   width: 65%;
   border:none;
   background-color: #383838;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.125rem;
   padding-left: 1rem;
   padding-top: 1rem;
-  border-radius: 1rem;
-  background: #383838;
-box-shadow:  10px 10px 20px #161616, 
-             -10px -10px 20px #5a5a5a;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.16)), #121212;
+  box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.2), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 24px 38px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
 }
 
 .container-segundo textarea::placeholder{
@@ -82,38 +80,37 @@ box-shadow:  10px 10px 20px #161616,
   height: 100%;
   width: 20%;
   margin-left: 2.5%;
-  border-radius: 1rem;
-  background: #383838;
-  box-shadow:  10px 10px 20px #161616, 
-             -10px -10px 20px #5a5a5a;
+  background: #3D3D3D;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
   overflow: auto;
   
 }
 
 .nota{
-  width: 90%;
+  width: 100%;
   height: 20%;
-  margin-top: 3.5%;
-  border-radius: 1rem;
-  background: #383838;
-  box-shadow:  10px 10px 20px #161616, 
-             -10px -10px 20px #424242;
-   
+  background: #2C2C2C;
+  border: 1px solid #7D7D7D;
+  box-sizing: border-box;
   text-align: center;
   cursor: pointer;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nota p{
-  margin-top: 8%;
-  font-weight: bold ;
-  color: #BB86FC;
-  font-size:1.1rem;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: -0.015em;
+  color: #E5E5E5;
 }
 
 .nota:hover{
-  box-shadow:  10px 10px 20px #555555, 
-             -9px -9px 20px #4b4b4b;
+  opacity: 0.7;
 }
 
 .nota:active{
@@ -133,13 +130,11 @@ box-shadow:  10px 10px 20px #161616,
   height: 100%;
   margin-right: 3.7%;
   border: none;
-  border-radius: 1rem;
   display: inline-flex;
   width:22rem;
   cursor: pointer;
-  background: linear-gradient(145deg, #BB86FC, #BB86FC);
-box-shadow:  5px 5px 10px #181818, 
-             -5px -5px 10px #626262;
+  background: #BB86FC;
+  border-radius: 0.25rem;
   
 }
 

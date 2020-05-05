@@ -22,12 +22,11 @@ const Notas = () => {
         <form>
         <div className="container-segundo">
           <div className="item-segundo">
-            <div className="nota"><p>Nota de ejemplo</p></div>
-            <div className="nota"><p>Nota de ejemplo</p></div>
-            <div className="nota"><p>Nota de ejemplo</p></div>
-            <div className="nota"><p>Nota de ejemplo</p></div>
-            
-          
+            <div className="nota"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor</p></div>
+            <div className="nota"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor</p></div>
+            <div className="nota"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor</p></div>
+            <div className="nota"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor</p></div>
+            <div className="nota"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor</p></div>
           </div>
           
           <textarea placeholder="Escribe tus notas aquí..."

@@ -1,0 +1,95 @@
+// best in chrome
+$total: 2000; // total particles
+$orb-size: 400px;
+$particle-size: 5px;
+$time: 14s; 
+$base-hue: 282; // change for diff colors (180 is turquoise...)
+
+
+
+body {
+  height: 50px;
+  .spiral-container {
+    height: 50px;
+  }
+  background: #171717;
+  overflow: hidden; // no scrollbars..
+  .brand-text {
+    margin:2rem;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    .titulo {
+      display: inline-flex;
+      width: 15rem;
+      height: auto;
+      margin-left: 2.7%;
+      color: rgb(255, 255, 255);
+      font-size: 32px;
+      font-family: "Bauhaus 93"; src: url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.eot"); src: url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.woff") format("woff"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.svg#Bauhaus 93") format("svg");
+      text-shadow:  0px 2px 5px #724396, 2px 2px 7px rgba(206,193,222,0.26), 8px 4px 3px #B376DB, 0px -2px 8px rgba(201,157,255,0.07), 0px 0px 10px rgba(233,220,255,0.07), 11px 12px 15px rgba(233,220,255,0.07), 14px 14px 13px rgba(233,220,255,0.07), 17px 26px 16px rgba(128,100,162,0.52), 1px -1px 10px rgba(117,6,105,0.47);
+      } 
+      .brand-icon{
+        display: inline-flex;
+        width: 10rem;
+        height: auto;
+        margin-left: 2.3%;
+      
+      }
+  }
+  
+}
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0; 
+  height: 0; 
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: rotate $time infinite linear; // rotate orb
+  
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+
+.c {
+  position: absolute;
+  width: $particle-size;
+  height: $particle-size;
+  border-radius: 50%;
+  opacity: 0; 
+}
+
+@for $i from 1 through $total {
+  $z: (random(360) * 1deg); // random angle to rotateZ
+  $y: (random(360) * 1deg); // random to rotateX
+  $hue: ((40/$total * $i) + $base-hue); // set hue
+  
+  .c:nth-child(#{$i}){ // grab the nth particle
+    animation: orbit#{$i} $time infinite;
+    animation-delay: ($i * .01s); 
+    background-color: hsla($hue, 100%, 50%, 1);
+    
+  }
+
+  @keyframes orbit#{$i}{ 
+    20% {
+      opacity: 1; // fade in
+    }
+    30% {
+      transform: rotateZ(-$z) rotateY($y) translateX($orb-size) rotateZ($z); // form orb
+    }
+    80% {
+      transform: rotateZ(-$z) rotateY($y) translateX($orb-size) rotateZ($z); // hold orb state 30-80
+      opacity: 1; // hold opacity 20-80
+    }
+    100% {
+       transform: rotateZ(-$z) rotateY($y) translateX( ($orb-size * 3) ) rotateZ($z); // translateX * 3
+    }
+  }
+}

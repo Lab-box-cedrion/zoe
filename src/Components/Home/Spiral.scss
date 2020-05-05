@@ -27,15 +27,6 @@ $base-hue: 282; // change for diff colors (180 is turquoise...)
         width: 8rem;
         height: auto;
         margin-left: 2.7%;
-      // display: inline-flex;
-      // width: 15rem;
-      // height: auto;
-      // margin-left: 2.7%;
-      // font-weight: 200;
-      // color: rgb(240, 240, 240);
-      // font-size: 32px;
-      // font-family: "Bauhaus 93"; src: url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.eot"); src: url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.woff") format("woff"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.svg#Bauhaus 93") format("svg");
-      // text-shadow:  0px 2px 5px #724396, 2px 2px 7px rgba(206,193,222,0.26), 8px 4px 3px #B376DB, 0px -2px 8px rgba(201,157,255,0.07), 0px 0px 10px rgba(233,220,255,0.07), 11px 12px 15px rgba(233,220,255,0.07), 14px 14px 13px rgba(233,220,255,0.07), 17px 26px 16px rgba(128,100,162,0.52), 1px -1px 10px rgba(117,6,105,0.47);
       } 
       .brand-icon{
         display: inline-flex;
@@ -105,5 +96,40 @@ $base-hue: 282; // change for diff colors (180 is turquoise...)
     100% {
        transform: rotateZ(-$z) rotateY($y) translateX( ($orb-size * 3) ) rotateZ($z); // translateX * 3
     }
+  }
+}
+
+// loading spinner
+
+.lds-ripple {
+  display: inline-block;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid rgb(138, 68, 187);
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
   }
 }

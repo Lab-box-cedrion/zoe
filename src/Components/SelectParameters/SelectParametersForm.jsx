@@ -19,7 +19,7 @@ function SelectParametersForm() {
   const [temperature, setTemperature] = useState(null);
   const [humidity, setHumidity] = useState(null);
   const [pulsedLight, setpulsedLight] = useState("true");
-  const [microorganisms, selectMicroorganisms] = useState("value");
+  /* const [microorganisms, selectMicroorganisms] = useState("value"); */
 
   /* 
     Pseudomonas aeruginosa, Listeria Monocytogenes, Escherichia Coli, Staphylococcus aureus, Salmonella typhimurium: "", */
@@ -248,22 +248,19 @@ function SelectParametersForm() {
           </div>
           <div className="item">
             <button
-              className="aply-parameters parameters buttons-form item"
+              className="aply-parameters parameters buttons item"
               type="submit"
             >
               <span>APLICAR PARÁMETROS</span>{" "}
             </button>
           </div>
           <div className="item">
-            <button
-              className="see-results forms buttons-form item"
-              type="submit"
-            >
+            <button className="see-results forms buttons item" type="submit">
               <span>VER RESULTADOS</span>{" "}
             </button>
           </div>
           <div className="item">
-            <button className="go-notes notes buttons-form item" type="submit">
+            <button className="go-notes notes buttons item" type="submit">
               <span>IR A NOTAS</span>{" "}
             </button>
           </div>

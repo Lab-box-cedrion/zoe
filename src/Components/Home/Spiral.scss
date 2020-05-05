@@ -1,7 +1,7 @@
 // best in chrome
 $total: 2000; // total particles
 $orb-size: 400px;
-$particle-size: 5px;
+$particle-size: 7px;
 $time: 14s; 
 $base-hue: 282; // change for diff colors (180 is turquoise...)
 
@@ -11,12 +11,10 @@ $base-hue: 282; // change for diff colors (180 is turquoise...)
     top: 0;
     bottom: 0;
     background: #171717;
+    background: linear-gradient(180deg, rgba(46, 4, 61, 0.8) 0%, rgba(5, 26, 59, 0.63) 37.5%, rgba(5, 30, 68, 0.60025) 48.96%, rgba(44, 2, 60, 0.392) 100%);
     width: 100%;
     overflow-y:hidden // no scrollbars..
   }
-  // .spiral-container {
-  //   height: 500px;
-  // }
   
   .brand-text {
     margin:2rem;
@@ -28,7 +26,7 @@ $base-hue: 282; // change for diff colors (180 is turquoise...)
       width: 15rem;
       height: auto;
       margin-left: 2.7%;
-      color: rgb(255, 255, 255);
+      color: rgb(240, 240, 240);
       font-size: 32px;
       font-family: "Bauhaus 93"; src: url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.eot"); src: url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.woff") format("woff"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3066b11123e63381b8e2aa554b18bf32.svg#Bauhaus 93") format("svg");
       text-shadow:  0px 2px 5px #724396, 2px 2px 7px rgba(206,193,222,0.26), 8px 4px 3px #B376DB, 0px -2px 8px rgba(201,157,255,0.07), 0px 0px 10px rgba(233,220,255,0.07), 11px 12px 15px rgba(233,220,255,0.07), 14px 14px 13px rgba(233,220,255,0.07), 17px 26px 16px rgba(128,100,162,0.52), 1px -1px 10px rgba(117,6,105,0.47);
@@ -39,6 +37,12 @@ $base-hue: 282; // change for diff colors (180 is turquoise...)
         height: auto;
         margin-left: 2.3%;
       
+      }
+      .motto {
+        color: rgb(246, 246, 246);
+        margin-left: 2.3%;
+        justify-self: flex-start;
+        text-shadow:  0px 2px 5px #724396, 2px 2px 7px rgba(206,193,222,0.26), 8px 4px 3px #B376DB, 0px -2px 8px rgba(201,157,255,0.07), 0px 0px 10px rgba(233,220,255,0.07), 11px 12px 15px rgba(233,220,255,0.07), 14px 14px 13px rgba(233,220,255,0.07), 17px 26px 16px rgba(128,100,162,0.52), 1px -1px 10px rgba(117,6,105,0.47);
       }
   }
   

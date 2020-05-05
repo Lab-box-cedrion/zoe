@@ -32,19 +32,49 @@
 }
 
 
-.navbar-light .navbar-nav .nav-link:focus,
-.navbar-light .navbar-nav .nav-link{
-  color:#E5E5E5;
-}
-
-.navbar-light .navbar-nav .nav-link:focus,
-.navbar-light .navbar-nav .nav-link:hover {
- color: #BB86FC ;
-}
-
 .navbar-nav{
   flex-direction: row;
   justify-content: space-between;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .dropdown-item a:hover, .nav-link a:hover{
+  color: #BB86FC;
+  text-decoration: none;
+  background-color:#31333e;
+}
+
+
+.nav-link a, .dropdown-item a, .navbar-light .navbar-nav .nav-link {
+  color: #E5E5E5;
+  text-decoration: none;
+  outline: none;
+}
+
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link{
+  color: #BB86FC;
+}
+
+.nav-link button:hover{
+  color: #BB86FC;
+}
+
+.nav-link .btn-primary{
+  background-color: transparent;
+  color: #E5E5E5;
+  font-size: 1.2rem;
+  border: none;
+  line-height: 28,8px;
+  margin-top: -8%;
+}
+
+.nav-link .btn-primary:focus{
+  box-shadow: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url(https://s6.gifyu.com/images/burger-menu-transparente.png);
+  background-size: 7.25rem;
 }
 
 /* Dropdown Menu NOTAS */
@@ -54,7 +84,6 @@
   padding: 0;
   border: none;
   border-top: none;
-  
 }
 
 
@@ -86,6 +115,7 @@ boton-modal:focus {
   background-color: transparent;
   border-color: transparent;
 } */
+
 
 
 

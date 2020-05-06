@@ -8,8 +8,11 @@ const fetch = require("node-fetch");
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
 const parser = new Readline();
+
+
+
 const mySerial = new Serialport("/dev/ttyUSB0", { baudRate: 9600 });
-//abro la conexión puerto serie
+//abrir la conexión puerto serie
 mySerial.on("open", function () {
   console.log("Opened Serial Port");
 });
@@ -17,7 +20,8 @@ const date = new Date().toLocaleString("es-Es");
 const globalExperiment = { experiment: date, temperature: [], humidity: [] };
 
 let start = false;
-//recibo datos de Arduino, cuando están los datos los queremos enviar a todos los clientes
+
+//recibit datos de Arduino a través del puerto de serie
 mySerial.on("data", function (data) {
   let dataOne = data.toString().split(",");
 
@@ -53,7 +57,7 @@ const datosJson = function () {
     .then((response) => console.log("Success:", response));
 };
 
-let tiempo = 24;
+let tiempo = 1800;
 let duration = tiempo * 1000 + 2000;
 
 function closeSerialPort() {
@@ -65,6 +69,6 @@ closeSerialPort();
 mySerial.on("err", function (data) {
   console.log(err.message);
 });
-server.listen(3000, () => {
-  console.log("server on port ", 3000);
+server.listen(3001, () => {
+  console.log("server on port ", 3001);
 });

@@ -146,13 +146,13 @@
 .container-tercero{
   display: flex;
   justify-content: flex-end;
-  height: 5vh;
+  height: 10.1vh;
   margin-top: 2.5%;
 }
 
 .container-tercero input{
   margin-top: 0;
-  height: 100%;
+  height: 44%;
   margin-right: 5.7%;
   border: none;
   display: inline-flex;

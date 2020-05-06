@@ -32,13 +32,27 @@ app.use((req, res, next) => {
 
 app.post("/insertar-data", (req, res) => {
   console.log(req.body);
-  database.query("INSERT INTO prueba SET ?", req.body, (error, results) => {
+  database.query("INSERT INTO readings SET ?", req.body, (error, results) => {
     if (error) {
       console.log(error);
       res.status(400).send(error);
     } else {
       console.log(error);
       res.status(201).send(results);
+    }
+  });
+});
+
+
+//Ruta get para recuperar los experimentos y sus lecturas
+app.get("/graphic-data", (req, res) => {
+  database.query("SELECT * FROM readings", (error, results) => {
+    if (error) {
+      console.log(error);
+      res.status.send(error);
+    } else {
+      console.log(results);
+      res.send(results);
     }
   });
 });

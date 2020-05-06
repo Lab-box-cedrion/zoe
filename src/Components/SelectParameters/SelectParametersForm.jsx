@@ -63,7 +63,7 @@ function SelectParametersForm() {
               placeholder="Nombre (opcional)"
               value={name}
               autocomplete="off"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setName((e.target.value).replace(/[^0-9]/g, ""))}
             />
           </div>
           <div className="time item">

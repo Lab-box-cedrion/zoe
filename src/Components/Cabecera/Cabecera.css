@@ -41,6 +41,7 @@
   color: #BB86FC;
   text-decoration: none;
   background-color:#31333e;
+  
 }
 
 
@@ -48,6 +49,7 @@
   color: #E5E5E5;
   text-decoration: none;
   outline: none;
+  
 }
 
 
@@ -66,6 +68,7 @@
   border: none;
   line-height: 28,8px;
   margin-top: -8%;
+
 }
 
 .nav-link .btn-primary:focus{
@@ -103,27 +106,26 @@
 
 /* MODAL */
 .modal-content{
-  color: #121212;
+  color: #E5E5E5;
+  background-color: #383838;
 }
 .modal-footer {
   display: flex;
   justify-content: center;
 }
-/* .boton-modal {
-  background-color: transparent;
-  border-color: transparent;
-  font-size: 1.2rem;
-}
-boton-modal:focus {
+
+/* ---DANDO ESTILO A LOS ICONOS DE SMARTPHONE--- */
+
+.icono-notas a, .rueda-ajustes a{
   color: #BB86FC;
-  background-color: transparent;
-  border-color: transparent;
-} */
+  outline:none;
+  
+}
 
-
-
-
-
+.icono-notas a:active, .rueda-ajustes a:active, .icono-notas a:focus, .rueda-ajustes a:focus{
+  color: #E5E5E5;
+  outline:none;
+}
 
 
 

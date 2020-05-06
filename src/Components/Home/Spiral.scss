@@ -22,7 +22,7 @@ $base-hue: 282; // change for diff colors (180 is turquoise...)
     display: flex;
     flex-direction: column;
     align-content: centern;
-    .zoe {
+      .zoe {
         align-self: center;
         width: 8rem;
         height: auto;
@@ -41,6 +41,7 @@ $base-hue: 282; // change for diff colors (180 is turquoise...)
         align-self: center;
         text-shadow:  0px 2px 5px #724396, 2px 2px 7px rgba(206,193,222,0.26), 8px 4px 3px #B376DB, 0px -2px 8px rgba(201,157,255,0.07), 0px 0px 10px rgba(233,220,255,0.07), 11px 12px 15px rgba(233,220,255,0.07), 14px 14px 13px rgba(233,220,255,0.07), 17px 26px 16px rgba(128,100,162,0.52), 1px -1px 10px rgba(117,6,105,0.47);
       }
+      
   }
   
 
@@ -99,8 +100,8 @@ $base-hue: 282; // change for diff colors (180 is turquoise...)
   }
 }
 
-//media queries
-//ipad 
+// media queries
+// mobile devices-from tablet to smartphones
 
 @media screen and (max-width:1024px){
 .brand-text {

@@ -110,8 +110,6 @@ const Historicos = () => {
                         Nombre
                         </section>
                     </article>
-                    
-                    
                     </main>
                 <Pie />
             </Fragment>

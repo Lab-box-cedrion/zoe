@@ -1,7 +1,7 @@
 .pie{
   width: 100%;
-  position: fixed;
-  bottom: 0px;
+  /* position: fixed; */
+  bottom: 0px; 
   display: flex;
   justify-content: flex-end;
   align-items: center;

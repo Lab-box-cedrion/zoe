@@ -9,27 +9,7 @@ import 'primeicons/primeicons.css';
 class LineChart extends Component {
 
     render() {
-        // const data = {
-        //     labels: ['t1', 't2', 't3', 't4', 't5', 't6', 't7'],
-        //     datasets: [
-        //         {
-        //             label: 'Temperatura',
-        //             data: [65, 59, 80, 81, 56, 55, 40],
-        //             fill: false,
-        //             backgroundColor: '#a4ade9',
-        //             borderColor: '#a4ade9'
-        //         },
-        //         {
-        //             label: 'Humedad',
-        //             data: [28, 48, 40, 19, 86, 27, 90],
-        //             fill: false,
-        //             backgroundColor: '#84dfc4',
-        //             borderColor: '#84dfc4'
-        //         }
-        //     ]
-        // };
     
-        
         const singleAxisData = {
 			labels: ['t1', 't2', 't3', 't4', 't5', 't6', 't7'],
 			datasets: [{
@@ -58,18 +38,8 @@ class LineChart extends Component {
             fontSize: 500,
             legend: {
                 position: 'bottom'
-            },
-            
-        //     scales: {
-        //         yAxes: [{
-        //             type: 'linear',
-        //             display: true,
-        //             position: 'left',
-        //             id: 'y-axis-1',
-
-        //         }
-        //     ]
-        // }
+            }
+        
         }
 
         const lineStylesData = {

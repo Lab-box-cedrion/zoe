@@ -43,7 +43,6 @@
   color: #BB86FC;
   background: rgba(34, 37, 42, 0.51);
   height: 40px;
-  filter: blur(0.5px);
   border-radius: 18px;
   font-weight: 600;
   font-size: 1.25rem;
@@ -98,7 +97,7 @@
   width: 20%;
   margin-left: 2.5%;
   background: #3D3D3D;
-  border: 0.025em solid rgb(89, 89, 89);
+  border: 0.15em solid rgb(41, 41, 41);
   box-sizing: border-box;
   overflow: auto;
   font-size: 1rem;
@@ -112,7 +111,7 @@
   width: 100%;
   height: 20%;
   background: #2C2C2C;
-  border: 1px solid #7D7D7D;
+  border-bottom: 0.001rem solid rgb(57, 56, 56);
   box-sizing: border-box;
   text-align: center;
   cursor: pointer;

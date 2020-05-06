@@ -83,7 +83,7 @@ class LineChart extends Component {
                     // titleFontSize: 500,
                     data: [65, 59, 80, 81, 56, 55, 40],
                     fill: false,
-                    borderColor: '#a4ade9',
+                    borderColor: '#7E8CE0',
                     backgroundColor:'rgb(255, 255, 255)'
                 },
                 {
@@ -96,12 +96,12 @@ class LineChart extends Component {
                     backgroundColor: 'rgba(132, 223, 196, 0.7)'
                 },
                 {
-                    label: 'Third Dataset',
+                    label: 'Ozono',
                     fontColor: 'rgb(255, 255, 255)',
                     data: [12, 51, 62, 33, 21, 62, 45],
                     fill: true,
-                    borderColor: '#ffc68a',
-                    backgroundColor: 'rgba(255, 198, 138)'
+                    borderColor: '#FFA48E',
+                    backgroundColor: '#FFA48E'
                     
                 }
             ]

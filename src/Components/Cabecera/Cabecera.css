@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5.8rem;
+  height: 4.3rem;
   background-color: #2c2c2c;
 }
 
@@ -40,6 +40,7 @@
 .navbar-light .navbar-nav .nav-link:hover, .dropdown-item a:hover, .nav-link a:hover{
   color: #BB86FC;
   text-decoration: none;
+  border-radius: 0.4rem;
   background-color:#31333e;
 }
 
@@ -103,11 +104,19 @@
 
 /* MODAL */
 .modal-content{
-  color: #121212;
+  background-color: #2b2b2b;
+  color: #E5E5E5;
 }
 .modal-footer {
   display: flex;
   justify-content: center;
+}
+.secondary {
+  background-color: #383838;
+  color: #E5E5E5;
+}
+button.close {
+  color: rgb(255, 255, 255);
 }
 /* .boton-modal {
   background-color: transparent;

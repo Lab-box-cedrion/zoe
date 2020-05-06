@@ -17,9 +17,9 @@ const Historicos = () => {
                     </article>
                     <main className= 'data-container'>
                     <article className='pair'>
-                        <section className= 'date-time'>aa mm dd hh:mm <Link to='/historicos_grafica'></Link>
+                        <section className= 'date-time'><Link to='/historicos_grafica'>aa mm dd hh:mm</Link>
                         </section>
-                        <section className='name'> Nombre <Link to='/historicos_grafica'></Link>
+                        <section className='name'><Link to='/historicos_grafica'>Nombre </Link>
                         </section>
                     </article>
                     <article className='pair'>

@@ -38,7 +38,6 @@ class LineChart extends Component {
 				backgroundColor: '#a4ade9',
                 borderColor: '#a4ade9',
                 yAxisID: 'y-axis-1',
-                
 				data: [65, 59, 80, 81, 56, 55, 10]
 			}, {
                 label: 'Humedad',
@@ -57,21 +56,24 @@ class LineChart extends Component {
             hoverMode: 'index',
             stacked: false,
             fontSize: 500,
+            legend: {
+                position: 'bottom'
+            },
             
-            scales: {
-                yAxes: [{
-                    type: 'linear',
-                    display: true,
-                    position: 'left',
-                    id: 'y-axis-1',
+        //     scales: {
+        //         yAxes: [{
+        //             type: 'linear',
+        //             display: true,
+        //             position: 'left',
+        //             id: 'y-axis-1',
 
-                }
-            ]
-        }
+        //         }
+        //     ]
+        // }
         }
 
         const lineStylesData = {
-            labels: ['t1', 't2', 't3', 't4', 't5', 't6', 't7'],
+            labels: ['t0','t1', 't2', 't3', 't4', 't5', 't6', 't7'],
             datasets: [
                 {
                     label: 'Temperatura',

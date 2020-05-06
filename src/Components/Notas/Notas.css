@@ -66,6 +66,7 @@
 .container-segundo textarea{
   resize: none;
   margin-left: 1.5%;
+  margin-bottom: 0;
   height: 60vh; 
   width: 65%;
   border:none;
@@ -150,6 +151,7 @@
 }
 
 .container-tercero input{
+  margin-top: 0;
   height: 100%;
   margin-right: 5.7%;
   border: none;
@@ -205,6 +207,7 @@ input.guardar-nota:active {
   .container-tercero input{
   flex-grow: 1;
   margin-right: 4.7%;
+  margin-top: 0;
   margin-left:4.7%;
   }
 

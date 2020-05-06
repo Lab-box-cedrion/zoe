@@ -17,19 +17,19 @@ $base-hue: 282; // change for diff colors (180 is turquoise...)
   }
   
   .brand-text {
+    width:20%;
     margin:2rem;
     display: flex;
     flex-direction: column;
-    align-content: centern
-    ;
-    .titulo {
-        display: inline-flex;
+    align-content: centern;
+      .zoe {
+        align-self: center;
         width: 8rem;
         height: auto;
         margin-left: 2.7%;
       } 
       .brand-icon{
-        display: inline-flex;
+        align-self: center;
         width: 10rem;
         height: auto;
         margin-left: 2.3%;
@@ -38,9 +38,10 @@ $base-hue: 282; // change for diff colors (180 is turquoise...)
       .motto {
         color: rgb(246, 246, 246);
         margin-left: 2.3%;
-        justify-self: flex-start;
+        align-self: center;
         text-shadow:  0px 2px 5px #724396, 2px 2px 7px rgba(206,193,222,0.26), 8px 4px 3px #B376DB, 0px -2px 8px rgba(201,157,255,0.07), 0px 0px 10px rgba(233,220,255,0.07), 11px 12px 15px rgba(233,220,255,0.07), 14px 14px 13px rgba(233,220,255,0.07), 17px 26px 16px rgba(128,100,162,0.52), 1px -1px 10px rgba(117,6,105,0.47);
       }
+      
   }
   
 
@@ -98,6 +99,22 @@ $base-hue: 282; // change for diff colors (180 is turquoise...)
     }
   }
 }
+
+// media queries
+// mobile devices-from tablet to smartphones
+
+@media screen and (max-width:1024px){
+.brand-text {
+  align-content: center;
+  width:80%;
+  margin: 2rem auto;
+  }
+}
+
+
+
+
+
 
 // loading spinner
 

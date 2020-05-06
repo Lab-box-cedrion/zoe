@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Redirect, Link } from "react-router-dom";
 import Cabecera from '../Cabecera/Cabecera';
 import Pie from '../Footer/Pie';
 import './Historicos.scss';
@@ -16,11 +17,9 @@ const Historicos = () => {
                     </article>
                     <main className= 'data-container'>
                     <article className='pair'>
-                        <section className= 'date-time'>
-                        aa mm dd hh:mm 
+                        <section className= 'date-time'><Link to='/historicos_grafica'>aa mm dd hh:mm</Link>
                         </section>
-                        <section className='name'>
-                        Nombre
+                        <section className='name'><Link to='/historicos_grafica'>Nombre </Link>
                         </section>
                     </article>
                     <article className='pair'>
@@ -111,8 +110,6 @@ const Historicos = () => {
                         Nombre
                         </section>
                     </article>
-                    
-                    
                     </main>
                 <Pie />
             </Fragment>

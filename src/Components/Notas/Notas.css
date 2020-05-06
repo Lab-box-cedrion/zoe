@@ -3,16 +3,15 @@
   text-align: center;
   display: flex;
   justify-content: space-around;
-  height: 10.5vh;
   align-items: flex-end;
 }
 
-.container-primero input{
+.container-primero input {
   width: 20%;
-  border:none;
-  height: 3rem;
-  color: #E5E5E5;
-  font-size: 1.5rem;
+  text-align: center;
+  border: none;
+  color: rgb(146, 146, 146);
+  font-size: 1.3rem;
   font-weight: normal;
   padding: 0 2rem;
   line-height: 2rem;
@@ -23,45 +22,56 @@
   margin-left: 1.6%;
 }
 
-.container-primero input::placeholder{
-  color:white;
+.container-primero input:placeholder{
+  
+  color:#E5E5E5;
   text-align: center;
-  font-size: 1.125rem;
- 
+  height: 40px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.015em;
+  width: 245px;
+  justify-content: space-evenly;
 }
 
-.item-primero{
-  
-  width: 20%;
-  border-radius: 1rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.item-primero {
+  margin-top: 2rem;
   color: #BB86FC;
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 2rem;
-  letter-spacing: -0.015em;
   background: rgba(34, 37, 42, 0.51);
-
+  height: 40px;
+  filter: blur(0.5px);
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.015em;
+  width: 250px;
 }
 
 .container-segundo{
   display: flex;
   justify-content: center;
-  height:43.5vh; 
-  margin-top: 2.5%;
+  min-height: 60vh; 
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 .container-segundo textarea{
   resize: none;
   margin-left: 1.5%;
-  height:100%; 
+  margin-bottom: 0;
+  height: 60vh; 
   width: 65%;
   border:none;
   background-color: #383838;
-  color: white;
+  color: rgb(216, 216, 216);
   font-size: 1.125rem;
   padding-left: 1rem;
   padding-top: 1rem;
@@ -71,20 +81,30 @@
 }
 
 .container-segundo textarea::placeholder{
-  color: white;
+  color: rgb(216, 216, 216);
+  font-size: 1.2rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  text-align: left;
+  min-height: 60vh; 
 }
 
 .item-segundo{
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  height: 100%;
+  text-align: left;
+  height: 60vh;
   width: 20%;
   margin-left: 2.5%;
   background: #3D3D3D;
-  border: 1px solid #C4C4C4;
+  border: 0.025em solid rgb(89, 89, 89);
   box-sizing: border-box;
   overflow: auto;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  border-radius: 0.25rem;
   
 }
 
@@ -96,7 +116,6 @@
   box-sizing: border-box;
   text-align: center;
   cursor: pointer;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,10 +127,13 @@
   font-size: 14px;
   line-height: 19px;
   letter-spacing: -0.015em;
-  color: #E5E5E5;
+  color: rgb(216, 216, 216);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
 }
 
 .nota:hover{
+  background-color: rgb(92, 92, 92);
   opacity: 0.7;
 }
 
@@ -129,15 +151,22 @@
 }
 
 .container-tercero input{
+  margin-top: 0;
   height: 100%;
   margin-right: 5.7%;
   border: none;
   display: inline-flex;
   width:22rem;
   cursor: pointer;
+
   background: #BB86FC;
   border-radius: 0.25rem;
-  
+}
+
+.nota p{
+  text-align: left;
+  margin: 0.3rem;
+
 }
 
 .container-tercero input:active{
@@ -145,6 +174,22 @@
   box-shadow: inset 5px 5px 10px #181818, 
               inset -5px -5px 10px #626262;
 }
+input.guardar-nota {
+  align-content: center;
+  justify-content: center;
+  
+}
+input.guardar-nota:hover {
+  
+    color: #84dfc4;
+    background: rgba(34, 37, 42, 0.7);
+}
+input.guardar-nota:active {
+    color: #84dfe2;
+    background: rgba(34, 37, 42, 0.7);
+    border: 0.56px solid #84DFE2;
+}
+
 
 /* MEDIA QUERIES */
 @media screen and (max-width:574px){
@@ -163,33 +208,34 @@
   .container-tercero input{
   flex-grow: 1;
   margin-right: 4.7%;
+  margin-top: 0;
   margin-left:4.7%;
   }
 
 }
 
 /* Media query iphon 5 y 6 */
-@media screen and (max-height:736px){
+/* @media screen and (max-height:736px){
   .container-primero{
     height: 18vh;
   }
 
   .item-primero, .container-primero input{
-    height: 28%;
+    height: 35%;
     margin-top: 0;
   }
 
   .container-segundo{
-    height: 40vh;;
+    min-height: 80vh; 
   }
 
-}
+} */
 
 /* Media query iphone 4 */
 @media screen and (max-height: 599px){
 
   .container-segundo{
-    height: 33vh;
+    min-height: 50vh; 
   }
 }
 

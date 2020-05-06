@@ -31,9 +31,9 @@ class Spiral extends Component {
             src="https://s6.gifyu.com/images/cedrion_horizontal_dark_TRANS-01.png"
             alt="main-icono"/>
             <img
-            className='titulo'
-            src="https://s6.gifyu.com/images/LAB-BOX-01.png"
-            alt="logo-lab-box"/>
+            className='zoe'
+            src="https://s6.gifyu.com/images/ZOE-01.png"
+            alt="logo-ZOE"/>
             <h3 className='motto'> We drive the flow </h3>
             </div>
             

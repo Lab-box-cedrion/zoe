@@ -158,6 +158,7 @@
   display: inline-flex;
   width:22rem;
   cursor: pointer;
+
   background: #BB86FC;
   border-radius: 0.25rem;
 }
@@ -214,7 +215,7 @@ input.guardar-nota:active {
 }
 
 /* Media query iphon 5 y 6 */
-@media screen and (max-height:736px){
+/* @media screen and (max-height:736px){
   .container-primero{
     height: 18vh;
   }
@@ -228,7 +229,7 @@ input.guardar-nota:active {
     min-height: 80vh; 
   }
 
-}
+} */
 
 /* Media query iphone 4 */
 @media screen and (max-height: 599px){

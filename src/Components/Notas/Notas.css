@@ -38,7 +38,8 @@
   justify-content: space-evenly;
 }
 
-.item-primero{
+.item-primero {
+  margin-top: 2rem;
   color: #BB86FC;
   background: rgba(34, 37, 42, 0.51);
   height: 40px;
@@ -52,21 +53,20 @@
   justify-content: center;
   letter-spacing: -0.015em;
   width: 245px;
-
-
 }
 
 .container-segundo{
   display: flex;
   justify-content: center;
-  min-height: 80vh; 
-  margin-top: 2.5%;
+  min-height: 60vh; 
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 .container-segundo textarea{
   resize: none;
   margin-left: 1.5%;
-  height: 100%; 
+  height: 60vh; 
   width: 65%;
   border:none;
   background-color: #383838;
@@ -85,6 +85,7 @@
   font-family: 'Nunito', sans-serif;
   font-weight: 200;
   text-align: left;
+  min-height: 60vh; 
 }
 
 .item-segundo{
@@ -92,7 +93,7 @@
   flex-flow: column nowrap;
   align-items: center;
   text-align: left;
-  height: 100%;
+  height: 60vh;
   width: 20%;
   margin-left: 2.5%;
   background: #3D3D3D;
@@ -221,7 +222,7 @@ input.guardar-nota:active {
   }
 
   .container-segundo{
-    height: 40vh;;
+    min-height: 80vh; 
   }
 
 }
@@ -230,7 +231,7 @@ input.guardar-nota:active {
 @media screen and (max-height: 599px){
 
   .container-segundo{
-    height: 33vh;
+    min-height: 50vh; 
   }
 }
 

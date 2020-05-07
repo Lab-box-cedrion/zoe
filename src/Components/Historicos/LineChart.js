@@ -15,7 +15,7 @@ class LineChart extends Component {
     render() {
 
 
-        const { humidity, temperature, experiment } = this.props.readingData;
+        const { humidity, temperature, ozone, experiment } = this.props.readingData;
 
         const humidityArray = humidity.split(',');
         const humidityNumberArray = humidityArray.map(element => (
@@ -27,6 +27,10 @@ class LineChart extends Component {
             parseFloat(element)
         ));
 
+        const ozoneArray = ozone.split(',');
+        const ozoneNumberArray = ozoneArray.map(element => (
+            parseFloat(element)
+        ));
         //Colocar los segundos en función de la length de la temperatura
         let medirNumeros = temperatureArray.length * 2
         let resultsSeconds = []
@@ -73,7 +77,7 @@ class LineChart extends Component {
                 {
                     label: 'Ozono %',
                     fontColor: 'rgb(255, 255, 255)',
-                    data: [],
+                    data: ozoneNumberArray,
                     fill: true,
                     borderColor: '#FFA48E',
                     backgroundColor: '#FFA48E'

@@ -13,7 +13,7 @@ const Routes = () => {
       <Route path="/" exact component={Home} />
       <Route path="/ajustes" component={SelectParametersForm} />
       <Route path="/historicos" component={Historicos} />
-      <Route path="/historicos_grafica" component={HGrafica} />
+      <Route path="/historicos_grafica/:id" component={HGrafica} />
       <Route path="/notas" component={Notas} />
       <Route path="/historicos_parametros" component={HParametros} />
     </Router>

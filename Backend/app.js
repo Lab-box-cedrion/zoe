@@ -30,6 +30,32 @@ app.use((req, res, next) => {
   next();
 });
 
+//Ruta get para recuperar los experimentos y sus lecturas
+app.get("/graphic-data", (req, res) => {
+  database.query("SELECT * FROM readings", (error, results) => {
+    if (error) {
+      console.log(error);
+      res.status.send(error);
+    } else {
+      console.log(results);
+      res.send(results);
+    }
+  });
+});
+
+//Ruta get para la gráfica por su id
+app.get("/graphic-data/:id", (req, res) => {
+  database.query("SELECT * FROM readings WHERE id ?", (error, result) => {
+    if (error) {
+      console.log(error);
+      res.status(400).send(error);
+    } else {
+      console.log(result);
+      res.status(200).send(result);
+    }
+  });
+});
+
 app.post("/insertar-data", (req, res) => {
   console.log(req.body);
   database.query("INSERT INTO readings SET ?", req.body, (error, results) => {
@@ -43,19 +69,6 @@ app.post("/insertar-data", (req, res) => {
   });
 });
 
-
-//Ruta get para recuperar los experimentos y sus lecturas
-app.get("/graphic-data", (req, res) => {
-  database.query("SELECT * FROM readings", (error, results) => {
-    if (error) {
-      console.log(error);
-      res.status.send(error);
-    } else {
-      console.log(results);
-      res.send(results);
-    }
-  });
-});
 
 app.listen(PORT, () => {
   console.log(`Conectado al puerto ${PORT}`);

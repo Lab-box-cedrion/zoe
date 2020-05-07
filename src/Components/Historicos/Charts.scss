@@ -49,7 +49,6 @@
         .date-time-charts {
             background: rgba(34, 37, 42, 0.51);
             height: 40px;
-            filter: blur(0.5px);
             border-radius: 18px;
             font-weight: 600;
             font-size: 20px;
@@ -63,9 +62,7 @@
         } 
         .name-charts {
             background: rgba(34, 37, 42, 0.51);
-            filter: blur(0.5px);
             border-radius: 18px;
-            
             font-weight: 600;
             font-size: 20px;
             line-height: 33px;

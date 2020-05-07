@@ -15,7 +15,7 @@ class LineChart extends Component {
     render() {
 
 
-        const { humidity, temperature } = this.props.readingData;
+        const { humidity, temperature, experiment } = this.props.readingData;
 
         const humidityArray = humidity.split(',');
         const humidityNumberArray = humidityArray.map(element => (
@@ -96,7 +96,7 @@ class LineChart extends Component {
                     <main className='container-charts'>
                         <article className='pair-charts'>
                             <section className='date-time-charts'>
-                                aa mm dd hh:mm
+                                {experiment}
                         </section>
                             <section className='name-charts'>
                                 Nombre

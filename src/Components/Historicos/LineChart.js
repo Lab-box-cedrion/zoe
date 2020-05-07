@@ -14,8 +14,15 @@ class LineChart extends Component {
 
     render() {
 
-        // console.log(this.props.location.state.data)
-        
+
+        const { humidity, temperature } = this.props.readingData;
+
+        const humidityArray = humidity.split(',');
+        const humidityNumberArray = humidityArray.map(element => (
+            parseFloat(element)
+        ));
+
+
         const options = {
             responsive: true,
             hoverMode: 'index',
@@ -24,11 +31,11 @@ class LineChart extends Component {
             legend: {
                 position: 'bottom'
             }
-        
+
         }
 
         const lineStylesData = {
-            labels: ['0','2s', '4s', '6s', '8s', '10s', '12s', '14s'],
+            labels: ['0', '2s', '4s', '6s', '8s', '10s', '12s', '14s'],
             datasets: [
                 {
                     label: 'Temperatura ºC',
@@ -36,15 +43,15 @@ class LineChart extends Component {
                     // titleFontFamily: 'Nunito, sans-serif',
                     fontColor: 'rgb(255, 255, 255)',
                     // titleFontSize: 500,
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    data: [],
                     fill: false,
                     borderColor: '#7E8CE0',
-                    backgroundColor:'rgb(255, 255, 255)'
+                    backgroundColor: 'rgb(255, 255, 255)'
                 },
                 {
                     label: 'Humedad %',
                     fontColor: 'rgb(255, 255, 255)',
-                    data: [28, 48, 40, 19, 86, 27, 90],
+                    data: humidityNumberArray,
                     fill: true,
                     borderDash: [5, 5],
                     borderColor: '#84dfc4',
@@ -53,40 +60,40 @@ class LineChart extends Component {
                 {
                     label: 'Ozono %',
                     fontColor: 'rgb(255, 255, 255)',
-                    data: [12, 51, 62, 33, 21, 62, 45],
+                    data: [],
                     fill: true,
                     borderColor: '#FFA48E',
                     backgroundColor: '#FFA48E'
-                    
+
                 }
             ]
         };
 
-        
+
 
         return (
             <div className='outerbox'>
                 <div className="content-section-introduction">
                     <div className="feature-intro">
-                        <h1 className= 'title-section'>Diagrama de parámetros</h1>
+                        <h1 className='title-section'>Diagrama de parámetros</h1>
                         <p className='instructions'>Visualización de los parámetros recogidos.
-                            Clica en la leyenda de un parámetro para ocultarlo o mostrarlo.
+                        Clica en la leyenda de un parámetro para ocultarlo o mostrarlo.
                             Sitúa el cursor sobre los nodos para ver el dato exacto.</p>
                     </div>
-                    <main className= 'container-charts'>
-                    <article className='pair-charts'>
-                        <section className= 'date-time-charts'>
-                        aa mm dd hh:mm 
+                    <main className='container-charts'>
+                        <article className='pair-charts'>
+                            <section className='date-time-charts'>
+                                aa mm dd hh:mm
                         </section>
-                        <section className='name-charts'>
-                        Nombre
+                            <section className='name-charts'>
+                                Nombre
                         </section>
-                    </article>
+                        </article>
                     </main>
                 </div>
 
                 <div className="content-section-implementation">
-                    <Chart type="line" data={ lineStylesData } option= {options}/>
+                    <Chart type="line" data={lineStylesData} option={options} />
 
                 </div>
             </div>

@@ -5,15 +5,19 @@ import Pie from '../Footer/Pie';
 import './HGrafica.scss';
 
 export default class HGrafica extends Component {
-   
-    render() { 
-        return ( 
+    constructor(props) {
+        super(props);
+        this.state = { data: this.props.location.state.data }
+    }
+    render() {
+        console.log(this.state.data);
+        return (
             <Fragment>
                 <Cabecera />
-                <LineChart />
+                <LineChart readingData={this.state.data} />
                 <Pie />
             </Fragment>
-            
-         );
+
+        );
     }
 }

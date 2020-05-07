@@ -22,6 +22,11 @@ class LineChart extends Component {
             parseFloat(element)
         ));
 
+        const temperatureArray = temperature.split(',');
+        const temperatureNumberArray = temperatureArray.map(element => (
+            parseFloat(element)
+        ));
+
 
         const options = {
             responsive: true,
@@ -43,7 +48,7 @@ class LineChart extends Component {
                     // titleFontFamily: 'Nunito, sans-serif',
                     fontColor: 'rgb(255, 255, 255)',
                     // titleFontSize: 500,
-                    data: [],
+                    data: temperatureNumberArray,
                     fill: false,
                     borderColor: '#7E8CE0',
                     backgroundColor: 'rgb(255, 255, 255)'

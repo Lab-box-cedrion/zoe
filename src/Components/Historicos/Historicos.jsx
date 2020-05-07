@@ -39,7 +39,7 @@ const Historicos = () => {
                             :
                             data.map(el => {
                                 return(
-                                     <Link to="/historicos_grafica/{data.id}">
+                                     <Link to={`/historicos_grafica/${el.id}`}>
                                         <article className='pair'>
                                             <section className= 'date-time'>{el.experiment}
                                             </section>

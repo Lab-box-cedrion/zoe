@@ -45,7 +45,7 @@ app.get("/graphic-data", (req, res) => {
 
 //Ruta get para la gráfica por su id
 app.get("/graphic-data/:id", (req, res) => {
-  database.query("SELECT * FROM readings WHERE id ?", (error, result) => {
+  database.query("SELECT * FROM readings WHERE id= ?", (error, result) => {
     if (error) {
       console.log(error);
       res.status(400).send(error);

@@ -4,6 +4,7 @@ import { Chart } from 'primereact/chart';
 import 'primereact/resources/themes/nova-dark/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import { getJSDocReadonlyTag } from 'typescript';
 
 
 class LineChart extends Component {
@@ -88,6 +89,9 @@ class LineChart extends Component {
                     type: 'linear',
                     display: true,
                     ticks: {
+                        fontFamily: "Nunito",
+                        fontSize: 10,
+                        fontColor: '#DEDEDE',
                         suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
                         // OR //
                         beginAtZero: true   // minimum value will be 0.
@@ -99,20 +103,31 @@ class LineChart extends Component {
                     type: 'linear',
                     display: true,
                     ticks: {
+                        fontFamily: "Nunito",
+                        fontSize: 10,
+                        fontColor: '#DEDEDE',
                         suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
                         // OR //
-                        beginAtZero: true   // minimum value will be 0.
+                        beginAtZero: true,  // minimum value will be 0.
                     },
                     //eje a la derecha
                     position: 'right',
                     id: 'y-axis-2',
                     gridLines: {
                         drawOnChartArea: false
-                    }
+                    },
+                    
                 }]
             },
             legend: {
-                position: 'bottom'
+                position: 'bottom',
+                labels: {
+                    fontFamily: "Nunito",
+                    fontSize: 15,
+                    fontColor: '#DEDEDE',
+                    boxWidth: 30
+
+                }
             }
 
         }

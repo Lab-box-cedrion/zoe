@@ -7,30 +7,11 @@ import 'primeicons/primeicons.css';
 
 
 class LineChart extends Component {
-
+    // state= {
+    //     data: this.props.location.state
+    // }
     render() {
     
-        const singleAxisData = {
-			labels: ['t1', 't2', 't3', 't4', 't5', 't6', 't7'],
-			datasets: [{
-                label: 'Temperatura',
-                fill: false,
-				backgroundColor: '#a4ade9',
-                borderColor: '#a4ade9',
-                yAxisID: 'y-axis-1',
-				data: [65, 59, 80, 81, 56, 55, 10]
-			}, {
-                label: 'Humedad',
-                fill: false,
-				backgroundColor: '#84dfc4',
-                borderColor: '#84dfc4',
-				yAxisID: 'y-axis-2',
-				data: [28, 48, 40, 19, 86, 27, 90]
-            },
-            
-        ]
-        };
-
         const options = {
             responsive: true,
             hoverMode: 'index',
@@ -43,10 +24,10 @@ class LineChart extends Component {
         }
 
         const lineStylesData = {
-            labels: ['t0','t1', 't2', 't3', 't4', 't5', 't6', 't7'],
+            labels: ['0','2s', '4s', '6s', '8s', '10s', '12s', '14s'],
             datasets: [
                 {
-                    label: 'Temperatura',
+                    label: 'Temperatura ºC',
                     // bodyFontFamily: 'Nunito, sans-serif',
                     // titleFontFamily: 'Nunito, sans-serif',
                     fontColor: 'rgb(255, 255, 255)',
@@ -57,7 +38,7 @@ class LineChart extends Component {
                     backgroundColor:'rgb(255, 255, 255)'
                 },
                 {
-                    label: 'Humedad',
+                    label: 'Humedad %',
                     fontColor: 'rgb(255, 255, 255)',
                     data: [28, 48, 40, 19, 86, 27, 90],
                     fill: true,
@@ -66,7 +47,7 @@ class LineChart extends Component {
                     backgroundColor: 'rgba(132, 223, 196, 0.7)'
                 },
                 {
-                    label: 'Ozono',
+                    label: 'Ozono %',
                     fontColor: 'rgb(255, 255, 255)',
                     data: [12, 51, 62, 33, 21, 62, 45],
                     fill: true,
@@ -101,7 +82,7 @@ class LineChart extends Component {
                 </div>
 
                 <div className="content-section-implementation">
-                    <Chart type="line" data={singleAxisData, lineStylesData} option= {options}/>
+                    <Chart type="line" data={ lineStylesData } option= {options}/>
 
                 </div>
             </div>

@@ -11,13 +11,14 @@ const parser = new Readline();
 
 
 
+
 const mySerial = new Serialport("/dev/ttyUSB0", { baudRate: 9600 });
 //abrir la conexión puerto serie
 mySerial.on("open", function () {
   console.log("Opened Serial Port");
 });
 const date = new Date().toLocaleString("es-Es");
-const globalExperiment = { experiment: date, temperature: [], humidity: [] };
+const globalExperiment = { experiment: date, temperature: [], humidity: [], ozone: [] };
 
 let start = false;
 
@@ -28,6 +29,7 @@ mySerial.on("data", function (data) {
   //let experimentJson = JSON.stringify(globalExperiment);
   globalExperiment.humidity.push(parseFloat(dataOne[0]));
   globalExperiment.temperature.push(parseFloat(dataOne[1]));
+  globalExperiment.ozone.push(parseFloat(data[2]));
   console.log(globalExperiment);
   console.log("que soy");
 

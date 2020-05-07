@@ -7,11 +7,15 @@ import 'primeicons/primeicons.css';
 
 
 class LineChart extends Component {
-    // state= {
-    //     data: this.props.location.state
+    // constructor(props){
+    //     super(props);
+    //     this.state = {experimentooo: this.props.location.state.data}
     // }
+
     render() {
-    
+
+        // console.log(this.props.location.state.data)
+        
         const options = {
             responsive: true,
             hoverMode: 'index',

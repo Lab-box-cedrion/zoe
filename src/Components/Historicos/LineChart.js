@@ -27,17 +27,13 @@ class LineChart extends Component {
             parseFloat(element)
         ));
 
-<<<<<<< HEAD
-        const
-=======
         //Colocar los segundos en función de la length de la temperatura
         let medirNumeros = temperatureArray.length * 2
         let resultsSeconds = []
-        for(var i=0; i < medirNumeros; i = i+2){
-            resultsSeconds.push(`${i}s`)    
+        for (var i = 0; i < medirNumeros; i = i + 2) {
+            resultsSeconds.push(`${i}s`)
         }
 
->>>>>>> 4c6253bcc8c02f97a980deb11b13c5ac2fd4e69b
 
 
         const options = {
@@ -101,11 +97,7 @@ class LineChart extends Component {
                         <article className='pair-charts'>
                             <section className='date-time-charts'>
                                 {experiment}
-<<<<<<< HEAD
                             </section>
-=======
-                        </section>
->>>>>>> 4c6253bcc8c02f97a980deb11b13c5ac2fd4e69b
                             <section className='name-charts'>
                                 Nombre
                         </section>

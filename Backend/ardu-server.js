@@ -8,7 +8,7 @@ const fetch = require("node-fetch");
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
 const parser = new Readline();
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 
 app.post("/crear-experimento", (req, res) => {
   const mySerial = new Serialport(req.body.puerto, { baudRate: 9600 });
@@ -42,13 +42,21 @@ app.post("/crear-experimento", (req, res) => {
   });
 
   console.log("estoy fuera");
+
   const datosJson = function () {
     mySerial.close();
+
+
     console.log("objeto literal", globalExperiment);
+
+
     let temString = globalExperiment.temperature.join(",");
     let humString = globalExperiment.humidity.join(",");
+    let ozoString = globalExperiment.ozone.join(",");
+
     globalExperiment.temperature = temString;
     globalExperiment.humidity = humString;
+    globalExperiment.ozone = ozoString;
 
     fetch("http://localhost:5005/insertar-data", {
       method: "POST",
@@ -60,7 +68,10 @@ app.post("/crear-experimento", (req, res) => {
     })
       .then((res) => res.json())
       .catch((error) => console.error("Error:", error))
-      .then((response) => console.log("Success:", response));
+      .then((response) => {
+        console.log("Success:", response);
+        res.status(201).send("Los datos han sido creados con éxito");
+      });
   };
 
   //Tiempo en segundos que durará el experimento
@@ -76,6 +87,8 @@ app.post("/crear-experimento", (req, res) => {
   mySerial.on("err", function (data) {
     console.log(err.message);
   });
+
+
 });
 
 server.listen(3001, () => {

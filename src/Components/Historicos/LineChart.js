@@ -15,7 +15,7 @@ class LineChart extends Component {
     render() {
 
 
-        const { humidity, temperature } = this.props.readingData;
+        const { humidity, temperature, ozone, experiment } = this.props.readingData;
 
         const humidityArray = humidity.split(',');
         const humidityNumberArray = humidityArray.map(element => (
@@ -27,11 +27,15 @@ class LineChart extends Component {
             parseFloat(element)
         ));
 
+        const ozoneArray = ozone.split(',');
+        const ozoneNumberArray = ozoneArray.map(element => (
+            parseFloat(element)
+        ));
         //Colocar los segundos en función de la length de la temperatura
         let medirNumeros = temperatureArray.length * 2
         let resultsSeconds = []
-        for(var i=0; i < medirNumeros; i = i+2){
-            resultsSeconds.push(`${i}s`)    
+        for (var i = 0; i < medirNumeros; i = i + 2) {
+            resultsSeconds.push(`${i}s`)
         }
 
 
@@ -64,7 +68,7 @@ class LineChart extends Component {
                 {
                     label: 'Ozono %',
                     fontColor: 'rgb(255, 255, 255)',
-                    data: [],
+                    data: ozoneNumberArray,
                     fill: true,
                     yAxisID: 'y-axis-2',
                     borderColor: '#FFA48E',
@@ -128,8 +132,8 @@ class LineChart extends Component {
                     <main className='container-charts'>
                         <article className='pair-charts'>
                             <section className='date-time-charts'>
-                                aa mm dd hh:mm
-                        </section>
+                                {experiment}
+                            </section>
                             <section className='name-charts'>
                                 Nombre
                         </section>

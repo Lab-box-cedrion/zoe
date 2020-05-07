@@ -37,12 +37,12 @@ const Historicos = () => {
                         {!data ? 
                             <div>Loading...</div>
                             :
-                            data.map(el => {
+                            data.map((el, index) => {
                                 return(
-                                     <Link to={{pathname: `/historicos_grafica/${el.id}`,state: {
-                                         data: data[el.id]
+                                     <Link to={{pathname: `/historicos_grafica/${el.experiment}`,state: {
+                                         data: data[index]
                                      }}}>
-                                        <article className='pair'>
+                                        <article className='pair' key={el.id}>
                                             <section className= 'date-time'>{el.experiment}
                                             </section>
                                             <section className='name'>Nombre

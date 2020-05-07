@@ -4,14 +4,10 @@ import { Chart } from 'primereact/chart';
 import 'primereact/resources/themes/nova-dark/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import { getJSDocReadonlyTag } from 'typescript';
+import { getJSDocReadonlyTag, isWhiteSpaceLike } from 'typescript';
 
 
 class LineChart extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state = {experimentooo: this.props.location.state.data}
-    // }
 
     render() {
 
@@ -39,48 +35,72 @@ class LineChart extends Component {
             resultsSeconds.push(`${i}s`)
         }
 
-
-        // Datos ejes x e y
-        const multiAxisData = {
+    
+        // Datos ejes 'x' e 'y'
+        const lineData = {
             labels: resultsSeconds,
             datasets: [
                 {
                     label: 'Temperatura ºC',
-                    // bodyFontFamily: 'Nunito, sans-serif',
-                    // titleFontFamily: 'Nunito, sans-serif',
-                    fontColor: 'rgb(255, 255, 255)',
-                    // titleFontSize: 500,
                     data: temperatureNumberArray,
                     fill: false,
-                    yAxisID: 'y-axis-1',
+                    // yAxisID: 'y-axis-1',
                     borderColor: '#7E8CE0',
+                    borderWidth: 2,
+                    hoverBorderWidth: 4,
+                    hoverBorderColor:'rgb(255, 255, 255)',
                     backgroundColor: 'rgb(255, 255, 255)'
                 },
                 {
                     label: 'Humedad %',
                     fontColor: 'rgb(255, 255, 255)',
                     data: humidityNumberArray,
+                    // yAxisID: 'y-axis-1',
                     fill: true,
-                    
                     borderDash: [5, 5],
                     borderColor: '#84dfc4',
-                    backgroundColor: 'rgba(132, 223, 196, 0.7)'
+                    backgroundColor: 'rgba(132, 223, 196, 0.7)',
+                    hoverBorderWidth: 4,
+                    hoverBorderColor:'rgb(255, 255, 255)',
+                    
                 },
                 {
                     label: 'Ozono %',
                     fontColor: 'rgb(255, 255, 255)',
                     data: ozoneNumberArray,
                     fill: true,
-                    yAxisID: 'y-axis-2',
+                    // yAxisID: 'y-axis-1',
                     borderColor: '#FFA48E',
-                    backgroundColor: '#FFA48E'
+                    backgroundColor: '#FFA48E',
+                    hoverBorderWidth: 4,
+                    hoverBorderColor:'rgb(255, 255, 255)',
 
                 }
             ]
         };
         
         // Estilos- opciones de la gráfica
-        const multiAxisOptions = {
+        const options = {
+            title: {
+                display: true,
+                text: 'Temperatura (ºC) Humedad (%) Ozono (%)',
+                fontFamily: "Nunito",
+                fontSize: 15,
+                fontColor: '#DEDEDE',
+                position: 'left'
+
+            },
+            layout: {
+                padding: {
+                        top: 30,
+                        bottom: 2,
+                        right: 4,
+                        left:0
+                }
+            },
+            tooltips: {
+                enabled: true
+            },
             responsive: true,
             hoverMode: 'index',
             stacked: false,
@@ -98,7 +118,12 @@ class LineChart extends Component {
                     },
                     //eje a la izquierda
                     position: 'left',
-                    id: 'y-axis-1',
+                    // id: 'y-axis-1',
+                    gridLines: {
+                        display: true,
+                        color: "#a1a1a1",
+                        drawOnChartArea: true
+                    },
                 }, {
                     type: 'linear',
                     display: true,
@@ -109,15 +134,21 @@ class LineChart extends Component {
                         suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
                         // OR //
                         beginAtZero: true,  // minimum value will be 0.
-                    },
-                    //eje a la derecha
-                    position: 'right',
-                    id: 'y-axis-2',
-                    gridLines: {
-                        drawOnChartArea: false
-                    },
+                    }
                     
-                }]
+                }],
+                xAxes: [{ 
+                    gridLines: {
+                        display: true,
+                        borderDash: [5,5],
+                        color: "#a1a1a1",
+                        drawOnChartArea: true
+                        
+                    },
+                    ticks: {
+                      fontColor: "#CCC", // this here
+                    },
+                }],
             },
             legend: {
                 position: 'bottom',
@@ -157,7 +188,7 @@ class LineChart extends Component {
                 </div>
 
                 <div className="content-section-implementation">
-                <Chart type="line" data={multiAxisData} options={multiAxisOptions} />
+                <Chart type="line" data={lineData} options={options} />
 
 
                 </div>

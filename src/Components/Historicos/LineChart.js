@@ -35,19 +35,8 @@ class LineChart extends Component {
         }
 
 
-
-        const options = {
-            responsive: true,
-            hoverMode: 'index',
-            stacked: false,
-            fontSize: 500,
-            legend: {
-                position: 'bottom'
-            }
-
-        }
-
-        const lineStylesData = {
+        // Datos ejes x e y
+        const multiAxisData = {
             labels: resultsSeconds,
             datasets: [
                 {
@@ -58,6 +47,7 @@ class LineChart extends Component {
                     // titleFontSize: 500,
                     data: temperatureNumberArray,
                     fill: false,
+                    yAxisID: 'y-axis-1',
                     borderColor: '#7E8CE0',
                     backgroundColor: 'rgb(255, 255, 255)'
                 },
@@ -66,6 +56,7 @@ class LineChart extends Component {
                     fontColor: 'rgb(255, 255, 255)',
                     data: humidityNumberArray,
                     fill: true,
+                    
                     borderDash: [5, 5],
                     borderColor: '#84dfc4',
                     backgroundColor: 'rgba(132, 223, 196, 0.7)'
@@ -75,12 +66,53 @@ class LineChart extends Component {
                     fontColor: 'rgb(255, 255, 255)',
                     data: [],
                     fill: true,
+                    yAxisID: 'y-axis-2',
                     borderColor: '#FFA48E',
                     backgroundColor: '#FFA48E'
 
                 }
             ]
         };
+        
+        // Estilos- opciones de la gráfica
+        const multiAxisOptions = {
+            responsive: true,
+            hoverMode: 'index',
+            stacked: false,
+            scales: {
+                yAxes: [{
+                    type: 'linear',
+                    display: true,
+                    ticks: {
+                        suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                        // OR //
+                        beginAtZero: true   // minimum value will be 0.
+                    },
+                    //eje a la izquierda
+                    position: 'left',
+                    id: 'y-axis-1',
+                }, {
+                    type: 'linear',
+                    display: true,
+                    ticks: {
+                        suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                        // OR //
+                        beginAtZero: true   // minimum value will be 0.
+                    },
+                    //eje a la derecha
+                    position: 'right',
+                    id: 'y-axis-2',
+                    gridLines: {
+                        drawOnChartArea: false
+                    }
+                }]
+            },
+            legend: {
+                position: 'bottom'
+            }
+
+        }
+
 
 
 
@@ -106,7 +138,8 @@ class LineChart extends Component {
                 </div>
 
                 <div className="content-section-implementation">
-                    <Chart type="line" data={lineStylesData} option={options} />
+                <Chart type="line" data={multiAxisData} options={multiAxisOptions} />
+
 
                 </div>
             </div>

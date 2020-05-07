@@ -1,5 +1,5 @@
-*{
-  font-family: "Open Sans", "sans-serif";
+p{
+  font-family: 'Nunito', sans-serif;
 }
 
 #cabecera{
@@ -8,6 +8,7 @@
   align-items: center;
   height: 4.1rem;
   background-color: #2c2c2c;
+  
 }
 
 /* Icono ajustes solo en movil */
@@ -28,6 +29,7 @@
 
 /* Menú */
 .nav-link{
+  font-family: 'Monda', sans-serif;
   font-size: 1.2rem;
 }
 
@@ -98,6 +100,7 @@
 .dropdown-item{
   color:#E5E5E5;
   font-size: 1.2rem;
+  font-family: "Open Sans", "sans-serif";
 }
 
 .dropdown-item:hover{
@@ -106,10 +109,17 @@
 }
 
 /* MODAL */
+.modal-title {
+  font-family: 'Monda', sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+}
+  
 .modal-content{
   color: #E5E5E5;
-  background-color: #2b2b2b;
-  color: #E5E5E5;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.16)), #121212;
+  box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.2), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 24px 38px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
 }
 .modal-footer {
   display: flex;
@@ -122,16 +132,7 @@
 button.close {
   color: rgb(255, 255, 255);
 }
-/* .boton-modal {
-  background-color: transparent;
-  border-color: transparent;
-  font-size: 1.2rem;
-}
-boton-modal:focus {
-  color: #BB86FC;
-  background-color: transparent;
-  border-color: transparent;
-} */
+
 
 
 

@@ -3,8 +3,8 @@
     margin: 2rem 2rem;
     width: 600px;
     height: 45px;
-    font-family: Open Sans;
-    font-weight: bold;
+    font-family: 'Monda', sans-serif;
+    font-weight: 400;
     font-size: 30px;
     line-height: 37px;
     display: flex;
@@ -28,9 +28,8 @@
             .date-time-charts {
                 background: rgba(34, 37, 42, 0.51);
                 height: 40px;
-                filter: blur(0.5px);
                 border-radius: 18px;
-                font-weight: 600;
+                font-weight: 300;
                 font-size: 20px;
                 line-height: 33px;
                 display: flex;
@@ -42,9 +41,8 @@
             } 
             .name-charts {
                 background: rgba(34, 37, 42, 0.51);
-                filter: blur(0.5px);
                 border-radius: 18px;
-                font-weight: 600;
+                font-weight: 300;
                 font-size: 20px;
                 line-height: 33px;
                 display: flex;

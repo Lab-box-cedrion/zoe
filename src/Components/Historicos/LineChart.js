@@ -27,6 +27,14 @@ class LineChart extends Component {
             parseFloat(element)
         ));
 
+        //Colocar los segundos en función de la length de la temperatura
+        let medirNumeros = temperatureArray.length * 2
+        let resultsSeconds = []
+        for(var i=0; i < medirNumeros; i = i+2){
+            resultsSeconds.push(`${i}s`)    
+        }
+
+
 
         const options = {
             responsive: true,
@@ -40,7 +48,7 @@ class LineChart extends Component {
         }
 
         const lineStylesData = {
-            labels: ['0', '2s', '4s', '6s', '8s', '10s', '12s', '14s'],
+            labels: resultsSeconds,
             datasets: [
                 {
                     label: 'Temperatura ºC',

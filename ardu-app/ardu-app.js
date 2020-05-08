@@ -4,8 +4,7 @@ const PORT = process.env.PORT || 5005;
 require("dotenv").config();
 const database = require("./conf");
 const bodyParser = require("body-parser");
-const http = require("http");
-const server = http.createServer(app);
+
 app.use(
   bodyParser.urlencoded({
     extended: true,

@@ -52,6 +52,8 @@ p{
   color: #E5E5E5;
   text-decoration: none;
   outline: none;
+  font-family: 'Monda', sans-serif;
+  font-size: 1.2rem;
   
 }
 
@@ -181,9 +183,4 @@ button.close {
     margin-bottom: 2%;
   }
   
-}
-
-/* ----Iphone 4/5 */
-@media only screen and (max-width:346px){
- 
 }

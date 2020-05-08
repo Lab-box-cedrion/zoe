@@ -37,14 +37,14 @@ class LineChart extends Component {
 
     
         // Datos ejes 'x' e 'y'
-        const lineData = {
+        const data = {
             labels: resultsSeconds,
             datasets: [
                 {
                     label: 'Temperatura ºC',
                     data: temperatureNumberArray,
                     fill: false,
-                    // yAxisID: 'y-axis-1',
+                    yAxisID: 'y-axis-1',
                     borderColor: '#7E8CE0',
                     borderWidth: 2,
                     hoverBorderWidth: 4,
@@ -55,7 +55,7 @@ class LineChart extends Component {
                     label: 'Humedad %',
                     fontColor: 'rgb(255, 255, 255)',
                     data: humidityNumberArray,
-                    // yAxisID: 'y-axis-1',
+                    yAxisID: 'y-axis-1',
                     fill: true,
                     borderDash: [5, 5],
                     borderColor: '#84dfc4',
@@ -69,7 +69,7 @@ class LineChart extends Component {
                     fontColor: 'rgb(255, 255, 255)',
                     data: ozoneNumberArray,
                     fill: true,
-                    // yAxisID: 'y-axis-1',
+                    yAxisID: 'y-axis-1',
                     borderColor: '#FFA48E',
                     backgroundColor: '#FFA48E',
                     hoverBorderWidth: 4,
@@ -83,7 +83,7 @@ class LineChart extends Component {
         const options = {
             title: {
                 display: true,
-                text: 'Temperatura (ºC) Humedad (%) Ozono (%)',
+                text: 'Temperatura (ºC) - Humedad (%) - Ozono (%)',
                 fontFamily: "Nunito",
                 fontSize: 15,
                 fontColor: '#DEDEDE',
@@ -111,30 +111,31 @@ class LineChart extends Component {
                     ticks: {
                         fontFamily: "Nunito",
                         fontSize: 10,
-                        fontColor: '#DEDEDE',
+                        fontColor: '#a1a1a1',
                         suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
                         // OR //
                         beginAtZero: true   // minimum value will be 0.
                     },
                     //eje a la izquierda
                     position: 'left',
-                    // id: 'y-axis-1',
+                    id: 'y-axis-1',
                     gridLines: {
                         display: true,
                         color: "#a1a1a1",
                         drawOnChartArea: true
                     },
-                }, {
-                    type: 'linear',
-                    display: true,
-                    ticks: {
-                        fontFamily: "Nunito",
-                        fontSize: 10,
-                        fontColor: '#DEDEDE',
-                        suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
-                        // OR //
-                        beginAtZero: true,  // minimum value will be 0.
-                    }
+                    //si se quisiera poner otro eje id: 'y-axis-2',
+                // }, {
+                //     type: 'linear',
+                //     display: true,
+                //     ticks: {
+                //         fontFamily: "Nunito",
+                //         fontSize: 10,
+                //         fontColor: '#a1a1a1',
+                //         suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                //         // OR //
+                //         beginAtZero: true,  // minimum value will be 0.
+                //     }
                     
                 }],
                 xAxes: [{ 
@@ -188,7 +189,7 @@ class LineChart extends Component {
                 </div>
 
                 <div className="content-section-implementation">
-                <Chart type="line" data={lineData} options={options} />
+                <Chart type="line" data={data} options={options} />
 
 
                 </div>

@@ -5,6 +5,9 @@ import Pie from '../Footer/Pie';
 import './Historicos.scss';
 import axios from 'axios';
 import { InputText } from "primereact/inputtext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
+
 
 
 
@@ -72,11 +75,11 @@ const Historicos = () => {
             </article>
             <article>
                 <form onSubmit={(event) => { enviarDatos(event) }} className="ardu-form">
-                    <span className="p-float-label">
+                    <span className="p-float-label portfield">
                         <InputText id="in" value={form.puerto} onChange={(e) => setValue({ ...form, puerto: e.target.value })} />
                         <label htmlFor="in">Puerto</label>
                     </span>
-                    <span className="p-float-label">
+                    <span className="p-float-label timefield">
                         <InputText id="in" value={form.segundos} onChange={(e) => setValue({ ...form, segundos: e.target.value })} />
                         <label htmlFor="in">Tiempo(s)</label>
                     </span>
@@ -84,12 +87,12 @@ const Historicos = () => {
                         <InputText id="in" value={form.nombre} onChange={(e) => setValue({ ...form, nombre: e.target.value })} />
                         <label htmlFor="in">Nombre experimento</label>
                     </span> */}
-                    <button
-                        className=""
+                    <button 
+                        className="startButton "
                         type="submit"
-                    >
-                        <span>Iniciar experimento</span>{" "}
+                    > <FontAwesomeIcon icon={ faPowerOff } />
                     </button>
+                    <span className='icontext'>Iniciar experimento</span>{" "}
                 </form>
             </article>
 

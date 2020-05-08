@@ -45,10 +45,10 @@ class LineChart extends Component {
                     data: temperatureNumberArray,
                     fill: false,
                     yAxisID: 'y-axis-1',
-                    borderColor: '#7E8CE0',
+                    borderColor: '#2BB882',
                     borderWidth: 2,
                     hoverBorderWidth: 4,
-                    hoverBorderColor:'rgb(255, 255, 255)',
+                    hoverBorderColor:'#65F6D3',
                     backgroundColor: 'rgb(255, 255, 255)'
                 },
                 {
@@ -58,8 +58,8 @@ class LineChart extends Component {
                     yAxisID: 'y-axis-1',
                     fill: false,
                     borderDash: [5, 5],
-                    borderColor: '#84dfc4',
-                    backgroundColor: 'rgba(132, 223, 196, 0.7)',
+                    borderColor: '#B064FC',
+                    backgroundColor: 'rgba(202, 157, 246, 0.8)',
                     hoverBorderWidth: 4,
                     hoverBorderColor:'rgb(255, 255, 255)',
                     
@@ -70,8 +70,8 @@ class LineChart extends Component {
                     data: ozoneNumberArray,
                     fill: true,
                     yAxisID: 'y-axis-1',
-                    borderColor: '#FFA48E',
-                    backgroundColor: '#FFA48E',
+                    borderColor: '#FD867F',
+                    backgroundColor: '#FD867F',
                     hoverBorderWidth: 4,
                     hoverBorderColor:'rgb(255, 255, 255)',
 

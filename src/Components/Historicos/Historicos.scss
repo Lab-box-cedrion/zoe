@@ -30,13 +30,54 @@
     }
 }
 .ardu-form{
-    margin: 12rem;
+    width: 30%;
+    margin: 14rem 2rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 0.15fr 0.3fr;
     grid-column-gap: 1rem;
+    
+    #in {
+        font-size: 14px;
+        color: #BB86FC;
+        background: #2c2c2c;
+        padding: 0.429em;
+        border: 1px solid #BB86FC;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        border-radius: 3px;
+        &:focus {
+            outline-color: #BB86FC;
+            outline-width: 1px;
+            box-shadow: none;
+          }
+        
+    }
+
+    .startButton{
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: #2c2c2c;
+        border: 2px solid #31343C;
+        background: linear-gradient(145deg, #2F3033, #222629);
+        box-shadow:  5px 5px 10px #1f1f1f, 
+             -5px -5px 10px #393939;
+    }
+    .svg-inline--fa {
+        color: rgb(131, 131, 131);
+        font-size: 1rem;
+        margin: 0.5rem 0;
+        
+    }
+    .icontext {
+        width: 10rem;
+        margin: 0.4rem -2rem 0 0;
+    }
+}
+.main {
+    top: 1rem;
 }
 .data-container {
-    margin: 12rem 2rem;
+    margin: -11rem 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto; 
@@ -58,6 +99,7 @@
                 justify-content: center;
                 letter-spacing: -0.015em;
                 color: #BB86FC;
+                
                 &:hover {
                     color: #84dfc4;
                     background: rgba(34, 37, 42, 0.7);
@@ -71,6 +113,10 @@
                     color: #7F7F7F;
                     background: rgba(34, 37, 42, 0.3);
                 }
+                &a:link {
+                    text-decoration: none;
+                }
+
             } 
         }
 }
@@ -99,7 +145,7 @@
         }
     }
     .data-container {
-        margin: 14rem 2rem;
+        margin: -11rem 2rem;
     }
 
     .data-container .pair .date-time {

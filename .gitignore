@@ -12,6 +12,9 @@
 /arduserver-back/node_modules
 /ardu-app/node_modules
 
+/ardu-app/.env
+/ardu-app/node_modules
+
 # production
 /build
 

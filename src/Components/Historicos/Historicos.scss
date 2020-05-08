@@ -48,8 +48,12 @@
             outline-color: #BB86FC;
             outline-width: 1px;
             box-shadow: none;
-          }
-        
+          } 
+    }
+
+    body .p-inputtext :filled {
+        background: #2c2c2c;
+    
     }
 
     .startButton{
@@ -61,6 +65,23 @@
         background: linear-gradient(145deg, #2F3033, #222629);
         box-shadow:  5px 5px 10px #1f1f1f, 
              -5px -5px 10px #393939;
+             &:focus {
+                outline:none !important;
+                outline-width: 0 !important;
+                box-shadow: none;
+              }
+              &:hover {
+                background: rgba(127, 127, 127, 0.3);;
+            }
+            &:active {
+                background: rgba(34, 37, 42, 0.7);
+                border: 0.56px solid #BB86FC;
+            }
+            &:visited {
+                color: #7F7F7F;
+                background: rgba(34, 37, 42, 0.3);
+            }
+              
     }
     .svg-inline--fa {
         color: rgb(131, 131, 131);

@@ -50,7 +50,7 @@ app.get("/graphic-data/:id", (req, res) => {
       console.log(error);
       res.status(400).send(error);
     } else {
-      console.log(result);
+      //console.log('HOLA', result);
       res.status(200).send(result);
     }
   });
@@ -63,7 +63,6 @@ app.post("/insertar-data", (req, res) => {
       console.log(error);
       res.status(400).send(error);
     } else {
-      console.log(error);
       res.status(201).send(results);
     }
   });

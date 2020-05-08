@@ -8,7 +8,24 @@ const fetch = require("node-fetch");
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
 const parser = new Readline();
+
+const path = require('path');
+
 app.use(express.urlencoded({ extended: false }));
+
+
+// Middleware para no tener problemas con los CORS cuando hagamos peticiones a nuestra API en Heroku
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+  res.header("Allow", "GET, POST, OPTIONS, PUT, DELETE");
+  next();
+});
+
 
 app.post("/crear-experimento", (req, res) => {
   const mySerial = new Serialport(req.body.puerto, { baudRate: 9600 });

@@ -5,6 +5,7 @@ import Pie from '../Footer/Pie';
 import './Historicos.scss';
 import axios from 'axios';
 import { InputText } from "primereact/inputtext";
+import { Button } from 'react-bootstrap';
 
 
 
@@ -17,14 +18,14 @@ const Historicos = () => {
     const [form, setValue] = useState({
         puerto: "",
         segundos: null,
-        nombre: "",
+        //nombre: "",
     });
     //Función para enviar datos
     const enviarDatos = async (event) => {
 
-        event.preventDefault();
+        //event.preventDefault();
 
-        await fetch("http://localhost:5005/crear-experimento", {
+        await fetch("http://localhost:3001/crear-experimento", {
 
             method: "POST",
             headers: {
@@ -33,11 +34,17 @@ const Historicos = () => {
             },
 
             body: JSON.stringify({
-                puerto: form.puerto,
-                segundos: form.segundos,
-                nombre: form.nombre
+                puerto: "/dev/ttyUSB0",
+                segundos: "4",
+                //nombre: form.nombre
             })
+
         })
+        console.log(JSON.stringify({
+            puerto: form.puerto,
+            segundos: form.segundos,
+            //nombre: form.nombre
+        }))
         console.log("¡Información enviada con éxito!")
     }
 
@@ -58,6 +65,7 @@ const Historicos = () => {
     return (
         <Fragment>
             <Cabecera />
+            <button onClick={() => enviarDatos()}>click</button>
             <article className='content'>
                 <h1 className='title'>
                     Históricos

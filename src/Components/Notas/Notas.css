@@ -82,7 +82,7 @@
 .container-segundo textarea::placeholder{
   color: rgb(216, 216, 216);
   font-size: 1.2rem;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Monda', sans-serif;
   font-weight: 200;
   text-align: left;
   min-height: 60vh; 
@@ -101,7 +101,7 @@
   box-sizing: border-box;
   overflow: auto;
   font-size: 1rem;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Monda', sans-serif;
   font-weight: 200;
   border-radius: 0.25rem;
   
@@ -127,7 +127,7 @@
   line-height: 19px;
   letter-spacing: -0.015em;
   color: rgb(216, 216, 216);
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Monda', sans-serif;
   font-weight: 200;
 }
 

@@ -12,29 +12,31 @@ import { InputText } from "primereact/inputtext";
 const Historicos = () => {
     // set up the hook. "data" is a variable used to store data, setData the function we call to insert stuff into "data"
     const [data, setData] = useState([]);
+
+    //set up the hook. "form" is a variable used to store form value, setValue the function we call to insert stuff into "form"
     const [form, setValue] = useState({
         puerto: "",
         segundos: null,
         nombre: "",
     });
     //Función para enviar datos
-    const enviarDatos = async (event) =>{
+    const enviarDatos = async (event) => {
 
         event.preventDefault();
-      
-      await fetch("localhost:3001/crear-experimento", {
-          
-        method: "POST",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json"
-        },
-        
-        body: JSON.stringify({
-          puerto: form.puerto,
-          segundos: form.segundos,
-          nombre: form.nombre
-          })
+
+        await fetch("http://localhost:5005/crear-experimento", {
+
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                puerto: form.puerto,
+                segundos: form.segundos,
+                nombre: form.nombre
+            })
         })
         console.log("¡Información enviada con éxito!")
     }
@@ -47,7 +49,7 @@ const Historicos = () => {
             );
 
             setData(result.data);
-            console.log("Connected to the database", result.data);
+            //console.log("Connected to the database", result.data);
         }
         fetchData();
     }, []);
@@ -63,7 +65,7 @@ const Historicos = () => {
                 <p className='about-historicos'>Archivo de  los experimentos. Se puede buscar por día y hora o nombre elegido. Ordenados de más reciente a más antiguo.  Seleccionando uno de  los campos se accederá a  una vista resumen de los resultados y seleccionando cada uno de ellos a  su vez  se  visualiza la gráfica de los resultados.</p>
             </article>
             <article>
-                <form onSubmit={(event)=>{enviarDatos(event)}} className="ardu-form">
+                <form onSubmit={(event) => { enviarDatos(event) }} className="ardu-form">
                     <span className="p-float-label">
                         <InputText id="in" value={form.puerto} onChange={(e) => setValue({ ...form, puerto: e.target.value })} />
                         <label htmlFor="in">Puerto</label>

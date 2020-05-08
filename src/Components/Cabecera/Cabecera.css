@@ -1,5 +1,5 @@
 p{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Monda', sans-serif;
 }
 
 #cabecera{
@@ -102,7 +102,7 @@ p{
 .dropdown-item{
   color:#E5E5E5;
   font-size: 1.2rem;
-  font-family: "Open Sans", "sans-serif";
+  font-family: "Monda", "sans-serif";
 }
 
 .dropdown-item:hover{
@@ -115,6 +115,10 @@ p{
   font-family: 'Monda', sans-serif;
   font-weight: 300;
   font-size: 30px;
+  color: #E5E5E5;
+}
+.subtitulo {
+  color: rgb(186, 186, 186);
 }
   
 .modal-content{

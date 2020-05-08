@@ -14,9 +14,31 @@ const Historicos = () => {
     const [data, setData] = useState([]);
     const [form, setValue] = useState({
         puerto: "",
-        tiempo: null,
+        segundos: null,
         nombre: "",
     });
+    //Función para enviar datos
+    const enviarDatos = async (event) =>{
+
+        event.preventDefault();
+      
+      await fetch("localhost:3001/crear-experimento", {
+          
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        
+        body: JSON.stringify({
+          puerto: form.puerto,
+          segundos: form.segundos,
+          nombre: form.nombre
+          })
+        })
+        console.log("¡Información enviada con éxito!")
+    }
+
     // fetch the data from the API, using axios, and call the function setData to store the JSON inside "data" variable
     useEffect(() => {
         async function fetchData() {
@@ -41,19 +63,19 @@ const Historicos = () => {
                 <p className='about-historicos'>Archivo de  los experimentos. Se puede buscar por día y hora o nombre elegido. Ordenados de más reciente a más antiguo.  Seleccionando uno de  los campos se accederá a  una vista resumen de los resultados y seleccionando cada uno de ellos a  su vez  se  visualiza la gráfica de los resultados.</p>
             </article>
             <article>
-                <form className="ardu-form">
+                <form onSubmit={(event)=>{enviarDatos(event)}} className="ardu-form">
                     <span className="p-float-label">
                         <InputText id="in" value={form.puerto} onChange={(e) => setValue({ ...form, puerto: e.target.value })} />
                         <label htmlFor="in">Puerto</label>
                     </span>
                     <span className="p-float-label">
-                        <InputText id="in" value={form.tiempo} onChange={(e) => setValue({ ...form, tiempo: e.target.value })} />
+                        <InputText id="in" value={form.segundos} onChange={(e) => setValue({ ...form, segundos: e.target.value })} />
                         <label htmlFor="in">Tiempo(s)</label>
                     </span>
-                    <span className="p-float-label">
+                    {/* <span className="p-float-label">
                         <InputText id="in" value={form.nombre} onChange={(e) => setValue({ ...form, nombre: e.target.value })} />
                         <label htmlFor="in">Nombre experimento</label>
-                    </span>
+                    </span> */}
                     <button
                         className=""
                         type="submit"

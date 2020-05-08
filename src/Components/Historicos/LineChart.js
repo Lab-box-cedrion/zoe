@@ -56,7 +56,7 @@ class LineChart extends Component {
                     fontColor: 'rgb(255, 255, 255)',
                     data: humidityNumberArray,
                     yAxisID: 'y-axis-1',
-                    fill: true,
+                    fill: false,
                     borderDash: [5, 5],
                     borderColor: '#84dfc4',
                     backgroundColor: 'rgba(132, 223, 196, 0.7)',
@@ -152,7 +152,7 @@ class LineChart extends Component {
                 }],
             },
             legend: {
-                position: 'bottom',
+                position: 'top',
                 labels: {
                     fontFamily: "Nunito",
                     fontSize: 15,

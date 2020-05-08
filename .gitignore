@@ -9,6 +9,7 @@
 /Backend/.env
 # testing
 /coverage
+/arduserver-back/node_modules
 
 # production
 /build

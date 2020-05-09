@@ -42,9 +42,9 @@
     column-gap: 2.5rem;
     grid-row-gap: 1rem;
     row-gap: 1rem;
-    .pair-charts {
+    .trio-charts {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: 1rem;
         .date-time-charts {
             background: rgba(34, 37, 42, 0.51);
@@ -58,6 +58,7 @@
             justify-content: center;
             letter-spacing: -0.015em;
             color: #BB86FC;
+            width: 20rem;
 
         } 
         .name-charts {
@@ -71,8 +72,36 @@
             align-items: center;
             letter-spacing: -0.015em;
             color: #BB86FC;
-
+            width: 20rem;
         }
+        .export {
+            width: 301px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background-color: #BB86FC;
+            box-shadow: 0px 4px 10px #000000;
+            border-radius: 4px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 25px;
+            text-align: justify;
+            letter-spacing: -0.015em;
+            color: #2c2c2c;
+            width: 20rem;
+            &:hover {
+                background-color: #D7B7FD;
+                box-shadow: none;
+              }
+            &:focus {
+                outline-color: #D7B7FD ;
+            }
+        }
+        
+
     }
 
 }
@@ -127,6 +156,13 @@
                     height: 30px;
                 } 
                 .name-charts {
+                    min-width: 70px;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 28px;
+                    height: 30px;
+                }
+                .exportData {
                     min-width: 70px;
                     font-weight: 400;
                     font-size: 12px;

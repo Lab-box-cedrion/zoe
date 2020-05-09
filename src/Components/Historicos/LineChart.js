@@ -177,12 +177,15 @@ class LineChart extends Component {
                             Sitúa el cursor sobre los nodos para ver el dato exacto.</p>
                     </div>
                     <main className='container-charts'>
-                        <article className='pair-charts'>
+                        <article className='trio-charts'>
                             <section className='date-time-charts'>
                                 {experiment}
                             </section>
                             <section className='name-charts'>
-                                Nombre
+                                Nombre 
+                        </section>
+                        <section className='exportData'>
+                                <button className='export'>Exportar csv</button>
                         </section>
                         </article>
                     </main>

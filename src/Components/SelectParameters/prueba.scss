@@ -8,17 +8,20 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
+  height: 100%;
 }
 .grid-form {
   display: grid;
+  grid-template-rows: 1fr;
   grid-gap: 25px;
 }
 .form-parameters {
-  margin: 1em 1em 0 1em;
+  margin: 1em;
   background-color: #292929;
   box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
-  height: 95%;
+  height: 100%;
+  padding: 0 0 1em 0;
 
   & .item {
     display: flex;
@@ -26,7 +29,7 @@
     justify-content: center;
   }
   .date {
-    width: 90%;
+    width: 80%;
     height: 50px;
     margin: 10px auto;
     color: #e5e5e5;
@@ -37,7 +40,7 @@
     justify-content: center;
   }
   .input_name {
-    width: 90%;
+    width: 80%;
     height: 50px;
     margin: 10px auto;
     padding: 0 2rem;
@@ -50,7 +53,7 @@
     border-radius: 30px;
     justify-content: center;
     &:focus {
-      outline:none !important;
+      outline: none !important;
       outline-width: 0 !important;
       box-shadow: none;
     }
@@ -67,11 +70,11 @@
     transition: border-color 0.2s, box-shadow 0.2s;
     appearance: none;
     border-radius: 3px;
-}
-  #float-input{
+  }
+  #float-input {
     font-size: 14px;
     color: #333333;
-    background: #1E1E1F;
+    background: #1e1e1f;
     padding: 0.429em;
     border: 1px solid rgb(69, 69, 69);
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -81,7 +84,6 @@
   .see-results {
     background-color: #b096ea;
     border: none;
-
   }
 
   .time,
@@ -118,13 +120,20 @@
     }
   }
 }
-.microorganisms {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.select-div {
   color: #e5e5e5;
+  padding-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  .microorganismo {
+  label {
+    padding: 0;
+    algn-items: flex-end;
+  }
+
+  .selected-items {
+    margin-left: 4px;
     background-color: #bb86fc;
     border: 1px solid #bb86fc;
     box-sizing: border-box;
@@ -135,7 +144,8 @@
 .pulsedLight {
   display: flex;
   align-items: center;
-  font-family: 'Monda', sans serif;
+  justify-content: center;
+  font-family: "Monda", sans serif;
   font-style: normal;
   font-size: 16px;
   line-height: 25px;
@@ -160,14 +170,14 @@
 }
 /*button of the bottom of form*/
 .buttons {
-  width: 301px;
-  height: 36px;
+  width: 250px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   border-radius: 4px;
-  font-family: 'Monda', sans serif;
+  font-family: "Monda", sans serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -175,6 +185,7 @@
   text-align: justify;
   letter-spacing: -0.015em;
   color: #2c2c2c;
+
   &.parameters {
     background: #bb86fc;
   }
@@ -190,14 +201,15 @@
     width: 700px;
     margin: auto;
   }
+
   .intro {
     grid-column: 2;
   }
   .grid-form {
     grid-column: 1;
     grid-row: 1;
-
     grid-template-rows: repeat(7, 75px);
+    height: auto;
     grid-g &item {
       display: flex;
       align-items: center;

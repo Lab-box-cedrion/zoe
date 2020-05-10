@@ -199,8 +199,20 @@ input.guardar-nota:active {
     align-items: center;
   }
 
+  .item-primero{
+    height: 23px;
+  }
+
   .item-primero, .container-primero input{
     margin-top: 1.5%;
+    width: 90%;
+  }
+
+  .item-segundo{
+    display:none;
+  }
+
+  .container-segundo textarea{
     width: 90%;
   }
 

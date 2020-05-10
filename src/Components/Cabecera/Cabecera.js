@@ -7,7 +7,7 @@ import {
   NavDropdown
 } from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCog, faClipboard} from "@fortawesome/free-solid-svg-icons";
+import {faCog, faStickyNote} from "@fortawesome/free-solid-svg-icons";
 import {Button, Modal} from "react-bootstrap";
 
 
@@ -52,7 +52,7 @@ const Cabecera = () => {
         </Navbar.Collapse>
       </Navbar>
       {/* ICONO DE NOTAS VISIBLE SOLO EN DISPOSITIVOS MÓVIL */}
-      <div className="icono-notas"><Link to="/notas"><FontAwesomeIcon icon={faClipboard} /></Link></div>
+      <div className="icono-notas"><Link to="/notas"><FontAwesomeIcon icon={faStickyNote} /></Link></div>
       {/* CONTENIDO DEL MODAL */}
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>

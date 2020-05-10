@@ -7,8 +7,6 @@ import {Link} from "react-router-dom";
 
 const Pie = () => {
 
-  const fecha = new Date().getFullYear();
-
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -31,8 +29,6 @@ const Pie = () => {
         <div className="icono-sub"><Link to="maxmin"><FontAwesomeIcon icon={faTasks} /></Link></div>
       </div>
 
-      {/* Icono de copyright */}
-      <p>{fecha} | Cedrion &copy;</p>
       {/* Contenido del modal */}
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>

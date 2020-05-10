@@ -147,7 +147,12 @@ button.close {
 .icono-notas a, .rueda-ajustes a{
   color: #BB86FC;
   outline:none;
+  font-size: 1.6rem;
   
+}
+
+.icono-notas a:hover, .rueda-ajustes a:hover{
+  color:#E5E5E5;
 }
 
 .icono-notas a:active, .rueda-ajustes a:active, .icono-notas a:focus, .rueda-ajustes a:focus{

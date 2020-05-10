@@ -9,7 +9,9 @@
     0px 24px 38px rgba(0, 0, 0, 0.14);
   border-radius: 4px;
   height: max-content;
-  padding: 40px 24px 0 24px;
+  width: auto;
+  margin: 20px 14px 0 14px;
+  padding: 1em 1em 1em 1em;
 }
 
 .intro-title {
@@ -35,4 +37,12 @@
 
   /* On Surface / Medium Emphasis */
   color: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (min-width: 768px) {
+  .intro {
+    margin: 12px 14px 0 14px;
+  }
+}
+@media screen and (min-width: 1198px) {
 }

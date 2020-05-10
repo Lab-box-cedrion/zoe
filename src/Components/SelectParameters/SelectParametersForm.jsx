@@ -29,14 +29,6 @@ function SelectParametersForm() {
     console.log({ name }, { time }, { tension });
   };
 
-  const microorganismsSelectItems = [
-    { label: "Pseudomonas aeruginosa", value: "Pseudomonas aerugniosa" },
-    { label: "Listeria Monocytogenes", value: "Listeria Monocytogenes" },
-    { label: "Escherichia Coli", value: "Escherichia Coli" },
-    { label: "Staphylococcus aureus", value: "Staphylococcus aureus" },
-    { label: "Salmonella typhimurium", value: "Salmonella typhimurium" },
-  ];
-
   return (
     <React.Fragment>
       <Cabecera />
@@ -62,8 +54,8 @@ function SelectParametersForm() {
               type="text"
               placeholder="Nombre (opcional)"
               value={name}
-              autocomplete="off"
-              onChange={(e) => setName((e.target.value).replace(/[^0-9]/g, ""))}
+              autoComplete="off"
+              onChange={(e) => setName(e.target.value.replace(/[<>]/g, ""))}
             />
           </div>
           <div className="time item">
@@ -72,9 +64,9 @@ function SelectParametersForm() {
                 id="float-input"
                 className="input"
                 type="text"
-                size="25"
+                size="20"
                 value={time}
-                autocomplete="off"
+                autoComplete="off"
                 onChange={(e) =>
                   setTime(Number(e.target.value.replace(/[^0-9]/g, "")))
                 }
@@ -102,9 +94,9 @@ function SelectParametersForm() {
                 id="float-input"
                 className="input"
                 type="text"
-                size="25"
+                size="20"
                 value={tension}
-                autocomplete="off"
+                autoComplete="off"
                 onChange={(e) =>
                   setTension(Number(e.target.value.replace(/[^0-9]/g, "")))
                 }
@@ -132,9 +124,9 @@ function SelectParametersForm() {
                 id="float-input"
                 className="input"
                 type="text"
-                size="25"
+                size="20"
                 value={amperage}
-                autocomplete="off"
+                autoComplete="off"
                 onChange={(e) =>
                   setAmperage(Number(e.target.value.replace(/[^0-9]/g, "")))
                 }
@@ -162,8 +154,8 @@ function SelectParametersForm() {
                 id="float-input"
                 className="input"
                 type="text"
-                size="25"
-                autocomplete="off"
+                size="20"
+                autoComplete="off"
                 value={temperature}
                 onChange={(e) =>
                   setTemperature(Number(e.target.value.replace(/[^0-9]/g, "")))
@@ -192,8 +184,8 @@ function SelectParametersForm() {
                 id="float-input"
                 className="input"
                 type="text"
-                size="25"
-                autocomplete="off"
+                size="20"
+                autoComplete="off"
                 value={humidity}
                 onChange={(e) =>
                   setHumidity(Number(e.target.value.replace(/[^0-9]/g, "")))
@@ -216,21 +208,19 @@ function SelectParametersForm() {
               <i className="pi pi-caret-down" style={{ fontSize: "1em" }}></i>
             </button>
           </div>
-          <div className="pulsedLight item">
+          <div className="pulsedLight ">
             <h3 className="title-light">Luz pulsada</h3>
             <InputSwitch
               checked={pulsedLight}
               onChange={(e) => setpulsedLight(e.target.value)}
             />
-            {/*               Encendida:{" "}
-             */}{" "}
             <span className="pulsedLight-label">
               {pulsedLight ? "Encendida" : "Apagada"}
             </span>
           </div>
-          <div className="microorganisms">
-            <label for="cars">Elige microorganismo:</label>
-            <select className="microorganismo">
+          <div className="select-div">
+            <label htmlFor="microorganism">Elige microorganismo:</label>
+            <select className="selected-items">
               <option value="Pseudomonas aeruginosa">
                 Pseudomonas aeruginosa
               </option>
@@ -246,21 +236,28 @@ function SelectParametersForm() {
               </option>
             </select>
           </div>
+          <div className="select-div">
+            <label htmlFor="sustratos">Elige sustrato:</label>
+            <select className="selected-items">
+              <option value="Tierra">Tierra</option>
+              <option value="Carbonados">Carbonados</option>
+            </select>
+          </div>
           <div className="item">
             <button
-              className="aply-parameters parameters buttons item"
+              className="aply-parameters parameters buttons"
               type="submit"
             >
               <span>APLICAR PARÁMETROS</span>{" "}
             </button>
           </div>
-          <div className="item">
-            <button className="see-results forms buttons item" type="submit">
+          <div className="item ">
+            <button className="see-results forms buttons" type="submit">
               <span>VER RESULTADOS</span>{" "}
             </button>
           </div>
-          <div className="item">
-            <button className="go-notes notes buttons item" type="submit">
+          <div className="item ">
+            <button className="go-notes notes buttons" type="submit">
               <span>IR A NOTAS</span>{" "}
             </button>
           </div>

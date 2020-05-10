@@ -52,6 +52,10 @@
     font-size: 1.5rem;
   }
 
+  .icono-sub a:active, .icono-sub a:focus{
+    color: #E5E5E5;
+  }
+
   .nav-link .btn{
     color: #BB86FC;
   }

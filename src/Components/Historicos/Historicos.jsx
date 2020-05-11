@@ -92,7 +92,6 @@ const Historicos = () => {
                         type="submit"
                     > <FontAwesomeIcon icon={ faPowerOff } />
                     </button>
-                    <span className='icontext'>Iniciar experimento</span>{" "}
                 </form>
             </article>
 

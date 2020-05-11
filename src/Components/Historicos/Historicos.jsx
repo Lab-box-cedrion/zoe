@@ -48,21 +48,23 @@ const Historicos = () => {
             nombre: form.nombre
         }))
         console.log("¡Información enviada con éxito!")
+        setTimeout(fetchData(), 2000);
+    }
+
+
+    async function fetchData() {
+        const result = await axios.get(
+            'http://localhost:5005/graphic-data',
+        );
+
+        setData(result.data);
+        //console.log("Connected to the database", result.data);
     }
 
     // fetch the data from the API, using axios, and call the function setData to store the JSON inside "data" variable
     useEffect(() => {
-        async function fetchData() {
-            const result = await axios.get(
-                'http://localhost:5005/graphic-data',
-            );
-
-            setData(result.data);
-            //console.log("Connected to the database", result.data);
-        }
         fetchData();
     }, []);
-
 
     return (
         <Fragment>
@@ -87,10 +89,10 @@ const Historicos = () => {
                         <InputText id="in" value={form.nombre} onChange={(e) => setValue({ ...form, nombre: e.target.value })} />
                         <label htmlFor="in">Nombre experimento</label>
                     </span>
-                    <button 
+                    <button
                         className="startButton "
                         type="submit"
-                    > <FontAwesomeIcon icon={ faPowerOff } />
+                    > <FontAwesomeIcon icon={faPowerOff} />
                     </button>
                 </form>
             </article>
@@ -109,8 +111,12 @@ const Historicos = () => {
                                 <article className='pair' key={el.id}>
                                     <section className='date-time'>{el.experiment}
                                     </section>
-                                    <section className='name'>{el.nombre.length === 0 ? 
-                                    "---": el.nombre}
+                                    <section className='name'>{el.nombre.length === 0
+
+                                        ? "---"
+                                        : el.nombre
+
+                                    }
                                     </section>
                                 </article>
                             </Link>

@@ -98,7 +98,7 @@ const Historicos = () => {
 
             <main className='data-container'>
                 {!data ?
-                    <div><div class="lds-ripple"><div></div><div></div></div></div>
+                    <div><div className="lds-ripple"><div></div><div></div></div></div>
                     :
                     data.map((el, index) => {
                         return (

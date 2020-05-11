@@ -34,7 +34,7 @@ const Notas = () => {
         </div>
         </form>
         <div className="container-tercero">
-          <input type="submit" className="guardar-nota" value="GUARDAR NOTA" onClick={()=> console.log("Nota guardada")}/>
+          <input type="submit" className="guardar-nota" value="Guardar nota" onClick={()=> console.log("Nota guardada")}/>
         </div>
       
       

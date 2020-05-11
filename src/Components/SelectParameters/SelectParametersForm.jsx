@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Cabecera from "../Cabecera/Cabecera";
 import Pie from "../Footer/Pie";
-
+import { Link } from "react-router-dom";
 import Intro from "./Intro";
 
 import { InputText } from "primereact/inputtext";
@@ -32,7 +32,6 @@ function SelectParametersForm() {
   return (
     <React.Fragment>
       <Cabecera />
-
       <section className="grid">
         <Intro />
         <form
@@ -248,17 +247,17 @@ function SelectParametersForm() {
               className="aply-parameters parameters buttons"
               type="submit"
             >
-              <span>APLICAR PARÁMETROS</span>{" "}
+              <span>Aplicar parámetros</span>{" "}
             </button>
           </div>
           <div className="item ">
             <button className="see-results forms buttons" type="submit">
-              <span>VER RESULTADOS</span>{" "}
+              <span>Ver resultados</span>{" "}
             </button>
           </div>
           <div className="item ">
             <button className="go-notes notes buttons" type="submit">
-              <span>IR A NOTAS</span>{" "}
+            <Link to="/notas"><span>Ir a notas</span>{" "}</Link>
             </button>
           </div>
         </form>

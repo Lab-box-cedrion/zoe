@@ -1,0 +1,175 @@
+.containerCss {
+  max-width: 1200px;
+  height: 90vh;
+  margin: 10px auto;
+  padding: 1em 1.2em;
+  width: 80%;
+  display: -ms-grid;
+  display: grid;
+  /* Define Auto Row size */
+  grid-auto-rows: 13 auto;
+  /*Define our columns */
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.form-parameters {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 1em 1em 0 1em;
+  background-color: #292929;
+  -webkit-box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.date {
+  width: 90%;
+  height: 50px;
+  background-color: #1e1e1f;
+  -webkit-box-shadow: inset -5px -5px 10px #242529, inset 5px 5px 10px #0a0a0a;
+          box-shadow: inset -5px -5px 10px #242529, inset 5px 5px 10px #0a0a0a;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5em;
+}
+
+.time,
+.amperage,
+.tension,
+.temperature,
+.humidity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.time .p-button,
+.amperage .p-button,
+.tension .p-button,
+.temperature .p-button,
+.humidity .p-button {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  background-color: #bb86fc;
+  border: 1px solid #bb86fc;
+  margin: 0.2em;
+}
+
+.pulsedLight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pulsedLight first {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: justify;
+  letter-spacing: -0.015em;
+  color: #e5e5e5;
+  margin: 0 1em 0 0;
+}
+
+.pulsedLight .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background: linear-gradient(94.05deg, #bb86fc 14.73%, #03dac6 97.52%);
+  border-radius: 37.0526px;
+}
+
+.pulsedLight .pulsedLight-label {
+  padding-left: 1em;
+}
+
+#float-input {
+  color: #e5e5e5;
+  font-size: 1rem;
+}
+
+.button {
+  width: 44px;
+  height: 44px;
+  background-color: #b096ea;
+  border: none;
+  margin: 0 0.1em 0;
+  border-radius: 50%;
+  padding: 0.2 0.5em 0.5em 0.5em;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.buttons {
+  width: 301px;
+  height: 36px;
+}
+
+.forms {
+  border: none;
+  border-radius: 4px;
+  background: #bb86fc;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: justify;
+  letter-spacing: -0.015em;
+  color: #2c2c2c;
+}
+
+.notes {
+  border: none;
+  background: #03dac6;
+  border-radius: 4px;
+}
+
+.microorganismo {
+  background: #bb86fc;
+  border: 1px solid #bb86fc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 7px;
+}
+
+body a {
+  color: #2c2c2c;
+  text-decoration: none;
+}
+/*# sourceMappingURL=SelectParametersForm.css.map */

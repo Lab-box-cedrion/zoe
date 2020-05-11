@@ -38,14 +38,14 @@ const Historicos = () => {
             body: JSON.stringify({
                 puerto: form.puerto,
                 segundos: form.segundos,
-                //nombre: form.nombre
+                nombre: form.nombre
             })
 
         })
         console.log(JSON.stringify({
             puerto: form.puerto,
             segundos: form.segundos,
-            //nombre: form.nombre
+            nombre: form.nombre
         }))
         console.log("¡Información enviada con éxito!")
     }
@@ -83,10 +83,10 @@ const Historicos = () => {
                         <InputText id="in" value={form.segundos} onChange={(e) => setValue({ ...form, segundos: e.target.value })} />
                         <label htmlFor="in">Tiempo(s)</label>
                     </span>
-                    {/* <span className="p-float-label">
+                    <span className="p-float-label">
                         <InputText id="in" value={form.nombre} onChange={(e) => setValue({ ...form, nombre: e.target.value })} />
                         <label htmlFor="in">Nombre experimento</label>
-                    </span> */}
+                    </span>
                     <button 
                         className="startButton "
                         type="submit"
@@ -110,7 +110,12 @@ const Historicos = () => {
                                 <article className='pair' key={el.id}>
                                     <section className='date-time'>{el.experiment}
                                     </section>
-                                    <section className='name'>Nombre
+                                    <section className='name'>{el.nombre.length === 0
+                                    
+                                        ? "---"
+                                        : el.nombre
+
+                                    }
                                             </section>
                                 </article>
                             </Link>

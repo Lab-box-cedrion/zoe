@@ -77,15 +77,18 @@ app.post("/crear-experimento", (req, res) => {
   mySerial.on("open", function () {
     console.log("Opened Serial Port");
   });
+
+  const nombre = req.body.nombre
   const date = new Date().toLocaleString("es-Es");
   const globalExperiment = {
     experiment: date,
+    nombre: nombre,
     temperature: [],
     humidity: [],
     ozone: [],
   };
 
-  let start = false;
+
 
   //recibit datos de Arduino a través del puerto de serie
   mySerial.on("data", function (data) {

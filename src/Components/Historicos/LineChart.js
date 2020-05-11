@@ -12,7 +12,7 @@ class LineChart extends Component {
     render() {
 
 
-        const { humidity, temperature, ozone, experiment } = this.props.readingData;
+        const { humidity, temperature, ozone, experiment, nombre } = this.props.readingData;
 
         const humidityArray = humidity.split(',');
         const humidityNumberArray = humidityArray.map(element => (
@@ -182,7 +182,7 @@ class LineChart extends Component {
                                 {experiment}
                             </section>
                             <section className='name-charts'>
-                                Nombre 
+                                {nombre} 
                         </section>
                         <section className='exportData'>
                                 <button className='export'>Exportar csv</button>

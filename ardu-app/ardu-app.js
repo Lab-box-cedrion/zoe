@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 });
 //Ruta get para recuperar los experimentos y sus lecturas
 app.get("/graphic-data", (req, res) => {
-  database.query("SELECT * FROM readings", (error, results) => {
+  database.query("SELECT * FROM readings ORDER BY id DESC", (error, results) => {
     if (error) {
       console.log(error);
       res.status.send(error);

@@ -110,9 +110,13 @@ const Historicos = () => {
                             }}>
                                 <article className='pair' key={el.id}>
                                     <section className='date-time'>{el.experiment}
-                                    </section<
-                                    <section className='name'>{el.nombre.length === 0 ?
-                                        "---" : el.nombre}
+                                    </section>
+                                    <section className='name'>{el.nombre.length === 0
+
+                                        ? "---"
+                                        : el.nombre
+
+                                    }
                                     </section>
                                 </article>
                             </Link>

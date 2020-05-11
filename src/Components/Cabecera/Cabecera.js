@@ -50,20 +50,15 @@ const Cabecera = () => {
               </Button>
             </Nav.Link>
             {/* ----FIN DEL MODAL---- */}
-            <NavDropdown title="Ajustes" id="collasible-nav-dropdown">
-              <NavDropdown.Item>
-                <Link to="/ajustes">Ajustes</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to="/notas">Notas</Link>
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link>
+              <Link to="/ajustes">Ajustes</Link>
+            </Nav.Link>
 
             <Nav.Link>
               <Link to="/historicos">Históricos</Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/maxmin">Max/Min</Link>
+              <Link to="/notas">Notas</Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

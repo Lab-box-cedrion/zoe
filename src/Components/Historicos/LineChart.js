@@ -182,10 +182,11 @@ class LineChart extends Component {
                                 {experiment}
                             </section>
                             <section className='name-charts'>
-                                {nombre} 
+                                {nombre.length !== 0 ? nombre : '---'}
+                                 
                         </section>
                         <section className='exportData'>
-                                <button className='export'>Exportar csv</button>
+                                <button className='export'>Exportar CSV</button>
                         </section>
                         </article>
                     </main>

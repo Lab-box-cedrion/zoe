@@ -33,7 +33,7 @@ app.get("/graphic-data", (req, res) => {
       res.send(results);
     }
   });
-});
+});/* 
 //Ruta get para la gráfica por su id
 app.get("/graphic-data/:id", (req, res) => {
   database.query("SELECT * FROM readings WHERE id= ?", (error, result) => {
@@ -45,7 +45,7 @@ app.get("/graphic-data/:id", (req, res) => {
       res.status(200).send(result);
     }
   });
-});
+}); */
 app.post("/insertar-data", (req, res) => {
   console.log(req.body);
   database.query("INSERT INTO readings SET ?", req.body, (error, results) => {

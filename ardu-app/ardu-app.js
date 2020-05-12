@@ -29,7 +29,7 @@ app.get("/graphic-data", (req, res) => {
       console.log(error);
       res.status.send(error);
     } else {
-      console.log(results);
+      //console.log(results);
       res.send(results);
     }
   });
@@ -53,7 +53,7 @@ app.post("/insertar-data", (req, res) => {
       console.log(error);
       res.status(400).send(error);
     } else {
-      console.log(error);
+      console.log(results);
       res.status(201).send(results);
     }
   });

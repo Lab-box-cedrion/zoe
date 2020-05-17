@@ -44,8 +44,8 @@
   background: rgba(34, 37, 42, 0.51);
   height: 40px;
   border-radius: 18px;
-  font-weight: 600;
-  font-size: 1.25rem;
+  font-weight: 300;
+  font-size: 1.2rem;
   line-height: 33px;
   display: flex;
   align-items: center;
@@ -81,7 +81,7 @@
 
 .container-segundo textarea::placeholder{
   color: rgb(216, 216, 216);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: 'Monda', sans-serif;
   font-weight: 200;
   text-align: left;
@@ -176,6 +176,7 @@
 input.guardar-nota {
   align-content: center;
   justify-content: center;
+  font-size: 1.2rem;
   
 }
 input.guardar-nota:hover {
@@ -213,7 +214,7 @@ input.guardar-nota:active {
   }
 
   .container-segundo textarea{
-
+    
     width: 90%;
   }
 
@@ -222,6 +223,7 @@ input.guardar-nota:active {
   margin-right: 4.7%;
   margin-top: 0;
   margin-left:4.7%;
+  
   }
 
 }

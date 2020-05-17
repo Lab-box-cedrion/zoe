@@ -1,6 +1,16 @@
+
+$primaryColor: #BB86FC;
+$secondColor: #03DAC6;
+$deep: #1E1E1F;
+$dark: #2c2c2c;
+$softDark:#383838;
+$medium: #3D3D3D;
+$light:#DEDEDE;
+$errorColor: #FD695E;
+
 .outerbox {
-    color: #E5E5E5;
-    background-color: #3D3D3D;
+    color: $light;
+    background-color: $medium;
     bottom:30px;
     height: 900px;
     
@@ -57,7 +67,7 @@
             align-items: center;
             justify-content: center;
             letter-spacing: -0.015em;
-            color: #BB86FC;
+            color: $primaryColor;
             width: 20rem;
 
         } 
@@ -71,7 +81,7 @@
             justify-content: center;
             align-items: center;
             letter-spacing: -0.015em;
-            color: #BB86FC;
+            color: $primaryColor;
             width: 20rem;
         }
         .export {
@@ -81,7 +91,7 @@
             align-items: center;
             justify-content: center;
             border: none;
-            background-color: #BB86FC;
+            background-color: $primaryColor;
             box-shadow: 0px 4px 10px #000000;
             border-radius: 4px;
             font-style: normal;

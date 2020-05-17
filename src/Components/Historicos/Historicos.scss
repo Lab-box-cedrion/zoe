@@ -1,3 +1,13 @@
+$primaryColor: #BB86FC;
+$secondColor: #03DAC6;
+$deep: #1E1E1F;
+$dark: #2c2c2c;
+$softDark:#383838;
+$medium: #3D3D3D;
+$light:#DEDEDE;
+$errorColor: #FD695E;
+
+
 .content {
     width:100%;
     display: flex;
@@ -20,7 +30,7 @@
         display: flex;
         align-items: center;
         letter-spacing: 0;
-        color: #E5E5E5;
+        color: $light;
 
     }
     .about-historicos{
@@ -28,7 +38,7 @@
         right: 30%;
         margin: 5rem  2rem;
         font-size: 16.7px;
-        color: #E5E5E5;
+        color: $light;
         font-family: 'Monda', sans-serif;
         font-weight: 100;
     }
@@ -68,21 +78,21 @@
     
     #in {
         font-size: 14px;
-        color: #BB86FC;
+        color: $primaryColor;
         background: #2c2c2c;
         padding: 0.429em;
-        border: 1px solid #BB86FC;
+        border: 1px solid $primaryColor;
         transition: border-color 0.2s, box-shadow 0.2s;
         border-radius: 3px;
         &:focus {
-            outline-color: #BB86FC;
+            outline-color: $primaryColor;
             outline-width: 1px;
             box-shadow: none;
           } 
     }
 
     body .p-inputtext :filled {
-        background: #2c2c2c;
+        background: $dark;
     
     }
 
@@ -105,7 +115,7 @@
             }
             &:active {
                 background: rgba(34, 37, 42, 0.7);
-                border: 0.56px solid #BB86FC;
+                border: 0.56px solid $primaryColor;
             }
             &:visited {
                 color: #7F7F7F;
@@ -156,7 +166,7 @@
     column-gap: 2.5rem;
     row-gap: 1rem;
     a {
-        text-decoration-color: #BB86FC ;
+        text-decoration-color: $primaryColor ;
     }
     @media screen and (max-width: 736px) {
         margin: 6rem 2rem;
@@ -218,7 +228,7 @@
             margin: 40rem 1rem 1rem 2rem;
             align-items: center;
             letter-spacing: -0.015em;
-            color: #E5E5E5;
+            color: $light;
         }
     }
     .data-container {

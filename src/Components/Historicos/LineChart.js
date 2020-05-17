@@ -68,7 +68,7 @@ class LineChart extends Component {
                     label: 'Ozono %',
                     fontColor: 'rgb(255, 255, 255)',
                     data: ozoneNumberArray,
-                    fill: true,
+                    fill: false,
                     yAxisID: 'y-axis-1',
                     borderColor: '#FD867F',
                     backgroundColor: '#FD867F',

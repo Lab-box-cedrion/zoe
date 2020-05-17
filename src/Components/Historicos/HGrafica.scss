@@ -1,3 +1,12 @@
+$primaryColor: #BB86FC;
+$secondColor: #03DAC6;
+$deep: #1E1E1F;
+$dark: #2c2c2c;
+$softDark:#383838;
+$medium: #3D3D3D;
+$light:#DEDEDE;
+$errorColor: #FD695E;
+
 .title {
     position: absolute;
     margin: 2rem 2rem;
@@ -10,7 +19,7 @@
     display: flex;
     align-items: center;
     letter-spacing: -0.015em;
-    color: #E5E5E5;
+    color: $light;
 
 }
 .data-container-charts {
@@ -36,7 +45,7 @@
                 align-items: center;
                 justify-content: center;
                 letter-spacing: -0.015em;
-                color: #BB86FC;
+                color: $primaryColor;
 
             } 
             .name-charts {
@@ -49,19 +58,14 @@
                 justify-content: center;
                 align-items: center;
                 letter-spacing: -0.015em;
-                color: #BB86FC;
-
-            }
-            
-        }
-        
+                color:$primaryColor;
+            }   
+        }        
 }
 // MEDIA QUERIES  
 
   // Ipad
   @media screen and (max-width:1024px) {
-
-  
 
 }
 
@@ -71,8 +75,7 @@
      .data-container-charts {
         transform: rotate(90deg);
       }
-      
-      
+         
 }
 
  // iphone 6, 7, 8 plus

@@ -253,7 +253,7 @@ function SelectParametersForm() {
           </div>
           <div className="item ">
             <button className="go-notes notes buttons" type="submit">
-              <Link to="/notas">
+              <Link to="/notas" >
                 <span>Ir a notas</span>{" "}
               </Link>
             </button>

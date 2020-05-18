@@ -251,6 +251,11 @@ $errorColor: #FD695E;
         font-size: 14px;
         line-height: 30px;
     }
+    .submission .ardu-form {
+        width: 90%;
+        margin: 6rem 2rem 2rem 2rem;
+    }
+    
 }   
     // iphone 6, 7, 8 plus
     @media screen and (max-width:736px){
@@ -265,7 +270,7 @@ $errorColor: #FD695E;
         }
         
         .data-container {
-            margin: 6rem 2rem 1rem 2rem;
+            margin: 3rem 2rem 1rem 2rem;
             display: grid;
             grid-template-columns: 1fr;
                 .pair {
@@ -294,6 +299,9 @@ $errorColor: #FD695E;
             right: 1%;
             margin: 5rem 2rem;
             font-size: 14px;
+        }
+        .ardu-form{
+            margin-top: 2rem;
         }
         }
         

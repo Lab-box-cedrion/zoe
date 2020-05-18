@@ -186,7 +186,11 @@ class LineChart extends Component {
                 {nombre.length !== 0 ? nombre : "---"}
               </section>
               <section className="exportData">
-                <CSVLink className="export" data={arrayProps}>
+                <CSVLink
+                  className="export"
+                  filename={`${experiment}-${nombre}.csv`}
+                  data={arrayProps}
+                >
                   Exportar CSV
                 </CSVLink>
               </section>

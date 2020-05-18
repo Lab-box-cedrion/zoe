@@ -163,9 +163,9 @@ class LineChart extends Component {
 
     const arrayProps = [];
     arrayProps.push(
-      humidityNumberArray,
-      temperatureNumberArray,
-      ozoneNumberArray
+      ["Humedad", ...humidityNumberArray],
+      ["Temperatura", ...temperatureNumberArray],
+      ["Ozono", ...ozoneNumberArray]
     );
 
     return (

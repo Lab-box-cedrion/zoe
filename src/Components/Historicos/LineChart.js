@@ -122,7 +122,7 @@ class LineChart extends Component {
               color: "#a1a1a1",
               drawOnChartArea: true,
             },
-            //si se quisiera poner otro eje id: 'y-axis-2',
+            // //si se quisiera poner otro eje id: 'y-axis-2',
             // }, {
             //     type: 'linear',
             //     display: true,

@@ -53,6 +53,7 @@ $errorColor: #FD695E;
     grid-row-gap: 1rem;
     row-gap: 1rem;
     .trio-charts {
+        height: min-content;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: 1rem;
@@ -123,7 +124,8 @@ $errorColor: #FD695E;
         display: grid;
        
         grid-template-columns: 1fr;
-            .pair-charts {
+            .trio-charts {
+                height: min-content;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-column-gap: 1rem;
@@ -133,6 +135,7 @@ $errorColor: #FD695E;
                     font-size: 12px;
                     line-height: 28px;
                     height: 30px;
+                    margin-bottom: 1rem;
                 } 
                 .name-charts {
                     min-width: 70px;
@@ -140,6 +143,16 @@ $errorColor: #FD695E;
                     font-size: 12px;
                     line-height: 28px;
                     height: 30px;
+                    margin-bottom: 1rem;
+                }
+                .export {
+                
+                    min-width: 70px;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 28px;
+                    height: 30px;    
+                    
                 }
             }
         }
@@ -148,15 +161,21 @@ $errorColor: #FD695E;
 
 // iphone 6, 7, 8 plus
 @media screen and (max-width:736px){
+    .outerbox{
+        margin: 0 auto;
+        height: 600px;
+    }
     
     .container-charts {
-        margin: 2rem;
+        margin: 0 auto;
         display: grid;
        
         grid-template-columns: 1fr;
-            .pair-charts {
+            .trio-charts {
+                margin: 0 auto;
+                height: min-content;
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
                 grid-column-gap: 1rem;
                 .date-time-charts {
                     min-width: 70px;
@@ -181,38 +200,44 @@ $errorColor: #FD695E;
                 }
             }
         }
+        
+}
         // iphone 5
-@media screen and (max-width:568px){
-    .container-charts {
-        margin: 2rem;
-        display: grid;
-        grid-template-columns: 1fr;
-            .pair-charts{
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-column-gap: 1rem;
-                .date-time-charts {
-                    min-width: 100px;
-                    height:30px;
-                    font-weight: 350;
-                    font-size: 11px;
-                    line-height: 28px;
-                    height: 28px;
-
-                } 
-                .name-charts {
-                    min-width: 100px;
-                    height:30px;
-                    font-weight: 350;
-                    font-size: 11px;
-                    line-height: 28px;
-                    height: 28px;
+    @media screen and (max-width:568px){
+    .outerbox {
+        height: min-content;
+        .container-charts {
+            height: min-content;
+            display: grid;
+            grid-template-columns: 1fr;
+                .trio-charts {
+                    height: min-content;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-column-gap: 1rem;
+                    .date-time-charts {
+                        min-width: 100px;
+                        height:30px;
+                        font-weight: 350;
+                        font-size: 11px;
+                        line-height: 28px;
+                        height: 28px;
+    
+                    } 
+                    .name-charts {
+                        min-width: 100px;
+                        height:30px;
+                        font-weight: 350;
+                        font-size: 11px;
+                        line-height: 28px;
+                        height: 28px;
+                    }
                 }
             }
         }
     }
     
-    }
     
 }
+    
 

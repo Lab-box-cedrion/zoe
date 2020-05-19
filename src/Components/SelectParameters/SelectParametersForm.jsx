@@ -7,7 +7,7 @@ import Intro from "./Intro";
 import { InputText } from "primereact/inputtext";
 import { InputSwitch } from "primereact/inputswitch";
 
-import "./prueba.scss";
+import "./SelectParametersForm.scss";
 
 function SelectParametersForm() {
   // contiene los nombres de los campos de los input

@@ -88,16 +88,20 @@ const Cabecera = () => {
             En esta pantalla se encuentran los campos a rellenar para realizar
             un experimento.
             <br />
-            Archivo general de los experimentos realizados. Al clickar en cada
-            experimento se enseña su gráfica y una botón para descargar un
-            archivo .csv con las lecturas recogidas. encuentra el listado de
-            experimentos que se han realizado{" "}
-            <strong>resultado de experimento</strong>. Tiene acceso directo
-            desde el menú de navegación, <strong>HISTÓRICOS</strong>, donde se
-            muestra el último, o todos los anteriores
+            También es el archivo general de los experimentos realizados. Al
+            clickar en cada experimento (nombre o fecha) se muestra su gráfica y
+            una botón para descargar un archivo .csv con las lecturas recogidas.
           </p>
           <p>
-            Clicando sobre un parámetro se accede a la <strong>gráfica</strong>.
+            NOTAS
+            <br />
+            En esta pantalla se encuentra una sección en la que se puede guardar
+            anotaciones sobre el experimento realizado. Estas notas se guardan
+            asociadas a la fecha y nombre del experimento.
+            <br />
+            También es el archivo general de los experimentos realizados. Al
+            clickar en cada experimento (nombre o fecha) se muestra su gráfica y
+            una botón para descargar un archivo .csv con las lecturas recogidas.
           </p>
         </Modal.Body>
         <Modal.Footer>

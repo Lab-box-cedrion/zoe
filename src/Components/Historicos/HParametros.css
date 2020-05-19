@@ -3,6 +3,7 @@
   display:flex;
   flex-flow: row wrap;
   height: 10vh;
+  width:auto;
   justify-content: space-evenly;
   align-items: flex-end;
 }
@@ -79,6 +80,12 @@
   font-size: 1.2rem;
   text-align: center;
 }
+.disabled p{
+  color: rgb(113, 113, 113);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
 
 .tercer-container{
   display: flex;
@@ -99,6 +106,62 @@
   margin-right: 2%;
   margin-left: 2%;
 }
+.desactivado {
+  background: linear-gradient(320.66deg, #434343 14.75%, #434343 84.81%);
+  filter: blur(1px);
+  border-radius: 100px;
+}
+.desactivado p {
+  color: #7F7F7F;
+}
 
-/* Media queries */
+/* Media queries
+iphone 6, 7, 8 plus */
 
+    @media screen and (max-width:736px){
+      .segundo-container, .tercer-container {
+        justify-content: space-evenly; 
+      }
+      
+      .paracircle p {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 7%;
+    }
+    .parameter p {
+      font-size: .8rem;
+      font-size: .8rem;
+      min-width: 60px;
+      margin-top: 10px;
+    }
+    .primer-item {
+      width: 10rem;
+    }
+
+         
+}
+
+/*iphone 5 */
+
+    @media screen and (max-width:568px){
+      .segundo-container, .tercer-container {
+        justify-content: space-around; 
+      }
+      .paracircle {
+        max-width: 80px;
+        max-height: 80px;
+      }
+      .paracircle p {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 7%;
+    }
+    .parameter p {
+      font-size: .8rem;
+      font-size: .8rem;
+      min-width: 60px;
+      margin-top: 10px;
+  }
+
+         
+}

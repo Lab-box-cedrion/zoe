@@ -24,16 +24,19 @@ app.use((req, res, next) => {
 });
 //Ruta get para recuperar los experimentos y sus lecturas
 app.get("/graphic-data", (req, res) => {
-  database.query("SELECT * FROM readings ORDER BY id DESC", (error, results) => {
-    if (error) {
-      console.log(error);
-      res.status.send(error);
-    } else {
-      console.log(results);
-      res.send(results);
+  database.query(
+    "SELECT * FROM readings ORDER BY id DESC",
+    (error, results) => {
+      if (error) {
+        console.log(error);
+        res.status.send(error);
+      } else {
+        //console.log(results);
+        res.send(results);
+      }
     }
-  });
-});
+  );
+}); /* 
 //Ruta get para la gráfica por su id
 app.get("/graphic-data/:id", (req, res) => {
   database.query("SELECT * FROM readings WHERE id= ?", (error, result) => {
@@ -45,7 +48,7 @@ app.get("/graphic-data/:id", (req, res) => {
       res.status(200).send(result);
     }
   });
-});
+}); */
 app.post("/insertar-data", (req, res) => {
   console.log(req.body);
   database.query("INSERT INTO readings SET ?", req.body, (error, results) => {
@@ -53,23 +56,19 @@ app.post("/insertar-data", (req, res) => {
       console.log(error);
       res.status(400).send(error);
     } else {
-      console.log(error);
+      console.log(results);
       res.status(201).send(results);
     }
   });
 });
 
 //ardu-server.js petición post
-/* const http = require("http");
- const server = http.createServer(app);*/
 
 const fetch = require("node-fetch");
 
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
 const parser = new Readline();
-
-
 
 app.post("/crear-experimento", (req, res) => {
   const mySerial = new Serialport(req.body.puerto, { baudRate: 9600 });
@@ -78,7 +77,7 @@ app.post("/crear-experimento", (req, res) => {
     console.log("Opened Serial Port");
   });
 
-  const nombre = req.body.nombre
+  const nombre = req.body.nombre;
   const date = new Date().toLocaleString("es-Es");
   const globalExperiment = {
     experiment: date,
@@ -88,21 +87,15 @@ app.post("/crear-experimento", (req, res) => {
     ozone: [],
   };
 
-
-
   //recibit datos de Arduino a través del puerto de serie
   mySerial.on("data", function (data) {
     let dataOne = data.toString().split(",");
 
-    //let experimentJson = JSON.stringify(globalExperiment);
     globalExperiment.humidity.push(parseFloat(dataOne[0]));
     globalExperiment.temperature.push(parseFloat(dataOne[1]));
-    globalExperiment.ozone.push(parseFloat(data[2]));
+    globalExperiment.ozone.push(parseFloat(dataOne[2]));
     console.log(globalExperiment);
     console.log("que soy");
-
-    /*   mySerial.close();
-     */
   });
 
   console.log("estoy fuera");
@@ -110,9 +103,7 @@ app.post("/crear-experimento", (req, res) => {
   const datosJson = function () {
     mySerial.close();
 
-
     console.log("objeto literal", globalExperiment);
-
 
     let temString = globalExperiment.temperature.join(",");
     let humString = globalExperiment.humidity.join(",");
@@ -151,8 +142,6 @@ app.post("/crear-experimento", (req, res) => {
   mySerial.on("err", function (data) {
     console.log(err.message);
   });
-
-
 });
 
 //fin de ardu-server.js

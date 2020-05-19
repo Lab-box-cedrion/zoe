@@ -1,6 +1,16 @@
+
+$primaryColor: #BB86FC;
+$secondColor: #03DAC6;
+$deep: #1E1E1F;
+$dark: #2c2c2c;
+$softDark:#383838;
+$medium: #3D3D3D;
+$light:#DEDEDE;
+$errorColor: #FD695E;
+
 .outerbox {
-    color: #E5E5E5;
-    background-color: #3D3D3D;
+    color: $light;
+    background-color: $medium;
     bottom:30px;
     height: 900px;
     
@@ -43,6 +53,7 @@
     grid-row-gap: 1rem;
     row-gap: 1rem;
     .trio-charts {
+        height: min-content;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: 1rem;
@@ -57,7 +68,7 @@
             align-items: center;
             justify-content: center;
             letter-spacing: -0.015em;
-            color: #BB86FC;
+            color: $primaryColor;
             width: 20rem;
 
         } 
@@ -71,7 +82,7 @@
             justify-content: center;
             align-items: center;
             letter-spacing: -0.015em;
-            color: #BB86FC;
+            color: $primaryColor;
             width: 20rem;
         }
         .export {
@@ -81,7 +92,7 @@
             align-items: center;
             justify-content: center;
             border: none;
-            background-color: #BB86FC;
+            background-color: $primaryColor;
             box-shadow: 0px 4px 10px #000000;
             border-radius: 4px;
             font-style: normal;
@@ -113,7 +124,8 @@
         display: grid;
        
         grid-template-columns: 1fr;
-            .pair-charts {
+            .trio-charts {
+                height: min-content;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-column-gap: 1rem;
@@ -123,6 +135,7 @@
                     font-size: 12px;
                     line-height: 28px;
                     height: 30px;
+                    margin-bottom: 1rem;
                 } 
                 .name-charts {
                     min-width: 70px;
@@ -130,6 +143,16 @@
                     font-size: 12px;
                     line-height: 28px;
                     height: 30px;
+                    margin-bottom: 1rem;
+                }
+                .export {
+                
+                    min-width: 70px;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 28px;
+                    height: 30px;    
+                    
                 }
             }
         }
@@ -138,15 +161,21 @@
 
 // iphone 6, 7, 8 plus
 @media screen and (max-width:736px){
+    .outerbox{
+        margin: 0 auto;
+        height: 600px;
+    }
     
     .container-charts {
-        margin: 2rem;
+        margin: 0 auto;
         display: grid;
        
         grid-template-columns: 1fr;
-            .pair-charts {
+            .trio-charts {
+                margin: 0 auto;
+                height: min-content;
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
                 grid-column-gap: 1rem;
                 .date-time-charts {
                     min-width: 70px;
@@ -171,38 +200,44 @@
                 }
             }
         }
+        
+}
         // iphone 5
-@media screen and (max-width:568px){
-    .container-charts {
-        margin: 2rem;
-        display: grid;
-        grid-template-columns: 1fr;
-            .pair-charts{
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-column-gap: 1rem;
-                .date-time-charts {
-                    min-width: 100px;
-                    height:30px;
-                    font-weight: 350;
-                    font-size: 11px;
-                    line-height: 28px;
-                    height: 28px;
-
-                } 
-                .name-charts {
-                    min-width: 100px;
-                    height:30px;
-                    font-weight: 350;
-                    font-size: 11px;
-                    line-height: 28px;
-                    height: 28px;
+    @media screen and (max-width:568px){
+    .outerbox {
+        height: min-content;
+        .container-charts {
+            height: min-content;
+            display: grid;
+            grid-template-columns: 1fr;
+                .trio-charts {
+                    height: min-content;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-column-gap: 1rem;
+                    .date-time-charts {
+                        min-width: 100px;
+                        height:30px;
+                        font-weight: 350;
+                        font-size: 11px;
+                        line-height: 28px;
+                        height: 28px;
+    
+                    } 
+                    .name-charts {
+                        min-width: 100px;
+                        height:30px;
+                        font-weight: 350;
+                        font-size: 11px;
+                        line-height: 28px;
+                        height: 28px;
+                    }
                 }
             }
         }
     }
     
-    }
     
 }
+    
 

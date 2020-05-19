@@ -28,8 +28,8 @@ const HParametros = () => {
           </div>
         </div>
         <div className="segundo-item">
-          <div className="paracircle"><p>15,9</p></div>
-          <div className="parameter">
+          <div className="paracircle desactivado"><p>15,9</p></div>
+          <div className="parameter disabled">
             <p>NOx %</p>
           </div>
         </div>
@@ -37,20 +37,20 @@ const HParametros = () => {
 
       <div className="tercer-container">
         <div className="tercer-item">
-          <div className="paracircle"><p>75,9</p></div>
+          <div className="paracircle"><p>0,9</p></div>
           <div className="parameter">
             <p>03 %</p>
           </div>
         </div>
         <div className="tercer-item">
-          <div className="paracircle"><p>77,8</p></div>
-          <div className="parameter">
+          <div className="paracircle desactivado"><p>77,8</p></div>
+          <div className="parameter disabled">
             <p>H202 %</p>
           </div>
         </div>
         <div className="tercer-item">
-          <div className="paracircle"><p>34,6</p></div>
-          <div className="parameter">
+          <div className="paracircle desactivado"><p>34,6</p></div>
+          <div className="parameter disabled">
             <p>X %</p>
           </div>
         </div>

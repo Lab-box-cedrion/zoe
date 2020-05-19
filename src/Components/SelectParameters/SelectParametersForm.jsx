@@ -19,10 +19,6 @@ function SelectParametersForm() {
   const [temperature, setTemperature] = useState(null);
   const [humidity, setHumidity] = useState(null);
   const [pulsedLight, setpulsedLight] = useState("true");
-  /* const [microorganisms, selectMicroorganisms] = useState("value"); */
-
-  /* 
-    Pseudomonas aeruginosa, Listeria Monocytogenes, Escherichia Coli, Staphylococcus aureus, Salmonella typhimurium: "", */
 
   const submitInfo = (event) => {
     event.preventDefault();
@@ -257,7 +253,9 @@ function SelectParametersForm() {
           </div>
           <div className="item ">
             <button className="go-notes notes buttons" type="submit">
-            <Link to="/notas"><span>Ir a notas</span>{" "}</Link>
+              <Link to="/notas" >
+                <span>Ir a notas</span>{" "}
+              </Link>
             </button>
           </div>
         </form>

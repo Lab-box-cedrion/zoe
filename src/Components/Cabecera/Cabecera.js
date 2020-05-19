@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 import "./Cabecera.css";
 import { Link } from "react-router-dom";
-import {
-  Navbar,
-  Nav,
-  NavDropdown
-} from "react-bootstrap";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCog, faStickyNote} from "@fortawesome/free-solid-svg-icons";
-import {Button, Modal} from "react-bootstrap";
-
-
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCog, faStickyNote } from "@fortawesome/free-solid-svg-icons";
+import { Button, Modal } from "react-bootstrap";
 
 const Cabecera = () => {
   const [show, setShow] = useState(false);
@@ -64,7 +58,11 @@ const Cabecera = () => {
         </Navbar.Collapse>
       </Navbar>
       {/* ICONO DE NOTAS VISIBLE SOLO EN DISPOSITIVOS MÓVIL */}
-      <div className="icono-notas"><Link to="/notas"><FontAwesomeIcon icon={faStickyNote} /></Link></div>
+      <div className="icono-notas">
+        <Link to="/notas">
+          <FontAwesomeIcon icon={faStickyNote} />
+        </Link>
+      </div>
       {/* CONTENIDO DEL MODAL */}
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
@@ -80,19 +78,23 @@ const Cabecera = () => {
             4. Clicando sobre ellos, se accede a su gráfica correspondiente. Otro modo de acceder a la última gráfica es clicando un parámetro del último experimento, al que se tiene acceso directo desde el logo de Cedrion del navegador */}
           <p>
             <strong>AJUSTES</strong>
-            Desde este menú se accede a "Ajustes" desde donde se podrá elegir
-            los valores con los que tiene que funcionar la placa Arduino.
-            <p>
-              <strong>NOTAS</strong>, o si se quiere directamente desde el
-              submenú de navegación de Ajustes.
-            </p>
+            <br />
+            Desde este menú se accede a la pantalla desde donde se eligen los
+            valores con los que tiene que funcionar la placa Arduino.
           </p>
           <p>
-            2. Una vez hechos los campos de selección en el apartado de ajustes,
-            se crean los resultados del experimento que se puede ver desde el
-            botón de ver <strong>resultado de experimento</strong>. Tiene acceso
-            directo desde el menú de navegación, <strong>HISTÓRICOS</strong>,
-            donde se muestra el último, o todos los anteriores
+            HISTÓRICOS
+            <br />
+            En esta pantalla se encuentran los campos a rellenar para realizar
+            un experimento.
+            <br />
+            Archivo general de los experimentos realizados. Al clickar en cada
+            experimento se enseña su gráfica y una botón para descargar un
+            archivo .csv con las lecturas recogidas. encuentra el listado de
+            experimentos que se han realizado{" "}
+            <strong>resultado de experimento</strong>. Tiene acceso directo
+            desde el menú de navegación, <strong>HISTÓRICOS</strong>, donde se
+            muestra el último, o todos los anteriores
           </p>
           <p>
             Clicando sobre un parámetro se accede a la <strong>gráfica</strong>.

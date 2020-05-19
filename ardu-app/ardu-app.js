@@ -93,7 +93,7 @@ app.post("/crear-experimento", (req, res) => {
 
     globalExperiment.humidity.push(parseFloat(dataOne[0]));
     globalExperiment.temperature.push(parseFloat(dataOne[1]));
-    globalExperiment.ozone.push(parseFloat(data[2]));
+    globalExperiment.ozone.push(parseFloat(dataOne[2]));
     console.log(globalExperiment);
     console.log("que soy");
   });

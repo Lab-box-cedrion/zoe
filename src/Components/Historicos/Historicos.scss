@@ -41,6 +41,14 @@ $errorColor: #FD695E;
         color: $light;
         font-family: 'Monda', sans-serif;
         font-weight: 100;
+        height: min-content;
+    }
+    .subtitulo {
+        position: absolute;
+        margin: 18rem 2rem 0 2rem;
+        height: 45px;
+        font-size: 20px;
+
     }
 }
 

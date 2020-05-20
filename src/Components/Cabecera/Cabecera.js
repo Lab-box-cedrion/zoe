@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import {
   Navbar,
   Nav,
-  NavDropdown
 } from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCog, faStickyNote} from "@fortawesome/free-solid-svg-icons";

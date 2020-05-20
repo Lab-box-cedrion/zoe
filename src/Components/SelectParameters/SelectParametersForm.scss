@@ -199,14 +199,7 @@
     background: #03dac6;
   }
 }
-@media screen and (max-width: 768px) {
-  .input_date {
-    margin-top: 2rem;
-   }
-   .input_name {
-    margin-top: 0rem;
-   }
-  }
+
 
 
 @media screen and (min-width: 768px) {
@@ -215,12 +208,7 @@
     width: 700px;
     margin: auto;
   }
-  .input_date {
-    margin-top: 2rem;
-   }
-   .input_name {
-    margin-top: 1rem;
-   }
+  
 
   .intro {
     grid-column: 2;

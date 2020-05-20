@@ -4,7 +4,6 @@ import { Chart } from "primereact/chart";
 import "primereact/resources/themes/nova-dark/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
-import { getJSDocReadonlyTag, isWhiteSpaceLike } from "typescript";
 import { CSVLink } from "react-csv";
 
 class LineChart extends Component {

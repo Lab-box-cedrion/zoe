@@ -13,9 +13,11 @@ $errorColor: #FD695E;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 20rem;
+    height: 12rem;
     @media screen and (max-width:736px){
-        height: 17rem;
+        height: 20rem;
+    }@media screen and (max-width:1024px){
+        height: 20rem;
     }
 
     .title {
@@ -36,7 +38,7 @@ $errorColor: #FD695E;
     .about-historicos{
         position: absolute;
         right: 30%;
-        margin: 5rem  2rem 3rem 2rem;
+        margin: 5rem  2rem .5rem 2rem;
         font-size: 16.7px;
         color: $light;
         font-family: 'Monda', sans-serif;
@@ -45,24 +47,40 @@ $errorColor: #FD695E;
     }
     .subtitle {
         position: absolute;
-        color: $light;
+        display: flex;
+        color: #bdbdbd;
         margin:  11rem 2rem 0 2rem;
-        height: 45px;
+        height: 4rem;
         font-size: 20px;
-
+        width:100%;
+        //ipad 
+        @media screen and (max-width: 1024px){
+        margin: 16rem 2rem 0 2rem;
+        font-size: 18px;
+        
+        }
     }
 }
+.submission {
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: baseline;
+    margin: 1rem 0 2rem;
+}
+.ardu-form {
+    height: 3rem;
+    align-content: center;
+    justify-content: center;
 
-.submission .ardu-form {
     @media screen and (max-width: 1024px){
     width: 90%;
-    margin: 4rem 2rem 10rem 2rem;
+    margin: 1rem 2rem;
     } 
 }
-.submission {
-    height: 5rem;
     .ardu-form {
-    justify-content: center;
+
     width: 60%;
     margin: 1rem 2rem 0 2rem;
     display: grid;
@@ -72,7 +90,7 @@ $errorColor: #FD695E;
     //ipad
         @media screen and (max-width:1024px){
             width: 90%;
-            margin: 4rem 2rem 10rem 2rem;
+            margin: 1rem 2rem;
         }
     // iphone 6, 7, 8 plus
         @media screen and (max-width:736px){
@@ -144,7 +162,6 @@ $errorColor: #FD695E;
     }
 }
 
-}
 
 .main {
     height:10rem;
@@ -223,13 +240,13 @@ $errorColor: #FD695E;
   // Ipad
   @media screen and (max-width:1024px){
     
-    .content {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        width: 100%;
-        margin: 0 auto;
-        height: 14rem;
+    // .content {
+    //     display: flex;
+    //     flex-direction: column;
+    //     flex-wrap: wrap;
+    //     width: 100%;
+    //     margin: 0 auto;
+    //     height: 15rem;
 
         .about-historicos p{
             display:flex;
@@ -240,7 +257,9 @@ $errorColor: #FD695E;
             letter-spacing: -0.015em;
             color: $light;
         }
-    }
+        
+        //}
+     //}
     
     .data-container {
         margin: 2rem 2rem;
@@ -262,11 +281,13 @@ $errorColor: #FD695E;
         font-size: 14px;
         line-height: 30px;
     }
-    .submission .ardu-form {
-        width: 90%;
-        margin: 6rem 2rem 2rem 2rem;
+    .submission {
+        margin: -2rem 1rem 1rem 0;
     }
-    
+    .ardu-form {
+        width: 90%;
+        margin: 1rem 2rem 2rem 2rem;
+    }
     
 }   
     // iphone 6, 7, 8 plus
@@ -277,12 +298,13 @@ $errorColor: #FD695E;
             margin: 7rem 2rem;
             font-size: 14px;
         }
+        
         .submission {
             margin-top: -7rem;
         }
         
         .data-container {
-            margin: 3rem 2rem 1rem 2rem;
+            margin: 12rem 2rem 1rem 2rem;
             display: grid;
             grid-template-columns: 1fr;
                 .pair {
@@ -312,8 +334,9 @@ $errorColor: #FD695E;
             margin: 5rem 2rem;
             font-size: 14px;
         }
-        .ardu-form{
-            margin-top: 2rem;
+        .submission .ardu-form {
+            width: 90%;
+            margin: 9rem 2rem 2rem 2rem;
         }
         }
 

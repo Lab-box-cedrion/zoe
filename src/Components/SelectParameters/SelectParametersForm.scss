@@ -39,6 +39,7 @@
     border-radius: 30px;
     justify-content: center;
   }
+  
   .input_name {
     width: 80%;
     height: 50px;
@@ -121,6 +122,7 @@
     }
   }
 }
+
 .select-div {
   color: #e5e5e5;
   padding-left: 15px;
@@ -197,6 +199,15 @@
     background: #03dac6;
   }
 }
+@media screen and (max-width: 768px) {
+  .input_date {
+    margin-top: 2rem;
+   }
+   .input_name {
+    margin-top: 0rem;
+   }
+  }
+
 
 @media screen and (min-width: 768px) {
   .grid {
@@ -204,6 +215,12 @@
     width: 700px;
     margin: auto;
   }
+  .input_date {
+    margin-top: 2rem;
+   }
+   .input_name {
+    margin-top: 1rem;
+   }
 
   .intro {
     grid-column: 2;
@@ -247,6 +264,7 @@
       justify-content: center;
     }
   }
+  
   .select-div,
   .pulsedLight {
     display: flex;

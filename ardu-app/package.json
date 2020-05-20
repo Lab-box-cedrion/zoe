@@ -17,6 +17,7 @@
     "mysql": "^2.18.1",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.3",
-    "serialport": "^8.0.8"
+    "serialport": "^8.0.8",
+    "socket.io": "^2.3.0"
   }
 }

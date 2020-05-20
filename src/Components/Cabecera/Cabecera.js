@@ -69,13 +69,6 @@ const Cabecera = () => {
           <Modal.Title>Información</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {/* <h5 className='subtitulo'><strong>FORMAS DE USO DE ESTA APLICACIÓN</strong></h5> 
-           1. Desde el navegador superior se puede acceder a <strong>AJUSTES</strong>
-            donde se seleccionan los valores con los que se quiere que funcione la placa Arduino.
-            <p>
-            2. Una vez seleccionados los campos de ajustes, se comienza a realizar el experimento, que se podrá visualizar al pulsar "ver resultados".
-            3. Desde el menú de navegación, en "Históricos", también se tiene acceso directo a los resultados. Hay un historial completo de más a menos reciente.
-            4. Clicando sobre ellos, se accede a su gráfica correspondiente. Otro modo de acceder a la última gráfica es clicando un parámetro del último experimento, al que se tiene acceso directo desde el logo de Cedrion del navegador */}
           <p>
             <strong>AJUSTES</strong>
             <br />
@@ -89,7 +82,7 @@ const Cabecera = () => {
             un experimento.
             <br />
             También es el archivo general de los experimentos realizados. Al
-            clickar en cada experimento (nombre o fecha) se muestra su gráfica y
+            clicar en cada experimento (nombre o fecha) se muestra su gráfica y
             una botón para descargar un archivo .csv con las lecturas recogidas.
           </p>
           <p>
@@ -99,9 +92,6 @@ const Cabecera = () => {
             anotaciones sobre el experimento realizado. Estas notas se guardan
             asociadas a la fecha y nombre del experimento.
             <br />
-            También es el archivo general de los experimentos realizados. Al
-            clickar en cada experimento (nombre o fecha) se muestra su gráfica y
-            una botón para descargar un archivo .csv con las lecturas recogidas.
           </p>
         </Modal.Body>
         <Modal.Footer>

@@ -35,7 +35,7 @@ function SelectParametersForm() {
           className="grid-form form-parameters"
         >
           <div>
-            <p className='date item'>
+            <p className="date item">
               <label htmlFor="fecha">
                 <span>{date}</span>
               </label>

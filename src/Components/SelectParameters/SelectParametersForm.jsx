@@ -34,8 +34,8 @@ function SelectParametersForm() {
           onSubmit={(event) => submitInfo(event)}
           className="grid-form form-parameters"
         >
-          <div>
-            <p className="date item">
+          <div className="date">
+            <p className="date-p">
               <label htmlFor="fecha">
                 <span>{date}</span>
               </label>

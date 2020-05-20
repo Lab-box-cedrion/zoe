@@ -29,17 +29,24 @@
     justify-content: center;
   }
   .date {
-    width: 80%;
-    height: 50px;
-    margin: 10px auto;
-    color: #e5e5e5;
-    font-size: 18px;
-    background-color: #1e1e1f;
-    box-shadow: inset -5px -5px 10px #242529, inset 5px 5px 10px #0a0a0a;
-    border-radius: 30px;
+    display: flex;
+    align-items: flex-end;
     justify-content: center;
+    .date-p {
+      width: 80%;
+      height: 65px;
+      margin: auto;
+      color: #e5e5e5;
+      font-size: 18px;
+      background-color: #1e1e1f;
+      box-shadow: inset -5px -5px 10px #242529, inset 5px 5px 10px #0a0a0a;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
-  
+
   .input_name {
     width: 80%;
     height: 50px;
@@ -200,15 +207,12 @@
   }
 }
 
-
-
 @media screen and (min-width: 768px) {
   .grid {
     grid-template-columns: 500px 200px;
     width: 700px;
     margin: auto;
   }
-  
 
   .intro {
     grid-column: 2;
@@ -231,6 +235,11 @@
     justify-content: center;
     align-items: center;
   }
+  .date {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
 }
 @media screen and (min-width: 1198px) {
   .grid {
@@ -252,7 +261,13 @@
       justify-content: center;
     }
   }
-  
+  .date {
+    .date-p {
+      width: 80%;
+      height: 30px;
+      margin: 0;
+    }
+  }
   .select-div,
   .pulsedLight {
     display: flex;

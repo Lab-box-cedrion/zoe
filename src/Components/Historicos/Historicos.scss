@@ -13,7 +13,7 @@ $errorColor: #FD695E;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 12rem;
+    height: 20rem;
     @media screen and (max-width:736px){
         height: 17rem;
     }
@@ -36,16 +36,17 @@ $errorColor: #FD695E;
     .about-historicos{
         position: absolute;
         right: 30%;
-        margin: 5rem  2rem;
+        margin: 5rem  2rem 3rem 2rem;
         font-size: 16.7px;
         color: $light;
         font-family: 'Monda', sans-serif;
         font-weight: 100;
         height: min-content;
     }
-    .subtitulo {
+    .subtitle {
         position: absolute;
-        margin: 18rem 2rem 0 2rem;
+        color: $light;
+        margin:  11rem 2rem 0 2rem;
         height: 45px;
         font-size: 20px;
 
@@ -228,6 +229,7 @@ $errorColor: #FD695E;
         flex-wrap: wrap;
         width: 100%;
         margin: 0 auto;
+        height: 14rem;
 
         .about-historicos p{
             display:flex;
@@ -239,6 +241,7 @@ $errorColor: #FD695E;
             color: $light;
         }
     }
+    
     .data-container {
         margin: 2rem 2rem;
     }
@@ -263,6 +266,7 @@ $errorColor: #FD695E;
         width: 90%;
         margin: 6rem 2rem 2rem 2rem;
     }
+    
     
 }   
     // iphone 6, 7, 8 plus
@@ -311,6 +315,14 @@ $errorColor: #FD695E;
         .ardu-form{
             margin-top: 2rem;
         }
+        }
+
+        .subtitle {
+            position: relative;
+            color: $light;
+            margin-top: 50rem;
+            font-size: 20px;
+    
         }
         
     }

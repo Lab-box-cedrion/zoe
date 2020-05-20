@@ -7,7 +7,7 @@ import Intro from "./Intro";
 import { InputText } from "primereact/inputtext";
 import { InputSwitch } from "primereact/inputswitch";
 
-import "./prueba.scss";
+import "./SelectParametersForm.scss";
 
 function SelectParametersForm() {
   // contiene los nombres de los campos de los input
@@ -214,7 +214,7 @@ function SelectParametersForm() {
             </span>
           </div>
           <div className="select-div">
-            <label htmlFor="microorganism">Elige microorganismo:</label>
+            <label htmlFor="microorganism">Microorganismo:</label>
             <select className="selected-items">
               <option value="Pseudomonas aeruginosa">
                 Pseudomonas aeruginosa
@@ -232,7 +232,7 @@ function SelectParametersForm() {
             </select>
           </div>
           <div className="select-div">
-            <label htmlFor="sustratos">Elige sustrato:</label>
+            <label htmlFor="sustratos">Sustrato:</label>
             <select className="selected-items">
               <option value="Tierra">Tierra</option>
               <option value="Carbonados">Carbonados</option>
@@ -253,7 +253,7 @@ function SelectParametersForm() {
           </div>
           <div className="item ">
             <button className="go-notes notes buttons" type="submit">
-              <Link to="/notas" >
+              <Link to="/notas">
                 <span>Ir a notas</span>{" "}
               </Link>
             </button>

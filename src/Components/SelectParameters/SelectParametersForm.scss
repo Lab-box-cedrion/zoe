@@ -1,67 +1,168 @@
-.containerCss {
-  max-width: 1200px;
-  height: 90vh;
-  margin: 10px auto;
-  padding: 1em 1.2em;
-  width: 80%;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.grid {
+  margin: 0 auto;
   display: grid;
-  /* Define Auto Row size */
-  grid-auto-rows: 13 auto;
-  /*Define our columns */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
+  height: 100%;
+}
+.grid-form {
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 25px;
 }
 .form-parameters {
-  height: max-content;
-  margin: 1em 1em 0 1em;
+  margin: 30px;
   background-color: #292929;
   box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
-}
+  height: 100%;
+  padding: 0 0 1em 0;
 
-.date {
-  width: 90%;
-  height: 50px;
-  background-color: #1e1e1f;
-  box-shadow: inset -5px -5px 10px #242529, inset 5px 5px 10px #0a0a0a;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-}
-.time,
-.amperage,
-.tension,
-.temperature,
-.humidity {
-  display: flex;
-  align-items: center;
-  & .p-button {
-    border-radius: 100%;
-    width: 40px;
-    height: 40px;
-    background-color: #bb86fc;
+  & .item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .date {
+    width: 80%;
+    height: 50px;
+    margin: 10px auto;
+    color: #e5e5e5;
+    font-size: 18px;
+    background-color: #1e1e1f;
+    box-shadow: inset -5px -5px 10px #242529, inset 5px 5px 10px #0a0a0a;
+    border-radius: 30px;
+    justify-content: center;
+  }
+  .input_name {
+    width: 80%;
+    height: 50px;
+
+    padding: 0 2rem;
+    font-size: 18px;
+    color: #e5e5e5;
+    background: #1e1e1f;
     border: 1px solid #bb86fc;
-    margin: 0.2em;
+    box-sizing: border-box;
+    box-shadow: inset -5px -5px 10px #242529, inset 5px 5px 10px #0a0a0a;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: flex-end;
+    &:focus {
+      outline: none !important;
+      outline-width: 0 !important;
+      box-shadow: none;
+    }
+  }
+  .input_name::placeholder {
+    text-align: center;
+  }
+  body .p-inputtext {
+    font-size: 14px;
+    color: #333333;
+    background: #1e1e1f;
+    padding: 0.429em;
+    border: 1px solid #222222;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    border-radius: 3px;
+  }
+  #float-input {
+    font-size: 14px;
+    color: #d2d2d2;
+    background: #1e1e1f;
+    padding: 0.429em;
+    border: 1px solid rgb(69, 69, 69);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    border-radius: 3px;
+  }
+
+  .see-results {
+    background-color: #b096ea;
+    border: none;
+  }
+
+  .time,
+  .amperage,
+  .tension,
+  .temperature,
+  .humidity {
+    margin: 0 0 0 15px;
+    & .button {
+      width: 44px;
+      height: 44px;
+      background-color: #b096ea;
+      border: none;
+      margin: 0 0.1em 0;
+      border-radius: 50%;
+
+      text-align: center;
+      vertical-align: middle;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.5em;
+      color: #e5e5e5;
+      box-shadow: 0px 4px 10px #000000;
+    }
+    & .button:hover {
+      color: #03dac6;
+      box-shadow: none;
+    }
+    & .plus {
+      margin: 0 0 0 10px;
+    }
+    & .minus {
+      margin: 0 10px 0 10px;
+    }
   }
 }
+.select-div {
+  color: #e5e5e5;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  .selected-items {
+    margin-left: 4px;
+    background-color: #bb86fc;
+    border: 1px solid #bb86fc;
+    box-sizing: border-box;
+    border-radius: 7px;
+  }
+}
+
 .pulsedLight {
   display: flex;
   align-items: center;
-  & first {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 25px;
+  justify-content: center;
+  font-family: "Monda", sans serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 25px;
+  color: #e5e5e5;
+
+  & .title-light {
+    margin: 0;
+    font-size: 16px;
     display: flex;
     align-items: center;
     text-align: justify;
     letter-spacing: -0.015em;
-    color: #e5e5e5;
     margin: 0 1em 0 0;
   }
-
   & .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
     background: linear-gradient(94.05deg, #bb86fc 14.73%, #03dac6 97.52%);
     border-radius: 37.0526px;
@@ -70,55 +171,89 @@
     padding-left: 1em;
   }
 }
-
-#float-input {
-  color: #e5e5e5;
-  font-size: 1rem;
-}
-.button {
-  width: 44px;
-  height: 44px;
-  background-color: #b096ea;
-  border: none;
-  margin: 0 0.1em 0;
-  border-radius: 50%;
-  padding: 0.2 0.5em 0.5em 0.5em;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1.5em;
-  color: #fff;
-}
-
+/*button of the bottom of form*/
 .buttons {
-  width: 301px;
-  height: 36px;
-}
-.forms {
+  width: 250px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 4px;
-  background: #bb86fc;
-  font-family: Open Sans;
+  font-family: "Monda", sans serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: justify;
   letter-spacing: -0.015em;
   color: #2c2c2c;
+
+  &.parameters {
+    background: #bb86fc;
+  }
+  &.notes {
+    border: none;
+    background: #03dac6;
+  }
 }
-.notes {
-  border: none;
-  background: #03dac6;
-  border-radius: 4px;
+
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: 500px 200px;
+    width: 700px;
+    margin: auto;
+  }
+
+  .intro {
+    grid-column: 2;
+  }
+  .grid-form {
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-rows: repeat(7, 75px);
+    height: auto;
+
+    &item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .select-div,
+  .pulsedLight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
-.microorganismo {
-  background: #bb86fc;
-  border: 1px solid #bb86fc;
-  box-sizing: border-box;
-  border-radius: 7px;
+@media screen and (min-width: 1198px) {
+  .grid {
+    grid-template-columns: 1fr 300px;
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .intro {
+    grid-column: 2;
+  }
+  .grid-form {
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(7, 60px);
+    & item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .select-div,
+  .pulsedLight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  pulsedLight-label {
+    align-items: flex-end;
+  }
 }

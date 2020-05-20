@@ -41,6 +41,9 @@ void loop() {
    Serial.print(h);
    Serial.print(",");
    Serial.print(t);
-   Serial.println();
+   Serial.print(",");
+   //futura variable para ozono
+   Serial.print(t - (25));
+
 
 }

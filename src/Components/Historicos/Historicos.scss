@@ -48,9 +48,12 @@ $errorColor: #FD695E;
     .subtitle {
         position: absolute;
         display: flex;
-        color: #bdbdbd;
-        margin:  11rem 2rem 0 2rem;
-        height: 4rem;
+        color:$secondColor;
+        //color: #bdbdbd;
+        margin:  10.5rem 2rem 0 2rem;
+        // padding-top: .5rem;
+        height: 2.5rem;
+        text-align: left;
         font-size: 20px;
         width:100%;
         //ipad 
@@ -342,7 +345,7 @@ $errorColor: #FD695E;
 
         .subtitle {
             position: relative;
-            color: $light;
+            color:$secondColor;
             margin-top: 50rem;
             font-size: 20px;
     

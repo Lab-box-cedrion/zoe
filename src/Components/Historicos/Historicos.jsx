@@ -8,6 +8,8 @@ import { InputText } from "primereact/inputtext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 import {Alert,Button} from 'react-bootstrap';
+import ReactPaginate from 'react-paginate';
+
 
  
 
@@ -25,6 +27,13 @@ const Historicos = () => {
         //nombre: "",
     });
 
+    // set up the hook. "posts" is a variable used to store the posts, setPosts the function we call to insert a number of posts into "post".
+
+    const [posts, setPosts] = useState ();
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(20);
+
+    // alert box
     const [show, setShow] = useState(true);
       
     function AlertDismissibleExample() {
@@ -43,6 +52,7 @@ const Historicos = () => {
         }
         return <Button onClick={() => setShow(true)}>Show Alert</Button>;
     }
+
     //Función para enviar datos
     const enviarDatos = async (event) => {
 

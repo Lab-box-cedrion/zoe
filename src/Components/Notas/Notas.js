@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Cabecera from "../Cabecera/Cabecera";
 import Pie from "../Footer/Pie";
 import "./Notas.css";
@@ -6,10 +6,16 @@ import "./Notas.css";
 
 const Notas = () => {
 
-  const [notas, guardarNotas] = useState({
-    texto: "",
-  });
- 
+  const [notas, guardarNotas] = useState([]);
+
+  useEffect(()=>{
+    fetch("http://localhost:5005/graphic-data")
+      .then(res=> res.json())
+      .then(resJSON =>guardarNotas(resJSON))
+      
+  }, [])
+
+
   return (  
     <Fragment> 
       <Cabecera />
@@ -22,11 +28,17 @@ const Notas = () => {
         <form>
         <div className="container-segundo">
           <div className="item-segundo">
-            <div className="nota"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor</p></div>
-            <div className="nota"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor</p></div>
-            <div className="nota"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor</p></div>
-            <div className="nota"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor</p></div>
-            <div className="nota"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor</p></div>
+
+            {
+              notas.length !== 0
+              ? notas.map((experimentos)=>{
+              return (<div className="nota"><p>{experimentos.experiment}-{experimentos.nombre}</p></div>)
+              })
+
+              : null
+              
+            }
+            
           </div>
           
           <textarea placeholder="Escribe tus notas aquí..."

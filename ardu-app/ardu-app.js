@@ -68,10 +68,10 @@ const fetch = require("node-fetch");
 
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
-const parser = new Readline();
+
 
 app.post("/crear-experimento", (req, res) => {
-  const mySerial = new Serialport(req.body.puerto, { baudRate: 115200 });
+  const mySerial = new Serialport(req.body.puerto, { baudRate: 9600 });const parser = mySerial.pipe(new Readline({ delimiter: '\n' }));
   //abrir la conexión puerto serie
   mySerial.on("open", function () {
     console.log("Opened Serial Port");
@@ -86,18 +86,21 @@ app.post("/crear-experimento", (req, res) => {
     humidity: [],
     ozone: [],
   };
-
+  
   //recibit datos de Arduino a través del puerto de serie
-  mySerial.on("data", function (data) {
+  
+    parser.on("data", function (data) {
+      
     let dataOne = data.toString().split(",");
+    
 
     globalExperiment.humidity.push(parseFloat(dataOne[0]));
     globalExperiment.temperature.push(parseFloat(dataOne[1]));
     globalExperiment.ozone.push(parseFloat(dataOne[2]));
     console.log(globalExperiment);
     console.log("que soy");
-  });
-
+  })
+  
   console.log("estoy fuera");
 
   const datosJson = function () {

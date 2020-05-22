@@ -17,15 +17,14 @@ const int DHTPin = 5;     // what digital pin we're connected to
 DHT dht(DHTPin, DHTTYPE);
  
 void setup() {
-   Serial.begin(115200);
-   
+   Serial.begin(9600);
+  
  
    dht.begin();
 }
  
 void loop() {
    // Wait a few seconds between measurements.
-   delay(2000);
  
    // Reading temperature or humidity takes about 250 milliseconds!
    float h = dht.readHumidity();
@@ -34,16 +33,25 @@ void loop() {
    if (isnan(h) || isnan(t)) {
       Serial.println("Failed to read from DHT sensor!");
       return;
+   } else {
+     String data = "";
+     data += h;
+     data += ",";
+     data += t;
+     data += ",";
+     data += t - (25);
+     data += "\n";
+     Serial.print(data);
+     //Serial.print(h);
+     //Serial.print(",");
+     //Serial.print(t);
+     //Serial.print(",");
+     //futura variable para ozono
+     //Serial.print(t - (25));
+
+   
    }
  
+ delay(2000);
  
- 
-   Serial.print(h);
-   Serial.print(",");
-   Serial.print(t);
-   Serial.print(",");
-   //futura variable para ozono
-   Serial.print(t - (25));
-
-
 }

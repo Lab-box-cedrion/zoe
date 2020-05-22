@@ -269,6 +269,7 @@ $errorColor: #FD695E;
             border-radius: 5px;
             border: 1px solid $softDark;
             background-color: #31343C;
+            cursor: pointer;
             &:hover {
                 font-size: 18px;
                 color: $light

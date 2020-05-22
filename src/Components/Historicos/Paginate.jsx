@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import ReactPaginate from 'react-paginate';
+import './Historicos2.scss';
 
-export class CommentList extends Component {
+
+export class DataList extends Component {
     static propTypes = {
       data: PropTypes.array.isRequired,
     };
@@ -11,7 +13,8 @@ export class CommentList extends Component {
     render() {
       let commentNodes = this.props.data.map((el, index) => {
         return (
-            <Link to={{
+           
+                <Link className='page' to={{
                 pathname: `/historicos_grafica/${el.experiment}`, state: {
                     data: this.props.data[index]
                 }
@@ -28,12 +31,14 @@ export class CommentList extends Component {
                     </section>
                 </article>
             </Link>
+           
+            
         )
     });
   
     return (
         <div id="project-comments" className="commentList">
-            <ul>{commentNodes}</ul>
+            <ul className='pairBox'>{commentNodes}</ul>
         </div>
     );
     }
@@ -46,28 +51,34 @@ export default class Paginate extends Component {
 
         this.state = {
             data: [],
+            chunk: [],
             offset: 0,
         };
     }
     
     loadResults() {
         // take the data array, which is passed in through the props, from Historico.jsx, and select a chunk which starts from the offset, and is as long as the number of elements per page
-        let results = this.props.data.splice(this.state.offset, this.props.perPage);
+        let chunk = this.state.data.slice(this.state.offset, this.state.offset + this.props.perPage);
+        
         // I am not sure about the "results.length / results" thing, need to test it better
         this.setState({
-            data: results,
-            pageCount: Math.ceil(results.length / results)
+            chunk: chunk,
+            pageCount: Math.ceil(this.state.data.length / this.props.perPage)
         })
     }
     
     // everytime the component loads we splice the data array with the number of results we need 
-    componentDidMount() {
+    async componentDidMount() {
+        await this.setState({
+            data: this.props.data
+        })
         this.loadResults();
     }
 
     handlePageClick = data => {
         // "data.selected" returns the value of the page you click on
         let selected = data.selected;
+        
         // we start counting elements from (number of pages) * (number of elements per page)
         let offset = Math.ceil(selected * this.props.perPage)
         // set the offset in this.state, and fire a callback function to retrieve the elements from the data array
@@ -79,11 +90,11 @@ export default class Paginate extends Component {
 
     render() {
         return (
-        <div className="commentBox">
-            <CommentList data={this.props.data} />
+        <div className="middleBox">
+            <DataList data={this.state.chunk} />
             <ReactPaginate
-                previousLabel={'previous'}
-                nextLabel={'next'}
+                previousLabel={'<'}
+                nextLabel={'>'}
                 breakLabel={'...'}
                 breakClassName={'break-me'}
                 pageCount={this.state.pageCount}

@@ -1,36 +1,139 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { Redirect, Link } from "react-router-dom";
+import React, { useState, useEffect, Fragment } from 'react';
 import Cabecera from '../Cabecera/Cabecera';
 import Pie from '../Footer/Pie';
-import './Historicos.scss';
+import './Historicos2.scss';
+import axios from 'axios';
+import { InputText } from "primereact/inputtext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
+import {Alert,Button} from 'react-bootstrap';
+
+// Pagination component
+import Paginate from './Paginate'
+
+
+
 
 const Historicos2 = () => {
-        // fetch the data from the API, in the end you will have an array of objects (JSON)
-        
-        
-        return ( 
-            <Fragment>
-                <Cabecera />
-                    <article className= 'content'>
-                        <h1 className= 'title'>
-                        Históricos
+    // set up the hook. "data" is a variable used to store data, setData the function we call to insert stuff into "data"
+    const [data, setData] = useState([]);
+
+    //set up the hook. "form" is a variable used to store form value, setValue the function we call to insert stuff into "form"
+    const [form, setValue] = useState({
+        puerto: "",
+        segundos: null,
+        //nombre: "",
+    });
+
+    const [show, setShow] = useState(true);
+      
+    function AlertDismissibleExample() {
+       
+        if (show) {
+          return (
+            <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+              <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+              <p>
+                Change this and that and try again. Duis mollis, est non commodo
+                luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                Cras mattis consectetur purus sit amet fermentum.
+              </p>
+            </Alert>
+          );
+        }
+        return <Button onClick={() => setShow(true)}>Show Alert</Button>;
+    }
+    //Función para enviar datos
+    const enviarDatos = async (event) => {
+
+        event.preventDefault();
+
+        await fetch("http://localhost:5005/crear-experimento", {
+
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                puerto: form.puerto,
+                segundos: form.segundos,
+                nombre: form.nombre
+            })
+
+        })
+        console.log(JSON.stringify({
+            puerto: form.puerto,
+            segundos: form.segundos,
+            nombre: form.nombre
+        }))
+        console.log("¡Información enviada con éxito!")
+        setTimeout(fetchData(), 2000);
+    }
+
+
+    async function fetchData() {
+        const result = await axios.get(
+            'http://localhost:5005/graphic-data',
+        );
+
+        setData(result.data);
+        // console.log("Connected to the database", result.data);
+    }
+
+    // fetch the data from the API, using axios, and call the function setData to store the JSON inside "data" variable
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    return (
+        <Fragment>
+            <Cabecera />
+            <article className='content'>
+                <h1 className='title'>
+                    Históricos
                         </h1>
-                        <p className= 'about-historicos'>Archivo de  los experimentos. Se puede buscar por día y hora o nombre elegido. Ordenados de más reciente a más antiguo.  Seleccionando uno de  los campos se accederá a  una vista resumen de los resultados y seleccionando cada uno de ellos a  su vez  se  visualiza la gráfica de los resultados.</p>
-                    </article>
-                    <main className= 'data-container'>
-                        {
-                        // array.map(data => {
-                        // return (
-                        // <Link to="/historicos_grafica/{data._id}"><article></article><Link>
-                        //)
-                        //})
-                        }
-                    </main>
-                <Pie />
-            </Fragment>
-            
-         );
-    
+                <p className='about-historicos'>Archivo de  los experimentos. Se puede buscar por día y hora o nombre elegido. Ordenados de más reciente a más antiguo.  Seleccionando uno de  los campos se accederá a  una vista resumen de los resultados y seleccionando cada uno de ellos a  su vez  se  visualiza la gráfica de los resultados.</p>
+                <h3 className ='subtitle'>
+                    Introduce los valores para iniciar el experimento
+                </h3>
+            </article>
+            <article className='submission'>
+                <form onSubmit={(event) => { enviarDatos(event) }} className="ardu-form">
+                    <span className="p-float-label portfield">
+                        <InputText id="in" value={form.puerto} onChange={(e) => setValue({ ...form, puerto: e.target.value })} />
+                        <label htmlFor="in">Puerto</label>
+                    </span>
+                    <span className="p-float-label timefield">
+                        <InputText id="in" value={form.segundos} onChange={(e) => setValue({ ...form, segundos: e.target.value })} />
+                        <label htmlFor="in">Tiempo(s)</label>
+                    </span>
+                    <span className="p-float-label">
+                        <InputText id="in" value={form.nombre} onChange={(e) => setValue({ ...form, nombre: e.target.value })} />
+                        <label htmlFor="in">Nombre experimento</label>
+                    </span>
+                    <button
+                        onClick={() => AlertDismissibleExample()}
+                        className="startButton "
+                        type="submit"
+                    > <FontAwesomeIcon icon={faPowerOff} />
+                    </button>
+                </form>
+            </article>
+
+            <main className='data-container'>
+                {!data.length ?
+                    <div><div className="lds-ripple"><div></div><div></div></div></div>
+                    :
+                    <Paginate data={data} perPage={20} />
+                }
+            </main>
+            <Pie />
+        </Fragment>
+
+    );
+
 }
- 
+
 export default Historicos2;

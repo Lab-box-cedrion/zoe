@@ -16,7 +16,7 @@
   grid-gap: 25px;
 }
 .form-parameters {
-  margin: 30px;
+  margin: 10px 40px 0 20px;
   background-color: #292929;
   box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
@@ -32,6 +32,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    margin-top: 10px;
     .date-p {
       width: 80%;
       height: 50px;
@@ -153,7 +154,7 @@
     border: 1px solid #bb86fc;
     box-sizing: border-box;
     border-radius: 7px;
-    width: 300px;
+    width: 250px;
   }
 }
 
@@ -233,6 +234,9 @@
       justify-content: center;
     }
   }
+  .form-parameters {
+    margin-top: 30px;
+  }
   .select-div,
   .pulsedLight {
     display: flex;
@@ -264,6 +268,9 @@
       align-items: center;
       justify-content: center;
     }
+  }
+  .form-parameters {
+    margin-top: 30px;
   }
   .date {
     .date-p {

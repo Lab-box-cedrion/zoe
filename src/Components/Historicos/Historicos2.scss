@@ -188,14 +188,11 @@ $errorColor: #FD695E;
 }
 
 .data-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: min-content;
     .middleBox {
     height: min-content;
-    margin: 1.5rem;
-    
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     }
     #project-comments {
     margin-left: -2.2rem;
@@ -204,6 +201,15 @@ $errorColor: #FD695E;
     grid-template-rows: auto; 
     column-gap: 2.5rem;
     row-gap: 1rem;
+    }
+    .pairBox{
+        display: grid;
+        margin-top: .7rem;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1rem;
+        @media screen and (max-width: 736px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     a {
@@ -214,13 +220,12 @@ $errorColor: #FD695E;
         display: grid;
         grid-template-columns: 1fr;
         }
-        .pairBox{
-            display: grid;
-            margin-top: .7rem;
-            margin-left: -2rem;
-            grid-template-columns: 1fr;
-            grid-column-gap: 1rem;
-        }
+        // .pairBox{
+        //     display: grid;
+        //     margin-top: .7rem;
+        //     grid-template-columns: 1fr;
+        //     grid-column-gap: 1rem;
+        // }
         .pair {
             
             display: grid;
@@ -265,7 +270,11 @@ $errorColor: #FD695E;
             border-radius: 25px;
             width: 35%;
             padding: .5rem;
-            margin-top: 1rem;
+            margin: 1rem;
+            @media screen and (max-width: 736px) {
+                margin: 1rem 3rem;
+            }
+
         }
         .pagination a {
             border: 1px solid rgb(167, 167, 167);

@@ -25,7 +25,18 @@ const Historicos2 = () => {
         //nombre: "",
     });
     
- 
+    // Warning
+    // const [showWarning, setShowWarning] = useState(false)
+    // showWarning(){
+    //     new Noty({
+    //       type:"warning",
+    //       theme:"bootstrap-v4",
+    //       layout:"topCenter",
+    //       text:"Ensayo en curso...",
+    //       timeout:"1500"
+    //     }).show()
+    //   }
+    // }
     //Función para enviar datos
     const enviarDatos = async (event) => {
 
@@ -97,9 +108,9 @@ const Historicos2 = () => {
                         <label htmlFor="in">Nombre experimento</label>
                     </span>
                     <button
-                        onClick={() => <Warning />
-                    }
-                        className="startButton "
+                        onClick={(e)=>this.showWarning(e)}
+                    
+                        className="startButton warningButton"
                         type="submit"
                     > <FontAwesomeIcon icon={faPowerOff} />
                     </button>

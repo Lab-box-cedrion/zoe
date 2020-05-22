@@ -10,7 +10,6 @@ class Warning extends Component {
     render() {
         return ( 
           <div className="Warning">
-              <h1>Aviso!</h1>
               <button className="warningButton" onClick={(e)=>this.showWarning(e)}><span>Warning!</span></button>
         </div>  
         );
@@ -20,8 +19,8 @@ class Warning extends Component {
         new Noty({
           type:"warning",
           theme:"bootstrap-v4",
-          layout:"topLeft",
-          text:"Notification Text Here....",
+          layout:"topCenter",
+          text:"Ensayo en curso...",
           timeout:"1500"
         }).show()
       }

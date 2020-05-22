@@ -17,7 +17,7 @@ const int DHTPin = 5;     // what digital pin we're connected to
 DHT dht(DHTPin, DHTTYPE);
  
 void setup() {
-   Serial.begin(9600);
+   Serial.begin(115200);
    
  
    dht.begin();

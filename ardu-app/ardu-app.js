@@ -71,7 +71,7 @@ const Readline = Serialport.parsers.Readline;
 const parser = new Readline();
 
 app.post("/crear-experimento", (req, res) => {
-  const mySerial = new Serialport(req.body.puerto, { baudRate: 9600 });
+  const mySerial = new Serialport(req.body.puerto, { baudRate: 115200 });
   //abrir la conexión puerto serie
   mySerial.on("open", function () {
     console.log("Opened Serial Port");

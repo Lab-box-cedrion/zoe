@@ -41,8 +41,7 @@ const Notas = () => {
             
           </div>
           
-          <textarea placeholder="Escribe tus notas aquí..."
-           onChange={(event)=>guardarNotas({...notas, texto: event.target.value})}></textarea>
+          <textarea placeholder="Escribe tus notas aquí..."rs></textarea>
         </div>
         </form>
         <div className="container-tercero">

@@ -6,10 +6,10 @@ import axios from 'axios';
 import { InputText } from "primereact/inputtext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
-import {Alert,Button} from 'react-bootstrap';
-
 // Pagination component
-import Paginate from './Paginate'
+import Paginate from './Paginate';
+import Warning from './Warning';
+
 
 
 
@@ -24,25 +24,8 @@ const Historicos2 = () => {
         segundos: null,
         //nombre: "",
     });
-
-    const [show, setShow] = useState(true);
-      
-    function AlertDismissibleExample() {
-       
-        if (show) {
-          return (
-            <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-              <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-              <p>
-                Change this and that and try again. Duis mollis, est non commodo
-                luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-                Cras mattis consectetur purus sit amet fermentum.
-              </p>
-            </Alert>
-          );
-        }
-        return <Button onClick={() => setShow(true)}>Show Alert</Button>;
-    }
+    
+ 
     //Función para enviar datos
     const enviarDatos = async (event) => {
 
@@ -114,7 +97,8 @@ const Historicos2 = () => {
                         <label htmlFor="in">Nombre experimento</label>
                     </span>
                     <button
-                        onClick={() => AlertDismissibleExample()}
+                        onClick={() => <Warning />
+                    }
                         className="startButton "
                         type="submit"
                     > <FontAwesomeIcon icon={faPowerOff} />

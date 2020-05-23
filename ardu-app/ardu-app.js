@@ -36,7 +36,21 @@ app.get("/graphic-data", (req, res) => {
       }
     }
   );
-}); /* 
+});
+
+app.get('/ultimo-experimento', (req, res)=> {
+  database.query('SELECT * FROM readings ORDER BY id DESC LIMIT 1', (error, results)=>{
+    if (error) {
+      console.log(error)
+      res.send(error)
+    } else {
+      res.send(results)
+    }
+  })
+})
+
+
+/* 
 //Ruta get para la gráfica por su id
 app.get("/graphic-data/:id", (req, res) => {
   database.query("SELECT * FROM readings WHERE id= ?", (error, result) => {

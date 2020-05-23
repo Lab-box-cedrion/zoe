@@ -42,12 +42,7 @@ void loop() {
      data += t - (25);
      data += "\n";
      Serial.print(data);
-     //Serial.print(h);
-     //Serial.print(",");
-     //Serial.print(t);
-     //Serial.print(",");
-     //futura variable para ozono
-     //Serial.print(t - (25));
+    
 
    
    }

@@ -80,11 +80,21 @@
   .noty_progressbar {
     display: none; }
 
-    
+    /* $primaryColor: #BB86FC;
+    $secondColor: #03DAC6;
+    $deep: #1E1E1F;
+    $dark: #2c2c2c;
+    $softDark:#383838;
+    $medium: #3D3D3D;
+    $light:#DEDEDE;
+    $errorColor: #FD695E;   */
   /*tamaño notificación*/
   .noty_body {
+    font-family: 'Monda';
     height:7rem;
-    border: 1px blue solid;
+    color: #3D3D3D;
+    border: 2px #3D3D3D;
+    background-color: #FD695E;
   }
   /*Barra de progreso*/
   .noty_has_timeout.noty_has_progressbar .noty_progressbar {

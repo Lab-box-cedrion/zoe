@@ -26,7 +26,7 @@ class Warning extends Component {
       theme: "bootstrap-v4",
       layout: "center",
       text: "Ensayo en curso...",
-      timeout: "30000",
+      timeout: "2000",
     }).show();
   }
 }

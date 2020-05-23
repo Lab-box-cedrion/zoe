@@ -10,7 +10,7 @@ class Warning extends Component {
     render() {
         return ( 
           <div className="Warning">
-              <button className="warningButton" onClick={(e)=>this.showWarning(e)}><span>Warning!</span></button>
+              <button className="warningButton" onClick={(e)=>this.showWarning(e)}></button>
         </div>  
         );
       }

@@ -16,6 +16,11 @@ const Notas = () => {
   }, [])
 
 
+  const [index, setIndex] = useState();
+
+  console.log((notas[index] || []).id) 
+  
+
   return (  
     <Fragment> 
       <Cabecera />
@@ -31,8 +36,8 @@ const Notas = () => {
 
             {
               notas.length !== 0
-              ? notas.map((experimentos)=>{
-              return (<div className="nota"><p>{experimentos.experiment}-{experimentos.nombre}</p></div>)
+              ? notas.map((experimentos, index)=>{
+              return (<div key={index} onClick={()=>setIndex(index)} className="nota"><p>{experimentos.experiment}-{experimentos.nombre}</p></div>)
               })
 
               : null
@@ -41,7 +46,10 @@ const Notas = () => {
             
           </div>
           
-          <textarea placeholder="Escribe tus notas aquí..."rs></textarea>
+          <textarea >
+           {(notas[index] || []).id}
+            
+            </textarea>
         </div>
         </form>
         <div className="container-tercero">

@@ -1,22 +1,49 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Cabecera from "../Cabecera/Cabecera";
 import Pie from "../Footer/Pie";
 import "primereact/resources/themes/nova-dark/theme.css";
 import "./HParametros.css";
+import { faTeeth } from "@fortawesome/free-solid-svg-icons";
 
 const HParametros = () => {
+
+
+  const [lastExperiment, setLastExperiment] = useState([]);
+
+  useEffect(()=>{
+    fetch("http://localhost:5005/ultimo-experimento")
+      .then((data)=>{
+        return data.json()
+      })
+      .then((dataJSON)=>{
+        setLastExperiment(dataJSON[0])
+        
+      })
+
+  },[])
+
+  // function lastResults() {
+  //   let stringHumidity = lastExperiment.humidity
+  //   // const arrayHumidity = stringHumidity.length
+  //   return console.log(stringHumidity);
+  // }
+
+  // lastResults();
+  
+
+
   return (
     <Fragment>
       <Cabecera />
 
       <div className="primer-container">
-        <div className="primer-item">dd-mm-aa</div>
-        <div className="primer-item">Nombre</div>
+        <div className="primer-item">{lastExperiment.experiment}</div>
+  <div className="primer-item">{lastExperiment.nombre}</div>
       </div>
 
       <div className="segundo-container">
         <div className="segundo-item">
-          <div className="paracircle"><p>76,3</p></div>
+         <div className="paracircle"><p>23</p></div>
           <div className="parameter">
             <p>HR %</p>
           </div>

@@ -4,8 +4,6 @@ import Pie from '../Footer/Pie';
 import './Historicos.scss';
 import axios from 'axios';
 import { InputText } from "primereact/inputtext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 // Pagination component
 import Paginate from './Paginate';
 import Warning from './Warning';

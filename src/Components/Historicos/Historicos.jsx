@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import Cabecera from '../Cabecera/Cabecera';
 import Pie from '../Footer/Pie';
-import './Historicos2.scss';
+import './Historicos.scss';
 import axios from 'axios';
 import { InputText } from "primereact/inputtext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,7 +14,7 @@ import Warning from './Warning';
 
 
 
-const Historicos2 = () => {
+const Historicos = () => {
     // set up the hook. "data" is a variable used to store data, setData the function we call to insert stuff into "data"
     const [data, setData] = useState([]);
 
@@ -117,4 +117,4 @@ const Historicos2 = () => {
 
 }
 
-export default Historicos2;
+export default Historicos;

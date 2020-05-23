@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import ReactPaginate from 'react-paginate';
-import './Historicos2.scss';
+import './Historicos.scss';
 
 
 export class DataList extends Component {

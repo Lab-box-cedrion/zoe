@@ -1,5 +1,4 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { Link } from "react-router-dom";
 import Cabecera from '../Cabecera/Cabecera';
 import Pie from '../Footer/Pie';
 import './Historicos.scss';
@@ -7,11 +6,10 @@ import axios from 'axios';
 import { InputText } from "primereact/inputtext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
-import {Alert,Button} from 'react-bootstrap';
-import ReactPaginate from 'react-paginate';
+// Pagination component
+import Paginate from './Paginate';
+import Warning from './Warning';
 
-
- 
 
 
 
@@ -26,34 +24,8 @@ const Historicos = () => {
         segundos: null,
         //nombre: "",
     });
-
-    // set up the hook. "posts" is a variable used to store the posts, setPosts the function we call to insert a number of posts into "post".
-
-    const [posts, setPosts] = useState ();
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(20);
-
-    // alert box
-    const [show, setShow] = useState(true);
-      
-    function AlertDismissibleExample() {
-       
-        if (show) {
-          return (
-            <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-              <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-              <p>
-                Change this and that and try again. Duis mollis, est non commodo
-                luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-                Cras mattis consectetur purus sit amet fermentum.
-              </p>
-            </Alert>
-          );
-        }
-        return <Button onClick={() => setShow(true)}>Show Alert</Button>;
-    }
-
-    //Función para enviar datos
+    
+    
     const enviarDatos = async (event) => {
 
         event.preventDefault();
@@ -89,7 +61,7 @@ const Historicos = () => {
         );
 
         setData(result.data);
-        //console.log("Connected to the database", result.data);
+        // console.log("Connected to the database", result.data);
     }
 
     // fetch the data from the API, using axios, and call the function setData to store the JSON inside "data" variable
@@ -123,40 +95,17 @@ const Historicos = () => {
                         <InputText id="in" value={form.nombre} onChange={(e) => setValue({ ...form, nombre: e.target.value })} />
                         <label htmlFor="in">Nombre experimento</label>
                     </span>
-                    <button
-                        onClick={() => AlertDismissibleExample()}
-                        className="startButton "
-                        type="submit"
-                    > <FontAwesomeIcon icon={faPowerOff} />
-                    </button>
+                    <span>
+                        <Warning />
+                    </span>
                 </form>
             </article>
 
             <main className='data-container'>
-                {!data ?
+                {!data.length ?
                     <div><div className="lds-ripple"><div></div><div></div></div></div>
                     :
-                    data.map((el, index) => {
-                        return (
-                            <Link to={{
-                                pathname: `/historicos_grafica/${el.experiment}`, state: {
-                                    data: data[index]
-                                }
-                            }}>
-                                <article className='pair' key={el.id}>
-                                    <section className='date-time'>{el.experiment}
-                                    </section>
-                                    <section className='name'>{el.nombre.length === 0
-
-                                        ? "---"
-                                        : el.nombre
-
-                                    }
-                                    </section>
-                                </article>
-                            </Link>
-                        )
-                    })
+                    <Paginate data={data} perPage={20} />
                 }
             </main>
             <Pie />

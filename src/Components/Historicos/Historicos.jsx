@@ -95,11 +95,9 @@ const Historicos = () => {
                         <InputText id="in" value={form.nombre} onChange={(e) => setValue({ ...form, nombre: e.target.value })} />
                         <label htmlFor="in">Nombre experimento</label>
                     </span>
-                    <button
-                        className="startButton warningButton"
-                        type="submit"
-                    > <Warning /><FontAwesomeIcon icon={faPowerOff} />
-                    </button>
+                    <span>
+                        <Warning />
+                    </span>
                 </form>
             </article>
 

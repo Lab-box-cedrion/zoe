@@ -79,15 +79,22 @@
   
   .noty_progressbar {
     display: none; }
-  
+
+    
+  /*tamaño notificación*/
+  .noty_body {
+    height:7rem;
+    border: 1px blue solid;
+  }
+  /*Barra de progreso*/
   .noty_has_timeout.noty_has_progressbar .noty_progressbar {
     display: block;
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 3px;
+    height: 5px;
     width: 100%;
-    background-color: #646464;
+    background-color: #e01a1a;
     opacity: 0.2;
     filter: alpha(opacity=10); }
   

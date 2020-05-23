@@ -30,11 +30,10 @@ const HParametros = () => {
 
       let lastResultsHUM = arrayHumidity[arrayHumidity.length - 1];
       let lastResultsTem = arrayTemperature[arrayTemperature.length - 1];
-      let lastResultsOzo = arrayOzone[arrayOzone.length - 1],
-      return  console.log(lastResultsHUM);
-
-       
+      let lastResultsOzo = arrayOzone[arrayOzone.length - 1];
+      results.push(lastResultsHUM, lastResultsTem, lastResultsOzo);
     }
+    return results;
   }
   lastResults();
 
@@ -51,7 +50,7 @@ const HParametros = () => {
       <div className="segundo-container">
         <div className="segundo-item">
           <div className="paracircle">
-            <p>23</p>
+            <p>{results[0]}</p>
           </div>
           <div className="parameter">
             <p>HR %</p>
@@ -59,7 +58,7 @@ const HParametros = () => {
         </div>
         <div className="segundo-item">
           <div className="paracircle">
-            <p>25,7</p>
+            <p>{results[1]}</p>
           </div>
           <div className="parameter">
             <p>T ºC</p>
@@ -78,7 +77,7 @@ const HParametros = () => {
       <div className="tercer-container">
         <div className="tercer-item">
           <div className="paracircle">
-            <p>0,9</p>
+            <p>{results[2]}</p>
           </div>
           <div className="parameter">
             <p>03 %</p>

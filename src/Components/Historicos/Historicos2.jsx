@@ -108,7 +108,7 @@ const Historicos2 = () => {
                         <label htmlFor="in">Nombre experimento</label>
                     </span>
                     <button
-                        onClick={(e)=>this.showWarning(e)}
+                        // onClick={(e)=>this.showWarning(e)}
                     
                         className="startButton warningButton"
                         type="submit"

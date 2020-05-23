@@ -30,7 +30,7 @@ const HParametros = () => {
 
       let lastResultsHUM = arrayHumidity[arrayHumidity.length - 1];
       let lastResultsTem = arrayTemperature[arrayTemperature.length - 1];
-      let lastResultsOzo = arrayOzone[arrayOzone.length - 1],
+      let lastResultsOzo = arrayOzone[arrayOzone.length - 1];
       return  console.log(lastResultsHUM);
 
        

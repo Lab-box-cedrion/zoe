@@ -103,8 +103,9 @@ const HParametros = () => {
 
       <Pie />
     </Fragment>
-  ) : (
-    <div>loading</div>
-  );
+  ) : (<div><div className="conecta">Conecta el servidor, por favor</div>
+    <div><div className="lds-ripple"><div></div><div></div></div></div> </div>)
+
+  ;
 };
 export default HParametros;

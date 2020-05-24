@@ -73,7 +73,7 @@ app.post("/crear-experimento", (req, res) => {
   const parser = mySerial.pipe(new Readline({ delimiter: "\n" }));
   //abrir la conexión puerto serie
   mySerial.on("open", function () {
-    console.log("Opened Serial Port");
+    console.log("Opened Serial Port to Arduino");
   });
 
   const nombre = req.body.nombre;
@@ -126,7 +126,7 @@ app.post("/crear-experimento", (req, res) => {
 
   //Tiempo en segundos que durará el experimento
   let tiempo = req.body.segundos;
-  let duration = tiempo * 1000 + 2000;
+  let duration = tiempo * 1000;
 
   function closeSerialPort() {
     let intervalo = setTimeout(datosJson, duration);

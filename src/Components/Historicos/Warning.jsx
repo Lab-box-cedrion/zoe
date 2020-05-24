@@ -7,7 +7,6 @@ import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 
 class Warning extends Component {
   render() {
-    console.log(this.props);
     return (
       <div className="Warning">
         <button

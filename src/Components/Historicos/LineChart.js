@@ -121,18 +121,6 @@ class LineChart extends Component {
               color: "#a1a1a1",
               drawOnChartArea: true,
             },
-            // //si se quisiera poner otro eje id: 'y-axis-2',
-            // }, {
-            //     type: 'linear',
-            //     display: true,
-            //     ticks: {
-            //         fontFamily: "Nunito",
-            //         fontSize: 10,
-            //         fontColor: '#a1a1a1',
-            //         suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
-            //         // OR //
-            //         beginAtZero: true,  // minimum value will be 0.
-            //     }
           },
         ],
         xAxes: [

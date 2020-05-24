@@ -44,7 +44,7 @@ const HParametros = () => {
       <Cabecera />
       <div className="primer-container">
         <Link to={{
-                pathname: `/historicos_grafica/${lastExperiment[0].experiment}`}} className='date'>
+                pathname: `/historicos_grafica/${lastExperiment[0].experiment}`, state: {lastExperiment}}} className='date'>
         <div className="primer-item">{lastExperiment[0].experiment}></div>
          </Link>
         <div className="primer-item">{lastExperiment[0].nombre}</div>

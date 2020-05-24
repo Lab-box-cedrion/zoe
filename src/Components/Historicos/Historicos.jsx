@@ -44,7 +44,7 @@ const Historicos = () => {
       })
     );
     console.log("¡Información enviada con éxito!");
-    setTimeout(fetchData(), 50);
+    setTimeout(fetchData(), 2000);
   };
 
   async function fetchData() {

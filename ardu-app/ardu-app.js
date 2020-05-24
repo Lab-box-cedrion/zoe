@@ -3,14 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 5005;
 require("dotenv").config();
 const database = require("./conf");
-const bodyParser = require("body-parser");
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
-app.use(bodyParser.json());
 // Middleware para no tener problemas con los CORS cuando hagamos peticiones a nuestra API en Heroku
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -38,31 +31,20 @@ app.get("/graphic-data", (req, res) => {
   );
 });
 
-app.get('/ultimo-experimento', (req, res)=> {
-  database.query('SELECT * FROM readings ORDER BY id DESC LIMIT 1', (error, results)=>{
-    if (error) {
-      console.log(error)
-      res.send(error)
-    } else {
-      res.send(results)
+app.get("/ultimo-experimento", (req, res) => {
+  database.query(
+    "SELECT * FROM readings ORDER BY id DESC LIMIT 1",
+    (error, results) => {
+      if (error) {
+        console.log(error);
+        res.send(error);
+      } else {
+        res.send(results);
+      }
     }
-  })
-})
+  );
+});
 
-
-/* 
-//Ruta get para la gráfica por su id
-app.get("/graphic-data/:id", (req, res) => {
-  database.query("SELECT * FROM readings WHERE id= ?", (error, result) => {
-    if (error) {
-      console.log(error);
-      res.status(400).send(error);
-    } else {
-      console.log(result);
-      res.status(200).send(result);
-    }
-  });
-}); */
 app.post("/insertar-data", (req, res) => {
   console.log(req.body);
   database.query("INSERT INTO readings SET ?", req.body, (error, results) => {
@@ -76,16 +58,16 @@ app.post("/insertar-data", (req, res) => {
   });
 });
 
-//ardu-server.js petición post
+//Inicio de la lectura por puerto-serie de los datos del sensor DHT22
 
 const fetch = require("node-fetch");
 
 const Serialport = require("serialport");
 const Readline = Serialport.parsers.Readline;
 
-
 app.post("/crear-experimento", (req, res) => {
-  const mySerial = new Serialport(req.body.puerto, { baudRate: 9600 });const parser = mySerial.pipe(new Readline({ delimiter: '\n' }));
+  const mySerial = new Serialport(req.body.puerto, { baudRate: 9600 });
+  const parser = mySerial.pipe(new Readline({ delimiter: "\n" }));
   //abrir la conexión puerto serie
   mySerial.on("open", function () {
     console.log("Opened Serial Port");
@@ -100,27 +82,20 @@ app.post("/crear-experimento", (req, res) => {
     humidity: [],
     ozone: [],
   };
-  
-  //recibit datos de Arduino a través del puerto de serie
-  
-    parser.on("data", function (data) {
-      
+
+  //recibir datos de Arduino a través del puerto de serie
+
+  parser.on("data", function (data) {
     let dataOne = data.toString().split(",");
-    
 
     globalExperiment.humidity.push(parseFloat(dataOne[0]));
     globalExperiment.temperature.push(parseFloat(dataOne[1]));
     globalExperiment.ozone.push(parseFloat(dataOne[2]));
-    console.log(globalExperiment);
-    console.log("que soy");
-  })
-  
-  console.log("estoy fuera");
+    console.log("Se están recibiendo datos de la placa", globalExperiment);
+  });
 
   const datosJson = function () {
     mySerial.close();
-
-    console.log("objeto literal", globalExperiment);
 
     let temString = globalExperiment.temperature.join(",");
     let humString = globalExperiment.humidity.join(",");
@@ -157,7 +132,7 @@ app.post("/crear-experimento", (req, res) => {
 
   // recojo errores
   mySerial.on("err", function (data) {
-    console.log(err.message);
+    console.log(data.message);
   });
 });
 

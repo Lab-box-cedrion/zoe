@@ -8,20 +8,17 @@ const Notas = () => {
 
   useEffect(() => {
     fetch("http://localhost:5005/graphic-data")
-      .then(res=> res.json())
-      .then(resJSON =>guardarNotas(resJSON))
-      
-  }, [])
+      .then((res) => res.json())
+      .then((resJSON) => guardarNotas(resJSON));
+  }, []);
 
   const [index, setIndex] = useState();
 
   const [escribiendo, setEscribiendo] = useState({
-    notas: ""
+    notas: "",
   });
 
-  console.log((notas[index] || []).id) 
-  
-  
+  console.log((notas[index] || []).id);
 
   return (
     <Fragment>
@@ -51,24 +48,17 @@ const Notas = () => {
                 })
               : null}
           </div>
-          
-          <textarea value={escribiendo.notas} onChange={(event)=>setEscribiendo({...escribiendo, notas: event.target.value})}>
-          
-            
-            </textarea>
+
+          <textarea
+            value={escribiendo.notas}
+            onChange={(event) =>
+              setEscribiendo({ ...escribiendo, notas: event.target.value })
+            }
+          ></textarea>
         </div>
-        </form>
-        <div className="container-tercero">
-          <input type="submit" className="guardar-nota" value="Guardar"/>
-        </div>
-      
+      </form>
       <div className="container-tercero">
-        <input
-          type="submit"
-          className="guardar-nota"
-          value="Guardar"
-          onClick={() => console.log("Nota guardada")}
-        />
+        <input type="submit" className="guardar-nota" value="Guardar" />
       </div>
 
       <Pie />

@@ -70,6 +70,12 @@ const Cabecera = () => {
         </Modal.Header>
         <Modal.Body>
           <p>
+            ÚLTIMO ENSAYO
+            <br />
+            El logo de Cedrión es un acceso directo a la visualización de los
+            datos del último ensayo y su gráfica.
+          </p>
+          <p>
             <strong>AJUSTES</strong>
             <br />
             Desde este menú se accede a la pantalla desde donde se eligen los

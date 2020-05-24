@@ -52,7 +52,15 @@ const HParametros = () => {
         >
           <div className="primer-item">{lastExperiment[0].experiment}</div>
         </Link>
-        <div className="primer-item">{lastExperiment[0].nombre}</div>
+        <Link
+          to={{
+            pathname: `/grafica-ultimo-experimento/${lastExperiment[0].experiment}`,
+            state: { lastGrafica },
+          }}
+          className="date"
+        >
+          <div className="primer-item">{lastExperiment[0].nombre}</div>
+        </Link>
       </div>
 
       <div className="segundo-container">

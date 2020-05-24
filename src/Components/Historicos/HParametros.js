@@ -3,7 +3,7 @@ import Cabecera from "../Cabecera/Cabecera";
 import Pie from "../Footer/Pie";
 import "primereact/resources/themes/nova-dark/theme.css";
 import "./HParametros.css";
-import { faTeeth } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const HParametros = () => {
   const [lastExperiment, setLastExperiment] = useState([]);
@@ -40,10 +40,13 @@ const HParametros = () => {
   console.log(lastExperiment);
 
   return loading ? (
-    <Fragment>
+    <Fragment className= 'HParametros'>
       <Cabecera />
       <div className="primer-container">
-        <div className="primer-item">{lastExperiment[0].experiment}</div>
+        <Link to={{
+                pathname: `/historicos_grafica/${lastExperiment[0].experiment}`}} className='date'>
+        <div className="primer-item">{lastExperiment[0].experiment}></div>
+         </Link>
         <div className="primer-item">{lastExperiment[0].nombre}</div>
       </div>
 

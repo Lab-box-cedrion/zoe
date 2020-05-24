@@ -10,7 +10,7 @@ $errorColor: #FD695E;
 /* Info part and initializating experiment */
 
 .content {
-    width:100%;
+    max-width:100vw;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -24,7 +24,7 @@ $errorColor: #FD695E;
     .title {
         position: absolute;
         margin: 2rem 2rem;
-        width: 207px;
+        width: 20rem;
         height: 45px;
         font-family: 'Monda', sans-serif;
         font-weight: 300;
@@ -56,7 +56,7 @@ $errorColor: #FD695E;
         height: 2.5rem;
         text-align: left;
         font-size: 20px;
-        width:100%;
+        max-width:100vw;
         //ipad 
         @media screen and (max-width: 1024px){
         margin: 16rem 2rem 0 2rem;
@@ -66,6 +66,7 @@ $errorColor: #FD695E;
     }
 }
 .submission {
+    max-width:100vw;
     height: 3rem;
     display: flex;
     flex-direction: row;
@@ -77,6 +78,7 @@ $errorColor: #FD695E;
     height: 3rem;
     align-content: center;
     justify-content: center;
+    width:100vw;
 
     @media screen and (max-width: 1024px){
     width: 90%;
@@ -168,6 +170,7 @@ $errorColor: #FD695E;
 /* Data fetch part: all experiments */
 
 .main {
+    max-width:100vw;
     height:10rem;
     //ipad
     @media screen and (max-width:1024px){
@@ -189,12 +192,14 @@ $errorColor: #FD695E;
 
 .data-container {
     .middleBox {
+    max-width:100vw;
     height: min-content;
     margin: 0;
     display: flex;
     flex-direction: column;
     }
     #project-comments {
+    max-width:100vw;
     margin-left: -2.2rem;
     display: grid;
     grid-template-columns: 1fr;
@@ -284,7 +289,7 @@ $errorColor: #FD695E;
             background-color: #31343C;
             cursor: pointer;
             &:hover {
-                font-size: 18px;
+                font-size: 16px;
                 color: $light
             }
         }

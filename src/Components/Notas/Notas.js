@@ -22,8 +22,8 @@ const Notas = () => {
 
       <div className="container-primero">
         <input type="text" placeholder="Buscar" />
-        <div className="item-primero">{experimentos.experiment}</div>
-        <div className="item-primero">{experimentos.nombre}</div>
+        <div className="item-primero">dd-mm-aa</div>
+        <div className="item-primero">nombre</div>
       </div>
       <form>
         <div className="container-segundo">

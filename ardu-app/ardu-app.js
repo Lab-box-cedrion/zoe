@@ -25,7 +25,7 @@ app.get("/graphic-data", (req, res) => {
     (error, results) => {
       if (error) {
         console.log(error);
-        res.status.send(error);
+        res.send(error);
       } else {
         //console.log(results);
         res.send(results);

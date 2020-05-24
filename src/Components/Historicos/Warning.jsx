@@ -7,6 +7,7 @@ import { faPowerOff } from "@fortawesome/free-solid-svg-icons";
 
 class Warning extends Component {
   render() {
+    console.log(this.props);
     return (
       <div className="Warning">
         <button
@@ -21,12 +22,14 @@ class Warning extends Component {
   }
 
   showWarning() {
+    let secondsExperiment = this.props.tiempo;
+    let timeoutWarning = secondsExperiment * 1000;
     new Noty({
       type: "warning",
       theme: "bootstrap-v4",
       layout: "center",
-      text: "Ensayo en curso...",
-      timeout: "2000",
+      text: `Ensayo de ${secondsExperiment} segundos`,
+      timeout: `${timeoutWarning}`,
     }).show();
   }
 }

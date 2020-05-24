@@ -8,7 +8,6 @@ import Notas from "./Components/Notas/Notas";
 import HParametros from "./Components/Historicos/HParametros";
 import GraficaLExperiment from "./Components/Historicos/GraficaLExperiment";
 
-
 const Routes = () => {
   return (
     <Router>
@@ -18,8 +17,10 @@ const Routes = () => {
       <Route path="/historicos_grafica/:id" component={HGrafica} />
       <Route path="/notas" component={Notas} />
       <Route path="/historicos_parametros" component={HParametros} />
-      <Route path="/grafica-ultimo-experimento/:id" component={GraficaLExperiment} />
-
+      <Route
+        path="/grafica-ultimo-experimento/:id"
+        component={GraficaLExperiment}
+      />
     </Router>
   );
 };

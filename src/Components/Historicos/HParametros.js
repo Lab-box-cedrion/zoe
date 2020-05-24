@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const HParametros = () => {
   const [lastExperiment, setLastExperiment] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [lastGrafica, setLastGrafica] = useState([]);
+  const [lastGrafica, setLastGrafica] = useState({});
 
   useEffect(() => {
     fetch("http://localhost:5005/ultimo-experimento")
@@ -18,7 +18,7 @@ const HParametros = () => {
       .then((dataJSON) => {
         setLastExperiment(dataJSON);
         setLoading(true);
-        setLastGrafica(dataJSON.data);
+        setLastGrafica(dataJSON[0]);
       });
   }, []);
 
@@ -39,16 +39,19 @@ const HParametros = () => {
   }
   lastResults();
 
-  console.log(lastExperiment);
-
   return loading ? (
-    <Fragment className= 'HParametros'>
+    <Fragment className="HParametros">
       <Cabecera />
       <div className="primer-container">
-        <Link to={{
-                pathname: `/historicos_grafica/${lastExperiment[0].experiment}`, state: {lastGrafica}}} className='date'>
-        <div className="primer-item">{lastExperiment[0].experiment}></div>
-         </Link>
+        <Link
+          to={{
+            pathname: `/grafica-ultimo-experimento/${lastExperiment[0].experiment}`,
+            state: { lastGrafica },
+          }}
+          className="date"
+        >
+          <div className="primer-item">{lastExperiment[0].experiment}</div>
+        </Link>
         <div className="primer-item">{lastExperiment[0].nombre}</div>
       </div>
 
@@ -108,9 +111,16 @@ const HParametros = () => {
 
       <Pie />
     </Fragment>
-  ) : (<div><div className="conecta">Conecta el servidor, por favor</div>
-    <div><div className="lds-ripple"><div></div><div></div></div></div> </div>)
-
-  ;
+  ) : (
+    <div>
+      <div className="conecta">Conecta el servidor, por favor</div>
+      <div>
+        <div className="lds-ripple">
+          <div></div>
+          <div></div>
+        </div>
+      </div>{" "}
+    </div>
+  );
 };
 export default HParametros;

@@ -23,17 +23,21 @@ https://www.luisllamas.es/arduino-dht11-dht22/
 
 Node.js: https://nodejs.org/es/
 
+(Descargar para equipos Windows) Git: https://git-scm.com/downloads
+
 Hay que descargarse este repositorio. :D
 
 ##Puesta en marcha del proyecto
 
 Requisitos:
 
-    Instalar el programa de este repositorio de la carpeta SENSOR_TEMP_HUM en la placa arduino.
+    Instalar el programa de la carpeta SENSOR_TEMP_HUM, de este repositorio, en la placa arduino.
 
-Poner en marcha el servidor en el PC:
+    Conectar la placa Arduino a un puerto.
 
-    Abrir la consola del ordenador.
+Para poner en marcha el servidor en el PC:
+
+    Hacer .
 
     Abrir carpeta ardu-app e instalar las dependencias necesarias escribiendo en consola:
 

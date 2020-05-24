@@ -80,14 +80,6 @@
   .noty_progressbar {
     display: none; }
 
-    /* $primaryColor: #BB86FC;
-    $secondColor: #03DAC6;
-    $deep: #1E1E1F;
-    $dark: #2c2c2c;
-    $softDark:#383838;
-    $medium: #3D3D3D;
-    $light:#DEDEDE;
-    $errorColor: #FD695E;   */
   /*tamaño notificación*/
   .noty_body {
     font-family: 'Monda';
@@ -103,10 +95,10 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 5px;
+    height: 10px;
     width: 100%;
-    background-color: #e01a1a;
-    opacity: 0.2;
+    background-color: #FD867F;
+    opacity: 0.9;
     filter: alpha(opacity=10); }
   
   .noty_bar {

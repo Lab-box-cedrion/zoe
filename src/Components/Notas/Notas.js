@@ -15,10 +15,14 @@ const Notas = () => {
       
   }, [])
 
-
   const [index, setIndex] = useState();
 
+  const [escribiendo, setEscribiendo] = useState({
+    notas: ""
+  });
+
   console.log((notas[index] || []).id) 
+  
   
 
   return (  
@@ -46,14 +50,14 @@ const Notas = () => {
             
           </div>
           
-          <textarea >
-           {(notas[index] || []).id}
+          <textarea value={escribiendo.notas} onChange={(event)=>setEscribiendo({...escribiendo, notas: event.target.value})}> {notas.notas}
+          
             
             </textarea>
         </div>
         </form>
         <div className="container-tercero">
-          <input type="submit" className="guardar-nota" value="Guardar" onClick={()=> console.log("Nota guardada")}/>
+          <input type="submit" className="guardar-nota" value="Guardar"/>
         </div>
       
       

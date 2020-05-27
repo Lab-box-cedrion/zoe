@@ -1,8 +1,9 @@
 #Proyecto 'Zoe' para Cedrion.
+Construido con React, Node.js, Express, Chart.js, HTML, CSS, SCSS
 
 Presentación
 Instalación
-Configuarción y uso
+Configuración y uso
 
 Este repositorio contiene el código de un proyecto que hemos desarrollado para la empresa Cedrión:
 

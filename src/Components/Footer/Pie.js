@@ -1,41 +1,82 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Pie.css";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faInfoCircle,faHistory,faTasks} from "@fortawesome/free-solid-svg-icons";
-import {Nav, Button, Modal} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInfoCircle,
+  faHistory,
+  faTasks,
+} from "@fortawesome/free-solid-svg-icons";
+import { Nav, Button, Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Pie = () => {
-
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  return(
-    
+  return (
     <div className="pie">
       {/* Menu solo visible en dispositivos móviles */}
       <div className="menu-inferior">
         <div className="icono-sub">
           {/* Modal empieza aquí */}
-        <Nav.Link>
-        <Button variant="primary" onClick={handleShow}>
-        <FontAwesomeIcon icon={faInfoCircle} />
-        </Button>
-      </Nav.Link></div>
-          {/* Modal termina aquí  */}
-        <div className="icono-sub"><Link to="/historicos"><FontAwesomeIcon icon={faHistory} /></Link></div>
-        <div className="icono-sub"><Link to="maxmin"><FontAwesomeIcon icon={faTasks} /></Link></div>
+          <Nav.Link>
+            <Button variant="primary" onClick={handleShow}>
+              <FontAwesomeIcon icon={faInfoCircle} />
+            </Button>
+          </Nav.Link>
+        </div>
+        {/* Modal termina aquí  */}
+        <div className="icono-sub">
+          <Link to="/historicos">
+            <FontAwesomeIcon icon={faHistory} />
+          </Link>
+        </div>
+        <div className="icono-sub">
+          <Link to="maxmin">
+            <FontAwesomeIcon icon={faTasks} />
+          </Link>
+        </div>
       </div>
 
       {/* Contenido del modal */}
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title>INFORMACIÓN</Modal.Title>
+          <Modal.Title>Información</Modal.Title>
         </Modal.Header>
-        <Modal.Body><h5><em>FORMAS DE USO DE ESTA APLICACIÓN</em></h5>
-        <p>1. Acceso a los ajustes de campos de selección desde <strong>AJUSTES</strong>. Desde aquí se pueden acceder a las <strong>NOTAS</strong>, o si se quiere directamente desde el submenú de navegación de Ajustes.</p><p>2. Una vez hechos los campos de selección en el apartado de ajustes, se crean los resultados del experimento que se puede ver desde el botón de ver <strong>resultado de experimento</strong>. Tiene acceso directo desde el menú de navegación, <strong>HISTÓRICOS</strong>, donde se muestra el último, o todos los anteriores</p><p>Clicando sobre un parámetro se accede a la <strong>gráfica</strong>.</p></Modal.Body>
+        <Modal.Body>
+          <p>
+            ÚLTIMO ENSAYO
+            <br />
+            El logo de Cedrión es un acceso directo a la visualización de los
+            datos del último ensayo y su gráfica.
+          </p>
+          <p>
+            <strong>AJUSTES</strong>
+            <br />
+            Desde este menú se accede a la pantalla desde donde se eligen los
+            valores con los que tiene que funcionar la placa Arduino.
+          </p>
+          <p>
+            HISTÓRICOS
+            <br />
+            En esta pantalla se encuentran los campos a rellenar para realizar
+            un experimento.
+            <br />
+            También es el archivo general de los experimentos realizados. Al
+            clicar en cada experimento (nombre o fecha) se muestra su gráfica y
+            una botón para descargar un archivo .csv con las lecturas recogidas.
+          </p>
+          <p>
+            NOTAS
+            <br />
+            En esta pantalla se encuentra una sección en la que se puede guardar
+            anotaciones sobre el experimento realizado. Estas notas se guardan
+            asociadas a la fecha y nombre del experimento.
+            <br />
+          </p>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Salir
@@ -43,10 +84,8 @@ const Pie = () => {
         </Modal.Footer>
       </Modal>
       {/* Fin del contenido del modal */}
-
     </div>
+  );
+};
 
-  )
-}
-
-export default Pie
+export default Pie;

@@ -11,7 +11,7 @@ const HParametros = () => {
   const [lastGrafica, setLastGrafica] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:5005/ultimo-experimento")
+    fetch("https://zoe-cedrion.herokuapp.com/ultimo-experimento")
       .then((data) => {
         return data.json();
       })

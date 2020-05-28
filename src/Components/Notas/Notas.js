@@ -7,7 +7,7 @@ const Notas = () => {
   const [notas, guardarNotas] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5005/graphic-data")
+    fetch("https://zoe-cedrion.herokuapp.com/graphic-data")
       .then((res) => res.json())
       .then((resJSON) => guardarNotas(resJSON));
   }, []);

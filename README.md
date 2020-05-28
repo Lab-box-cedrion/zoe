@@ -1,5 +1,4 @@
-#Proyecto 'Zoe' para Cedrion.
-Construido con React, Node.js, Express, Chart.js, HTML, CSS, SCSS
+# Proyecto 'Zoe' para Cedrion.
 
 Presentación
 Instalación
@@ -7,10 +6,10 @@ Configuración y uso
 
 Este repositorio contiene el código de un proyecto que hemos desarrollado para la empresa Cedrión:
 
-**Aplicación web** para mostrar en su interfaz la recogida de datos desde un sensor DHT22 (temperatura y humedad) de una placa **Arduino One**.
+** Aplicación web** para mostrar en su interfaz la recogida de datos desde un sensor DHT22 (temperatura y humedad) de una placa **Arduino One**.
 Los datos se guardan en una base de datos, se muestran gráficamente con Chart.js en la app y se pueden descargar un archivo tipo CSV.
 
-###Instalación y configuración Arduino
+### Instalación y configuración Arduino
 
 Hay que tener instalado:
 
@@ -20,15 +19,21 @@ https://www.arduino.cc/en/Guide/HomePage
 Montaje del sensor en la placa Arduino según el plano que comparte Luis Llamas en su web:
 https://www.luisllamas.es/arduino-dht11-dht22/
 
-###Instalación y configuración en el PC
+### Instalación y configuración en el PC
 
 Node.js: https://nodejs.org/es/
 
-(Descargar para equipos Windows) Git: https://git-scm.com/downloads
+Para usuarios de Windows es necesario descargar git desde: https://git-scm.com/downloads:
+1. Iremos a la carpeta donde se nos ha instalado git.
+2. Ejecutaremos "git-bash"
+3. También podemos hacer click con el botón derecho y seleccionar "git bash here" en el directorio que queramos abrir en la terminal.
+
+Para usuarios de Mac y Linux no hace falta instalar git. Ya viene integrado.
+
 
 Hay que descargarse este repositorio. :D
 
-##Puesta en marcha del proyecto
+## Puesta en marcha del proyecto
 
 Requisitos:
 
@@ -38,17 +43,14 @@ Requisitos:
 
 Para poner en marcha el servidor en el PC:
 
-    Hacer .
-
     Abrir carpeta ardu-app e instalar las dependencias necesarias escribiendo en consola:
 
     ```npm install```
 
 Ejecutar: node ardu-app.js
+
 Esperar a mensaje de: `Conectado al puerto 5005 app`
 
-    Abrir Zoe-cedrion.netlify.app
+    Abrir cedrion-zoe.netlify.app
+    
     Introducir datos en Históricos y darle al botón de power para comenzar experimento.
-    ￼
-
-                Añadir contraseña y correo de la base de datos

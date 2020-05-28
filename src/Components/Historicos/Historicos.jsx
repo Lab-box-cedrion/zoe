@@ -22,7 +22,7 @@ const Historicos = () => {
   const enviarDatos = async (event) => {
     event.preventDefault();
 
-    await fetch("http://localhost:5005/crear-experimento", {
+    await fetch("https://zoe-cedrion.herokuapp.com/crear-experimento", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -48,7 +48,7 @@ const Historicos = () => {
   };
 
   async function fetchData() {
-    const result = await axios.get("http://localhost:5005/graphic-data");
+    const result = await axios.get("https://zoe-cedrion.herokuapp.com/graphic-data");
 
     setData(result.data);
     // console.log("Connected to the database", result.data);

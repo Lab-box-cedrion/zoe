@@ -102,6 +102,8 @@ const Historicos = () => {
             <InputText
               id="in"
               value={form.nombre}
+              type="text"
+              maxlength="15"
               onChange={(e) => setValue({ ...form, nombre: e.target.value })}
             />
             <label htmlFor="in">Nombre experimento</label>

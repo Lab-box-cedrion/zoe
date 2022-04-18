@@ -28,11 +28,11 @@ class Spiral extends Component {
             <div className='brand-text'>
             <img
             className="brand-icon"
-            src="https://s6.gifyu.com/images/cedrion_horizontal_dark_TRANS-01.png"
+            src="../../images/cedrion_horizontal_dark_TRANS-01.png"
             alt="main-icono"/>
             <img
             className='zoe'
-            src="https://s6.gifyu.com/images/ZOE-01.png"
+            src="../../images/zoe-logo-white_zoe-white.png"
             alt="logo-ZOE"/>
             <h3 className='motto'> We drive the flow </h3>
             </div>

@@ -24,7 +24,7 @@ const Cabecera = () => {
       <Link to="/historicos_parametros">
         <img
           className="brand-icon"
-          src="../../images/cedrion_horizontal_dark_TRANS-01.png"
+          src="src/images/cedrion_horizontal_dark_TRANS-01.png"
           alt="main-icono"
         />
       </Link>

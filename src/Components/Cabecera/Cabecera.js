@@ -5,6 +5,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faStickyNote } from "@fortawesome/free-solid-svg-icons";
 import { Button, Modal } from "react-bootstrap";
+import cedrionlogo from ".src/images/cedrion_horizontal_dark_TRANS-01.png"
 
 const Cabecera = () => {
   const [show, setShow] = useState(false);
@@ -24,7 +25,7 @@ const Cabecera = () => {
       <Link to="/historicos_parametros">
         <img
           className="brand-icon"
-          src="src/images/cedrion_horizontal_dark_TRANS-01.png"
+          src= {cedrionlogo}
           alt="main-icono"
         />
       </Link>

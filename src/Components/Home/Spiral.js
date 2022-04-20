@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import './Spiral.scss';
+import cedrionlogo from ".src/images/cedrion_horizontal_dark_TRANS-01.png";
+import zoelogo from ".src/images/zoe-logo-white_zoe-white.png";
 
 
 
@@ -28,11 +30,11 @@ class Spiral extends Component {
                 <div className='brand-text'>
                     <img
                         className="brand-icon"
-                        src="src/images/cedrion_horizontal_dark_TRANS-01.png"
+                        src={cedrionlogo}
                         alt="main-icono" />
                     <img
                         className='zoe'
-                        src="src/images/zoe-logo-white_zoe-white.png"
+                        src={zoelogo}
                         alt="logo-ZOE" />
                     <h3 className='motto'> We drive the flow </h3>
                 </div>
